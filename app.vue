@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useStoryblokApi } from '@storyblok/vue'
 import Header from './components/Header.vue'
@@ -6,6 +6,11 @@ import Footer from './components/Footer.vue'
 
 const storyblokApi = useStoryblokApi()
 const story = ref(null)
+const config = useRuntimeConfig()
+
+useHead({
+  title: config.public.appName,
+})
 
 // Fetch the story content from Storyblok
 async function fetchStory() {
