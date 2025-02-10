@@ -14,7 +14,8 @@ useHead({
 
 // Fetch the story content from Storyblok
 async function fetchStory() {
-  const { data } = await storyblokApi.get('cdn/stories/home', {
+  const route = window.location.pathname === '/' ? 'home' : window.location.pathname
+  const { data } = await storyblokApi.get(`cdn/stories/${route}`, {
     version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
   })
   story.value = data.story

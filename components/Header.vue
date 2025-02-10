@@ -1,5 +1,5 @@
 <template>
-  <header class="header bg-purple-800 text-white">
+  <header class="header bg-purple-900 text-white">
     <nav>
       <h1>{{ config.public.appName }}</h1>
     </nav>
