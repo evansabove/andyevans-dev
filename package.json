@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.10.3",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@storyblok/nuxt": "^6.2.2",
     "@storyblok/richtext": "^3.0.2",

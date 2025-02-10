@@ -22,7 +22,7 @@ stories.value = response.data.stories
 
 <style scoped>
 .blog-header {
-  @apply text-2xl font-bold;
+  @apply text-2xl;
   @apply no-underline;
   @apply mb-3;
 }

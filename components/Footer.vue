@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-purple-800 text-white py-2">
+  <footer class="footer bg-purple-900 text-white py-2">
     <div class="footer-content">
       <p>&copy; {{ new Date().getFullYear() }} {{ config.public.appName }}</p>
     </div>
