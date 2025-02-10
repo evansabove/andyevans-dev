@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         return component
       }
     }
-  }], '@nuxtjs/tailwindcss'],
+  }], '@nuxtjs/tailwindcss', '@nuxt/fonts'],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
