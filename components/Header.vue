@@ -1,7 +1,9 @@
 <template>
-  <header class="header bg-purple-900 text-white">
+  <header class="header">
     <nav>
-      <h1>{{ config.public.appName }}</h1>
+      <div class="header-text">
+        <NuxtLink to="/" class="no-underline">{{ config.public.appName }}</NuxtLink>
+      </div>
     </nav>
   </header>
 </template>
@@ -12,7 +14,13 @@ const config = useRuntimeConfig();
 
 <style scoped>
 .header {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  @apply bg-purple-900;
+}
+
+.header-text {
+  @apply text-white;
+  @apply ps-5 py-5;
+  @apply cursor-pointer;
+  @apply text-xl;
 }
 </style>

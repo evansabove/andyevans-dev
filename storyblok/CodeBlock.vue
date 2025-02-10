@@ -24,5 +24,6 @@ const props = defineProps({ blok: Object })
   @apply overflow-scroll;
   @apply rounded-lg;
   @apply text-sm;
+  @apply border border-solid border-purple-900;
 }
 </style>

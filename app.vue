@@ -7,6 +7,7 @@ import Footer from './components/Footer.vue'
 const storyblokApi = useStoryblokApi()
 const story = ref(null)
 const config = useRuntimeConfig()
+const route = useRoute()
 
 useHead({
   title: config.public.appName,
