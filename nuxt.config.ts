@@ -1,6 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const appName = 'andyevans.dev'
 
+const fetchStoryblokRoutes = async () => {
+  const apiToken = process.env.STORYBLOK_API_KEY
+  const version = 'published'
+  console.log(apiToken)
+  const storyblokApiUrl = `https://api.storyblok.com/v2/cdn/stories?token=${apiToken}&version=${version}`
+
+  try {
+    const response = await fetch(storyblokApiUrl)
+    const stories = (await response.json()).stories || []
+
+    return stories.map(story => `/${story.full_slug}`)
+  } catch (error) {
+    console.error('Error fetching Storyblok routes:', error)
+    return []
+  }
+}
+
+const storyblokRoutes = await fetchStoryblokRoutes()
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -24,7 +43,7 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     prerender: {
-      routes: ['/', '/posts/functional-testing-with-isolated-azure-functions']
+      routes: storyblokRoutes
     }
   },
   app: {
