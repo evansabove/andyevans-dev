@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: [['@storyblok/nuxt', {
     accessToken: process.env.STORYBLOK_API_KEY,
     apiOptions: {
-      region: 'eu' // Change to 'eu' if your space is in EU
+      region: 'eu'
     },
     componentResolver: {
       resolve: (component) => {
@@ -17,6 +17,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appName: 'andyevans.dev'
+    }
+  },
+  ssr: true,
+  nitro: {
+    prerender: {
+      routes: ['/', '/posts/functional-testing-with-isolated-azure-functions']
     }
   },
 })

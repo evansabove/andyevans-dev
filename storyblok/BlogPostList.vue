@@ -10,13 +10,17 @@ import { useStoryblokApi } from '@storyblok/vue'
 
 const storyblokApi = useStoryblokApi()
 
-const stories = ref([])
+const { data } = await useAsyncData(
+  'blog-post-list',
+  async () => {
+    const { data } = await storyblokApi.get(`cdn/stories`, {
+      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
+    })
+    return data
+  }
+)
 
-const response = await storyblokApi.get('cdn/stories', {
-  version: process.env.NODE_ENV === 'production' ? 'published' : 'draft', starts_with: 'posts'
-})
-
-stories.value = response.data.stories
+const stories = computed(() => data.value?.stories)
 
 </script>
 
