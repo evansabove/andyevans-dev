@@ -1,47 +1,48 @@
 <script setup>
 import { useStoryblokApi } from '@storyblok/vue'
-import Header from '~/components/Header.vue';
-import Footer from '~/components/Footer.vue';
 
 const storyblokApi = useStoryblokApi()
+const route = useRoute()
 
-const story = ref(null)
+const slug = computed(() => route.path === '/' ? 'home' : route.path.replace(/^\//, ''))
 
-onMounted(async () => {
-    const route = window.location.pathname === '/' ? 'home' : window.location.pathname
-
-    const response = await storyblokApi.get(`cdn/stories/${route}`, {
-        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
+const { data } = await useAsyncData(
+  slug.value,
+  async () => {
+    const { data } = await storyblokApi.get(`cdn/stories/${slug.value}`, {
+      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
     })
+    return data
+  }
+)
 
-    story.value = response.data.story
-})
+const story = computed(() => data.value?.story)
 </script>
 
 <template>
-    <div class="app-wrapper bg-stone-100">
-        <Header />
+  <div class="app-wrapper bg-stone-100">
+    <Header />
 
-        <main class="main-content">
-            <StoryblokComponent v-if="story" :blok="story.content" />
-        </main>
+    <main class="main-content">
+      <StoryblokComponent v-if="story" :blok="story.content" />
+    </main>
 
-        <Footer />
-    </div>
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
 .app-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
-    flex: 1;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 </style>
