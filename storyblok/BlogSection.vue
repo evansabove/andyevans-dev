@@ -21,6 +21,7 @@ const html = renderedSections.join('<br />')
 
   &__heading {
     @apply text-3xl font-bold;
+    @apply mb-5;
   }
 }
 </style>

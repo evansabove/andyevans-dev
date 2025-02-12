@@ -10,7 +10,7 @@ const fetchStoryblokRoutes = async () => {
     const response = await fetch(storyblokApiUrl)
     const stories = (await response.json()).stories || []
 
-    return stories.map((story: { full_slug: string }) => `/${story.full_slug}`)
+    return stories.map(story => `/${story.full_slug}`)
   } catch (error) {
     console.error('Error fetching Storyblok routes:', error)
     return []
@@ -28,14 +28,13 @@ export default defineNuxtConfig({
       region: 'eu'
     },
     componentResolver: {
-      resolve: (component: string) => {
+      resolve: (component) => {
         return component
       }
     }
   }],
     '@nuxtjs/tailwindcss',
     '@nuxt/fonts',
-    '@nuxtjs/sitemap'
   ],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {

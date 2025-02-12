@@ -24,7 +24,7 @@ const story = computed(() => data.value?.story)
     <Header />
 
     <main class="main-content">
-      <StoryblokComponent v-if="story" :blok="story.content" />
+      <StoryblokComponent v-if="story" :blok="story.content" class="story" />
     </main>
 
     <Footer />
@@ -44,5 +44,9 @@ const story = computed(() => data.value?.story)
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+}
+
+.story {
+  @apply flex flex-col;
 }
 </style>

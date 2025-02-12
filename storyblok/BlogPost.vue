@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok">
+  <div v-editable="blok" class="blog-post">
     <div class="blog-title">{{ blok.Title }}</div>
     <div class="blog-description">{{ blok.Description }}</div>
     <div class="blog-image">
@@ -17,6 +17,10 @@ defineProps({ blok: Object })
 </script>
 
 <style scoped>
+.blog-post {
+  @apply flex flex-col;
+}
+
 .blog-title {
   @apply text-4xl font-bold;
   @apply mb-3;
