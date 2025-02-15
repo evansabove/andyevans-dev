@@ -35,5 +35,7 @@ defineProps({ blok: Object })
   max-height: 20rem;
   overflow: hidden;
   background-size: cover;
+  @apply mb-5;
+
 }
 </style>

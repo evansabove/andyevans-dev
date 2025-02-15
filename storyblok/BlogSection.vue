@@ -1,7 +1,8 @@
 <template>
-  <div class="blog-section blog-section__heading">{{ blok.Heading }}</div>
-
-  <div class="blog-section" v-html="html" />
+  <div class="blog-section-container">
+    <div class="blog-section blog-section__heading">{{ blok.Heading }}</div>
+    <div v-html="html" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -16,6 +17,10 @@ const html = renderedSections.join('<br />')
 </script>
 
 <style scoped>
+.blog-section-container {
+  @apply flex flex-col;
+  @apply mb-10;
+}
 .blog-section {
   @apply mb-10;
 
