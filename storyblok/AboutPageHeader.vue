@@ -1,6 +1,6 @@
 <template>
   <div class="about-container">
-    <StoryblokComponent :blok="blok.CodeBlock[0]" class="code-block" />
+    <StoryblokComponent :blok="blok.CodeBlock[0]" />
     <img :src="blok.Image.filename" {{ blok }} class="about-image" />
   </div>
 </template>
@@ -12,17 +12,12 @@ const props = defineProps({ blok: Object })
 
 <style scoped>
 .about-container {
-  @apply flex gap-5;
+  @apply flex;
+  flex-grow: 1;
 }
 
 .about-image {
   border-radius: 50%;
   object-fit: cover;
-  height: 12rem;
-  width: 12rem;
-}
-
-.code-block {
-  flex-grow: 1;
 }
 </style>
