@@ -16,6 +16,10 @@ const { data } = await useAsyncData(
   }
 )
 
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: "Page not found" });
+}
+
 const config = useRuntimeConfig()
 useHead({
   title: computed(() => `${data.value?.story?.name} | ${config.public.appName}`),
@@ -25,32 +29,12 @@ const story = computed(() => data.value?.story)
 </script>
 
 <template>
-  <div class="app-wrapper bg-stone-100">
-    <Header />
-
-    <main class="main-content">
-      <StoryblokComponent v-if="story" :blok="story.content" class="story" />
-    </main>
-
-    <Footer />
-  </div>
+  <AppTemplate>
+    <StoryblokComponent v-if="story" :blok="story.content" class="story" />
+  </AppTemplate>
 </template>
 
 <style scoped>
-.app-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-content {
-  flex: 1;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
 .story {
   @apply flex flex-col;
 }

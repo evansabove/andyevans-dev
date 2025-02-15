@@ -32,7 +32,7 @@ export default defineNuxtConfig({
         return component
       }
     }
-  }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/sitemap'],
+  }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/sitemap', '@nuxt/icon'],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {

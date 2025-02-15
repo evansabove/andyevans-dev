@@ -5,3 +5,10 @@ html {
 a {
     text-decoration: underline;
 }
+
+button {
+    @apply bg-purple-900;
+    @apply text-white;
+    @apply p-2;
+    @apply rounded-md;
+}
