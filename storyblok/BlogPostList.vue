@@ -1,7 +1,9 @@
 <template>
-  <div v-for="story in stories" :key="story.uuid">
-    <NuxtLink :to="story.full_slug" class="blog-header">{{ story.content.body[0].Title }}</NuxtLink>
-    <div>{{ story.content.body[0].Description }}</div>
+  <div>
+    <div v-for="story in stories" :key="story.uuid">
+      <NuxtLink :to="story.full_slug" class="blog-header">{{ story.content.body[0].Title }}</NuxtLink>
+      <div>{{ story.content.body[0].Description }}</div>
+    </div>
   </div>
 </template>
 

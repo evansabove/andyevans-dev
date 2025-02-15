@@ -19,7 +19,7 @@ const html = renderedSections.join('<br />')
 <style scoped>
 .blog-section-container {
   @apply flex flex-col;
-  @apply mb-10;
+  @apply mb-5;
 }
 .blog-section {
   @apply mb-10;

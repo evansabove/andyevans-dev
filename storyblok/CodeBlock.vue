@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="blog-code-container">
     <pre class="blog-code" v-if="props.blok.TypingAnimation" v-html="dynamicCode"></pre>
     <pre class="blog-code" v-else v-html="staticCode"></pre>
   </div>
@@ -41,6 +41,10 @@ if (import.meta.client) {
 </script>
 
 <style scoped>
+.blog-code-container {
+  @apply w-full;
+}
+
 .blog-code {
   @apply mb-10 p-5;
   @apply bg-purple-50;

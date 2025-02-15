@@ -11,15 +11,7 @@ const props = defineProps({ blok: Object })
 
 <style scoped>
 .about-container {
-  @apply flex;
+  @apply flex w-full;
   flex-grow: 1;
-  align-items: center;
-}
-
-.about-image {
-  border-radius: 50%;
-  object-fit: cover;
-  height: 10rem;
-  @apply mb-10;
 }
 </style>

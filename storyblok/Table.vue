@@ -2,14 +2,15 @@
   <div v-editable="blok" class="table-container">
     <table class="table">
       <thead>
-        <th v-for="header in blok.Table.thead">{{ header.value }}</th>
+        <tr>
+          <th v-for="header in blok.Table.thead">{{ header.value }}</th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="row in blok.Table.tbody">
           <td v-for="cell in row.body">{{ cell.value }}</td>
         </tr>
       </tbody>
-
     </table>
   </div>
 </template>
