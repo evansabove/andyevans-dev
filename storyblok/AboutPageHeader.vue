@@ -1,7 +1,6 @@
 <template>
   <div class="about-container">
     <StoryblokComponent :blok="blok.CodeBlock[0]" />
-    <img :src="blok.Image.filename" {{ blok }} class="about-image" />
   </div>
 </template>
 
@@ -14,10 +13,13 @@ const props = defineProps({ blok: Object })
 .about-container {
   @apply flex;
   flex-grow: 1;
+  align-items: center;
 }
 
 .about-image {
   border-radius: 50%;
   object-fit: cover;
+  height: 10rem;
+  @apply mb-10;
 }
 </style>

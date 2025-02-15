@@ -16,6 +16,11 @@ const { data } = await useAsyncData(
   }
 )
 
+const config = useRuntimeConfig()
+useHead({
+  title: computed(() => `${data.value?.story?.name} | ${config.public.appName}`),
+})
+
 const story = computed(() => data.value?.story)
 </script>
 
