@@ -49,4 +49,13 @@ if (import.meta.client) {
   @apply text-sm;
   @apply border border-solid border-purple-900;
 }
+
+.blog-code::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.blog-code::-webkit-scrollbar-thumb {
+  @apply bg-purple-700;
+  @apply rounded-md;
+}
 </style>
