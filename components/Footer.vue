@@ -3,11 +3,11 @@
     <div class="footer-content">
       <p>&copy; {{ new Date().getFullYear() }} {{ config.public.appName }}</p>
       <div class="icon-set">
-        <a href="https://github.com/evansabove" target="_blank">
+        <a href="https://github.com/evansabove" target="_blank" aria-label="Andy Evans GitHub"> 
           <Icon name="fa6-brands:square-github" class="icon" />
         </a>
 
-        <a href="https://www.linkedin.com/in/andy-evans-557b1125/" target="_blank">
+        <a href="https://www.linkedin.com/in/andy-evans-557b1125/" target="_blank" aria-label="Andy Evans LinkedIn">
           <Icon name="fa6-brands:linkedin" class="icon" />
         </a>
       </div>

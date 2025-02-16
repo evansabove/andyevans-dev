@@ -39,7 +39,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      appName: appName
+      appName: appName,
+      appUrl: 'https://andyevans.dev',
+      appDescription: "I'm Andy Evans, a software engineer based in Sheffield, UK. I write about web development, software engineering, and other tech topics.",
+      appImage: 'https://andyevans.dev/andyevans.jpeg',
     }
   },
   ssr: true,
@@ -54,7 +57,6 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: appName, name: appName, content: appName }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96' },
@@ -73,7 +75,10 @@ export default defineNuxtConfig({
             })(window,document,'script','dataLayer','GTM-5JWSMNHK');
           `,
         }
-      ]
+      ],
+      htmlAttrs: {
+        lang: 'en'
+      }
     }
   },
   site: {

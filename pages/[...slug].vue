@@ -25,6 +25,20 @@ useHead({
   title: computed(() => `${data.value?.story?.name} | ${config.public.appName}`),
 })
 
+const runtimeConfig = useRuntimeConfig()
+
+useSeoMeta({
+  title: runtimeConfig.public.appName,
+  description: runtimeConfig.public.appDescription,
+  ogTitle: runtimeConfig.public.appName,
+  ogDescription: runtimeConfig.public.appDescription,
+  ogUrl: runtimeConfig.public.appUrl,
+  ogType: 'website',
+  ogSiteName: runtimeConfig.public.appName,
+  ogLocale: 'en_GB',
+  ogImage: runtimeConfig.public.appImage
+})
+
 const story = computed(() => data.value?.story)
 </script>
 

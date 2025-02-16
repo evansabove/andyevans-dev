@@ -7,7 +7,6 @@
     </div>
 
     <div class="blog-date">Written: {{ $dayjs(blok.WrittenDate).format("MMMM YYYY") }}</div>
-
     <div class="blog-content">
       {{ blok.Content }}
     </div>
@@ -15,7 +14,22 @@
 </template>
 
 <script setup>
-defineProps({ blok: Object })
+const props = defineProps({ blok: Object })
+const runtimeConfig = useRuntimeConfig()
+
+useSeoMeta({
+  title: props.blok.Title,
+  description: props.blok.Description,
+  image: props.blok.Image?.filename,
+  ogTitle: props.blok.Title,
+  ogDescription: props.blok.Description,
+  ogImage: props.blok.Image?.filename,
+  ogUrl: runtimeConfig.public.appUrl,
+  ogType: 'article',
+  ogSiteName: runtimeConfig.public.appName,
+  ogLocale: 'en_GB'
+})
+
 </script>
 
 <style scoped>
