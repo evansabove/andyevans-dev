@@ -1,6 +1,5 @@
 <template>
   <div class="blog-section-container">
-    <div class="blog-section blog-section__heading">{{ blok.Heading }}</div>
     <div v-html="html" />
   </div>
 </template>
@@ -19,14 +18,6 @@ const html = renderedSections.join('<br />')
 <style scoped>
 .blog-section-container {
   @apply flex flex-col;
-  @apply mb-5;
-}
-.blog-section {
   @apply mb-10;
-
-  &__heading {
-    @apply text-3xl font-bold;
-    @apply mb-5;
-  }
 }
 </style>
