@@ -31,7 +31,7 @@ const config = useRuntimeConfig();
   @apply flex justify-center;
   @apply mt-3;
 
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .icon {

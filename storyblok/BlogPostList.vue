@@ -24,7 +24,8 @@ const { data } = await useAsyncData(
   'blog-post-list',
   async () => {
     const { data } = await storyblokApi.get(`cdn/stories`, {
-      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
+      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+      starts_with: 'posts/'
     })
     return data
   }
@@ -40,7 +41,7 @@ const stories = computed(() => data.value?.stories)
 }
 
 .list-item-image {
-  max-width: 15rem;
+  @apply w-1/4;
   @apply object-cover;
   @apply rounded-lg;
 }

@@ -10,6 +10,8 @@ const goToHome = () => clearError({ redirect: '/' })
 
 const title = computed(() => props.error?.statusCode === 404 ? 'Page not found' : 'Error')
 
+console.error(props.error)
+
 </script>
 
 <template>
