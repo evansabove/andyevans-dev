@@ -1,8 +1,15 @@
 <template>
-  <div>
+  <div class="blog-post-list">
     <div v-for="story in stories" :key="story.uuid">
-      <NuxtLink :to="story.full_slug" class="blog-header">{{ story.content.body[0].Title }}</NuxtLink>
-      <div>{{ story.content.body[0].Description }}</div>
+      <NuxtLink :to="story.full_slug" class="list-item-container">
+        <img :src="story.content.body[0].Image?.filename" class="list-item-image" />
+
+        <div class="list-item-content">
+          <div class="list-item-header">{{ story.content.body[0].Title }}</div>
+          <div>{{ story.content.body[0].Description }}</div>
+        </div>
+
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -28,9 +35,30 @@ const stories = computed(() => data.value?.stories)
 </script>
 
 <style scoped>
-.blog-header {
+.blog-post-list {
+  @apply flex flex-col;
+}
+
+.list-item-image {
+  max-width: 15rem;
+  @apply object-cover;
+  @apply rounded-lg;
+}
+
+.list-item-header {
   @apply text-2xl;
-  @apply no-underline;
   @apply mb-3;
+}
+
+.list-item-container {
+  @apply flex;
+  @apply mb-5;
+  @apply no-underline;
+}
+
+.list-item-content {
+  @apply flex flex-col;
+  @apply ml-5;
+  @apply no-underline;
 }
 </style>
