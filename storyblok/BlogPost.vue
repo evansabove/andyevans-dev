@@ -1,6 +1,7 @@
 <template>
   <div v-editable="blok" class="blog-post">
     <div class="blog-title">{{ blok.Title }}</div>
+    <div class="blog-date">Written {{ $dayjs(blok.WrittenDate).format("MMMM YYYY") }}</div>
     <div class="blog-description">{{ blok.Description }}</div>
     <div class="blog-image">
       <img :src="blok.Image.filename" alt="Blog Image" />
@@ -23,7 +24,7 @@ defineProps({ blok: Object })
 
 .blog-title {
   @apply text-4xl font-bold;
-  @apply mb-3;
+  @apply mb-5;
 }
 
 .blog-description {
@@ -36,6 +37,10 @@ defineProps({ blok: Object })
   overflow: hidden;
   background-size: cover;
   @apply mb-10;
+}
 
+.blog-date {
+  @apply font-bold;
+  @apply mb-5;
 }
 </style>
