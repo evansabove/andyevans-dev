@@ -33,6 +33,9 @@ export default defineNuxtConfig({
       }
     }
   }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/sitemap', '@nuxt/icon'],
+  fonts: {
+    families: [ { name: 'Monserrat', provider: 'local' }]
+  },
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
