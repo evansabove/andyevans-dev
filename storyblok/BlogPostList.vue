@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post-list">
     <div v-for="story in stories" :key="story.uuid">
-      <NuxtLink :to="story.full_slug" class="list-item-container">
+      <NuxtLink :to="`/${story.full_slug}`" class="list-item-container">
         <img :src="story.content.body[0].Image?.filename" :alt="story.content.body[0].Image?.alt" class="list-item-image" />
 
         <div class="list-item-content">
@@ -32,18 +32,6 @@ const { data } = await useAsyncData(
 )
 
 const stories = computed(() => data.value?.stories)
-const runtimeConfig = useRuntimeConfig()
-
-// useSeoMeta({
-//   title: runtimeConfig.public.appName,
-//   description: runtimeConfig.public.appDescription,
-//   ogTitle: runtimeConfig.public.appName,
-//   ogDescription: runtimeConfig.public.appDescription,
-//   ogUrl: runtimeConfig.public.appUrl,
-//   ogType: 'website',
-//   ogSiteName: runtimeConfig.public.appName,
-//   ogLocale: 'en_GB'
-// })
 
 </script>
 
