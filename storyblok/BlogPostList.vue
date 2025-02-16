@@ -25,7 +25,8 @@ const { data } = await useAsyncData(
   async () => {
     const { data } = await storyblokApi.get(`cdn/stories`, {
       version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
-      starts_with: 'posts/'
+      starts_with: 'posts/',
+      is_startpage: false
     })
     return data
   }
