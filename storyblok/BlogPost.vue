@@ -50,8 +50,12 @@ useSeoMeta({
 .blog-image {
   max-height: 20rem;
   overflow: hidden;
-  background-size: cover;
   @apply mb-10;
+  @apply flex items-center justify-center;
+}
+
+.blog-image img {
+  @apply w-full h-full object-cover;
 }
 
 .blog-date {

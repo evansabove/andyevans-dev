@@ -12,3 +12,8 @@ button {
     @apply p-2;
     @apply rounded-md;
 }
+
+ul {
+    @apply list-disc;
+    @apply ms-8;
+}
