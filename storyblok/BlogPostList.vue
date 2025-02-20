@@ -6,6 +6,7 @@
 
         <div class="list-item-content">
           <div class="list-item-header">{{ story.content.body[0].Title }}</div>
+          <div class="list-item-date">{{ $dayjs(story.content.body[0].WrittenDate).format("MMM YYYY") }}</div>
           <div>{{ story.content.body[0].Description }}</div>
         </div>
 
@@ -49,9 +50,13 @@ const stories = computed(() => data.value?.stories)
 
 .list-item-header {
   @apply text-2xl;
-  @apply mb-3;
+  @apply mb-1;
 }
 
+.list-item-date {
+  @apply font-bold;
+  @apply mb-3;
+}
 .list-item-container {
   @apply flex;
   @apply mb-5;
