@@ -25,10 +25,14 @@ const { data } = await useAsyncData(
   'blog-post-list',
   async () => {
     const { data } = await storyblokApi.get(`cdn/stories`, {
-      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+      version: process.env.NODE_ENV === 'production' || 'prerender' ? 'published' : 'draft',
       starts_with: 'posts/',
-      is_startpage: false
+      is_startpage: false,
+
     })
+
+    console.log("Blog post list found", data.stories.map(x => x.name))
+
     return data
   }
 )
