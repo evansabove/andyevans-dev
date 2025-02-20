@@ -10,6 +10,8 @@ const fetchStoryblokRoutes = async () => {
     const response = await fetch(storyblokApiUrl)
     const stories = (await response.json()).stories || []
 
+    console.log("Stories", stories.map(x => x.name ));
+
     return stories.map(story => `/${story.full_slug}`)
   } catch (error) {
     console.error('Error fetching Storyblok routes:', error)
