@@ -4,7 +4,6 @@ html {
 
 a {
     @apply underline;
-    @apply text-purple-900;
 }
 
 button {
