@@ -78,4 +78,7 @@ export default defineNuxtConfig({
     name: 'andyevans.dev',
     trailingSlash: false
   },
+  experimental: {
+    payloadExtraction: false
+  }
 })

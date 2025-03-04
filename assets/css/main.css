@@ -3,7 +3,8 @@ html {
 }
 
 a {
-    text-decoration: underline;
+    @apply underline;
+    @apply text-purple-900;
 }
 
 button {
@@ -16,4 +17,27 @@ button {
 ul {
     @apply list-disc;
     @apply ms-8;
+
+    li {
+        @apply my-1;
+        @apply ps-1;
+    }
+}
+
+ol {
+    @apply list-decimal;
+    @apply ms-8;
+
+    li {
+        @apply my-1;
+        @apply ps-1;
+    }
+}
+
+code {
+    @apply text-purple-900;
+    @apply bg-purple-100;
+    @apply rounded-md;
+    @apply px-2;
+    @apply py-0.5;
 }

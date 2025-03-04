@@ -10,11 +10,13 @@ import hljs from 'highlight.js/lib/core';
 import csharp from 'highlight.js/lib/languages/csharp';
 import json from 'highlight.js/lib/languages/json';
 import c from 'highlight.js/lib/languages/c';
+import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/github.css';
 
 hljs.registerLanguage('csharp', csharp);
 hljs.registerLanguage('json', json);
 hljs.registerLanguage('c', c);
+hljs.registerLanguage('typescript', typescript);
 
 const props = defineProps({ blok: Object })
 
