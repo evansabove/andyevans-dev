@@ -12,6 +12,7 @@ import json from 'highlight.js/lib/languages/json';
 import c from 'highlight.js/lib/languages/c';
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
+import yaml from 'highlight.js/lib/languages/yaml';
 import 'highlight.js/styles/github.css';
 
 hljs.registerLanguage('csharp', csharp);
@@ -19,6 +20,7 @@ hljs.registerLanguage('json', json);
 hljs.registerLanguage('c', c);
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('yaml', yaml);
 
 const props = defineProps({ blok: Object })
 
