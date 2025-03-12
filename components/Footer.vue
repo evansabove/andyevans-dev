@@ -25,6 +25,7 @@ const config = useRuntimeConfig();
   margin: 0 auto;
   text-align: center;
   font-size: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 .icon-set {
