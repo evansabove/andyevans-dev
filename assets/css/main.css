@@ -41,3 +41,9 @@ code {
     @apply px-2;
     @apply py-0.5;
 }
+
+h1 {
+    @apply text-3xl;
+    @apply font-bold;
+    @apply mb-4;
+}
