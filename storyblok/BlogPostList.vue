@@ -31,8 +31,6 @@ const { data } = await useAsyncData(
 
     })
 
-    console.log("Blog post list found", data.stories.map(x => x.name))
-
     return data
   }
 )
@@ -47,9 +45,10 @@ const stories = computed(() => data.value?.stories)
 }
 
 .list-item-image {
-  @apply w-1/4;
   @apply object-cover;
   @apply rounded-lg;
+  width: 15rem;
+  height: 15rem;
 }
 
 .list-item-header {
@@ -63,7 +62,7 @@ const stories = computed(() => data.value?.stories)
 }
 .list-item-container {
   @apply flex;
-  @apply mb-5;
+  @apply mb-10;
   @apply no-underline;
 }
 
