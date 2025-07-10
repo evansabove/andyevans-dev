@@ -47,8 +47,7 @@ const stories = computed(() => data.value?.stories)
 .list-item-image {
   @apply object-cover;
   @apply rounded-lg;
-  width: 15rem;
-  height: 15rem;
+  @apply h-64 w-full md:w-64 md:h-64;
 }
 
 .list-item-header {
@@ -60,15 +59,17 @@ const stories = computed(() => data.value?.stories)
   @apply font-bold;
   @apply mb-3;
 }
+
 .list-item-container {
-  @apply flex;
-  @apply mb-10;
+  @apply flex flex-col md:flex-row;
+  @apply mb-20  ;
   @apply no-underline;
 }
 
 .list-item-content {
   @apply flex flex-col;
-  @apply ml-5;
+  @apply md:ml-5;
+  @apply mt-5 md:mt-0;
   @apply no-underline;
 }
 </style>
