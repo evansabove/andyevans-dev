@@ -47,3 +47,7 @@ h1 {
     @apply font-bold;
     @apply mb-4;
 }
+
+span img {
+    @apply inline;
+}
