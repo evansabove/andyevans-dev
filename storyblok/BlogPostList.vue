@@ -2,12 +2,16 @@
   <div class="blog-post-list">
     <div v-for="story in stories" :key="story.uuid">
       <NuxtLink :to="`/${story.full_slug}`" class="list-item-container">
-        <img :src="story.content.body[0].Image?.filename" :alt="story.content.body[0].Image?.alt" class="list-item-image" />
+        <img :src="story.content.body[0].Image?.filename" :alt="story.content.body[0].Image?.alt"
+          class="list-item-image" />
 
         <div class="list-item-content">
           <div class="list-item-header">{{ story.content.body[0].Title }}</div>
           <div class="list-item-date">{{ $dayjs(story.content.body[0].WrittenDate).format("MMM YYYY") }}</div>
           <div>{{ story.content.body[0].Description }}</div>
+          <div class="list-item-button">
+            <button>Read now</button>
+          </div>
         </div>
 
       </NuxtLink>
@@ -62,7 +66,7 @@ const stories = computed(() => data.value?.stories)
 
 .list-item-container {
   @apply flex flex-col md:flex-row;
-  @apply mb-20  ;
+  @apply mb-20;
   @apply no-underline;
 }
 
@@ -71,5 +75,9 @@ const stories = computed(() => data.value?.stories)
   @apply md:ml-5;
   @apply mt-5 md:mt-0;
   @apply no-underline;
+}
+
+.list-item-button {
+  @apply mt-5;
 }
 </style>
