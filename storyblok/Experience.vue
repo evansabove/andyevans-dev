@@ -13,6 +13,11 @@
     <div class="experience-location">
       📍 {{ props.blok.location }}
     </div>
+
+    <div class="experience-tags">
+      <TagList :bloks="props.blok.tags" />
+    </div>
+
     <div class="experience-summary" v-html="html" />
   </div>
 </template>
@@ -41,5 +46,9 @@ const html = renderedSections.join('<br />')
   &-summary {
     @apply mt-5;
   }
+
+  &-tags {
+    @apply mt-2;
+  };
 }
 </style>
