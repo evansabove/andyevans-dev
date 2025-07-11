@@ -32,7 +32,7 @@ useSeoMeta({
   description: runtimeConfig.public.appDescription,
   ogTitle: runtimeConfig.public.appName,
   ogDescription: runtimeConfig.public.appDescription,
-  ogUrl: runtimeConfig.public.appUrl,
+  ogUrl: `${runtimeConfig.public.appUrl}/${slug.value}`,
   ogType: 'website',
   ogSiteName: runtimeConfig.public.appName,
   ogLocale: 'en_GB',

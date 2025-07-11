@@ -17,6 +17,9 @@
 const props = defineProps({ blok: Object })
 const runtimeConfig = useRuntimeConfig()
 
+const route = useRoute()
+const slug = computed(() => route.path.replace(/^\//, ''))
+
 useSeoMeta({
   title: props.blok.Title,
   description: props.blok.Description,
@@ -24,7 +27,7 @@ useSeoMeta({
   ogTitle: props.blok.Title,
   ogDescription: props.blok.Description,
   ogImage: props.blok.Image?.filename,
-  ogUrl: runtimeConfig.public.appUrl,
+  ogUrl: `${runtimeConfig.public.appUrl}/${slug.value}`,
   ogType: 'article',
   ogSiteName: runtimeConfig.public.appName,
   ogLocale: 'en_GB'
