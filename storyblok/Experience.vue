@@ -13,25 +13,24 @@
         <div class="experience-business">
           {{ props.blok.business }}
         </div>
-
-        <div class="experience-date">
-          {{ $dayjs(props.blok.start).format("MMM YYYY") }} -
-          {{ props.blok.end ? $dayjs(props.blok.end).format("MMM YYYY") : 'Present' }}
-        </div>
-
-        <div class="experience-location">
-          📍 {{ props.blok.location }}
-        </div>
       </div>
     </div>
+  </div>
 
-    <div class="experience-body">
-      <div class="experience-tags">
-        <TagList :bloks="props.blok.tags" />
+  <div class="experience-body">
+      <div class="experience-date">
+        {{ $dayjs(props.blok.start).format("MMM YYYY") }} -
+        {{ props.blok.end ? $dayjs(props.blok.end).format("MMM YYYY") : 'Present' }}
       </div>
 
-      <div class="experience-summary" v-html="html" />
+      <div class="experience-location">
+        📍 {{ props.blok.location }}
+      </div>
+    <div class="experience-tags">
+      <TagList :bloks="props.blok.tags" />
     </div>
+
+    <div class="experience-summary" v-html="html" />
   </div>
 </template>
 
@@ -50,17 +49,16 @@ const html = renderedSections.join('<br />')
 <style scoped>
 .experience {
   @apply flex flex-col;
-  @apply mb-20;
 
   &-header {
     @apply flex flex-row;
-    @apply mb-5;
+    @apply mb-2;
   }
 
   &-logo {
-    @apply mr-5;
-    width: 100px;
-    height: 100px;;
+    @apply mr-3;
+    width: 60px;
+    height: 60px;
   }
 
   &-details {
@@ -75,10 +73,11 @@ const html = renderedSections.join('<br />')
 
   &-summary {
     @apply mt-5;
+    @apply mb-20;
   }
 
   &-tags {
-    @apply mt-2;
+    @apply mt-5;
   }
 
   ;
