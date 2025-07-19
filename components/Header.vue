@@ -10,8 +10,8 @@
       </div>
 
       <div class="header-expanded-menu" v-if="menuExpanded">
-        <div>
-          <Icon name="fa6-solid:xmark" class="header-expanded-menu-exit" @click="menuExpanded = false" />
+        <div class="header-expanded-menu-exit">
+          <Icon name="fa6-solid:xmark" @click="menuExpanded = false" />
         </div>
 
         <NuxtLink to="/" class="header-link" @click="menuExpanded = false">Home</NuxtLink>
@@ -46,13 +46,15 @@ const menuExpanded = ref(false);
     @apply p-5;
     @apply flex;
     @apply flex-col;
-    @apply gap-2;
+    @apply gap-5;
     @apply text-right;
+    @apply rounded-bl-xl;
 
     &-exit {
       @apply text-right;
       @apply text-2xl;
       @apply cursor-pointer;
+      @apply mb-5;
     }
   }
 
