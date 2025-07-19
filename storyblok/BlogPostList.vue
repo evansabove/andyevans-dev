@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post-list">
     <div v-for="story in stories" :key="story.uuid">
-      <NuxtLink :to="`/${story.full_slug}`" class="list-item-container">
+      <NuxtLink :to="`/${story.full_slug}/`" class="list-item-container">
         <img :src="story.content.body[0].Image?.filename" :alt="story.content.body[0].Image?.alt"
           class="list-item-image" />
 

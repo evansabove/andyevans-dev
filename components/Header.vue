@@ -15,7 +15,7 @@
         </div>
 
         <NuxtLink to="/" class="header-link" @click="menuExpanded = false">Home</NuxtLink>
-        <NuxtLink to="/posts" class="header-link" @click="menuExpanded = false">Posts</NuxtLink>
+        <NuxtLink to="/posts/" class="header-link" @click="menuExpanded = false">Posts</NuxtLink>
       </div>
     </nav>
   </header>
