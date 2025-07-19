@@ -5,12 +5,17 @@
     </div>
 
     <nav class="header-nav">
-      <div class="header-nav-links">
-        <NuxtLink to="/posts" class="header-link">Posts</NuxtLink>
+      <div class="header-hamburger">
+        <Icon name="fa6-solid:bars" class="header-hamburger-icon" @click="menuExpanded = true" />
       </div>
 
-      <div class="header-hamburger">
-        <Icon name="fa6-solid:bars" class="header-hamburger-icon" />
+      <div class="header-expanded-menu" v-if="menuExpanded">
+        <div>
+          <Icon name="fa6-solid:xmark" class="header-expanded-menu-exit" @click="menuExpanded = false" />
+        </div>
+
+        <NuxtLink to="/" class="header-link" @click="menuExpanded = false">Home</NuxtLink>
+        <NuxtLink to="/posts" class="header-link" @click="menuExpanded = false">Posts</NuxtLink>
       </div>
     </nav>
   </header>
@@ -18,6 +23,8 @@
 
 <script setup lang="ts">
 const config = useRuntimeConfig();
+
+const menuExpanded = ref(false);
 </script>
 
 <style scoped>
@@ -28,26 +35,30 @@ const config = useRuntimeConfig();
   @apply px-5 py-5;
   @apply text-xl;
   @apply gap-10;
-  @apply justify-between md:justify-start;
+  @apply justify-between;
+
+  &-expanded-menu {
+    @apply absolute;
+    @apply top-0;
+    @apply right-0;
+    @apply bg-purple-900;
+    @apply w-40;
+    @apply p-5;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-2;
+    @apply text-right;
+
+    &-exit {
+      @apply text-right;
+      @apply text-2xl;
+      @apply cursor-pointer;
+    }
+  }
 
   &-nav {
     @apply flex;
     @apply gap-5;
-
-    &-links {
-      @apply flex;
-      @apply gap-5;
-      @apply hidden md:block;
-    }
-  }
-
-  &-nav-links {
-    @apply gap-5;
-    @apply hidden md:flex;
-  }
-
-  &-divider {
-    @apply hidden md:block;
   }
 
   &-link {
@@ -58,7 +69,6 @@ const config = useRuntimeConfig();
     &-icon {
       @apply text-2xl;
       @apply cursor-pointer;
-      @apply md:hidden;
     }
   }
 }
