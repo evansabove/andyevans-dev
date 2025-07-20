@@ -2,6 +2,9 @@
   <div v-editable="blok" class="blog-post">
     <div class="blog-title">{{ blok.Title }}</div>
     <div class="blog-description">{{ blok.Description }}</div>
+    <div class="blog-tags">
+      <TagList :bloks="blok.Tags" />
+    </div>
     <div class="blog-image">
       <img :src="blok.Image?.filename" alt="Blog Image" />
     </div>
@@ -15,10 +18,6 @@
 
 <script setup>
 const props = defineProps({ blok: Object })
-const runtimeConfig = useRuntimeConfig()
-
-const route = useRoute()
-const slug = computed(() => route.path.replace(/^\//, ''))
 
 useSeoMeta({
   description: props.blok.Description,
@@ -32,33 +31,39 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.blog-post {
-  @apply flex flex-col;
-}
+.blog {
+  &-post {
+    @apply flex flex-col;
+  }
 
-.blog-title {
-  @apply text-4xl font-bold;
-  @apply mb-5;
-}
+  &-title {
+    @apply text-4xl font-bold;
+    @apply mb-5;
+  }
 
-.blog-description {
-  margin-bottom: 2rem;
-  @apply italic;
-}
+  &-description {
+    margin-bottom: 2rem;
+    @apply italic;
+  }
 
-.blog-image {
-  max-height: 20rem;
-  overflow: hidden;
-  @apply mb-10;
-  @apply flex items-center justify-center;
-}
+  &-image {
+    max-height: 20rem;
+    overflow: hidden;
+    @apply mb-10;
+    @apply flex items-center justify-center;
 
-.blog-image img {
-  @apply w-full h-full object-cover;
-}
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
 
-.blog-date {
-  @apply font-bold;
-  @apply mb-5;
+  &-date {
+    @apply font-bold;
+    @apply mb-5;
+  }
+
+  &-tags {
+    @apply mb-5;
+  }
 }
 </style>
