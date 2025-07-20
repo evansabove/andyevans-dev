@@ -4,7 +4,7 @@ import { useStoryblokApi } from '@storyblok/vue'
 const storyblokApi = useStoryblokApi()
 const route = useRoute()
 
-const slug = computed(() => route.path === '/' ? 'home' : route.path.replace(/^\//, ''))
+const slug = computed(() => route.path === '/' ? 'home' : route.path.replace(/^\/|\/$/g, '')) //remove leading and trailing slashes
 
 const { data } = await useAsyncData(
   slug.value,
