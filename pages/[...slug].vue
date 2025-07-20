@@ -17,10 +17,10 @@ const { data } = await useAsyncData(
 )
 
 if (!data.value) {
+  console.error("Data could not be fetched for slug:", slug.value);
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
 }
 
-const config = useRuntimeConfig()
 useHead({
   title: computed(() => data.value?.story?.name),
 })
@@ -39,7 +39,7 @@ const story = computed(() => data.value?.story)
 
 <template>
   <AppTemplate>
-    <StoryblokComponent v-if="story" :blok="story.content" class="story" />
+    <StoryblokComponent v-if="story" :blok="story?.content" class="story" />
   </AppTemplate>
 </template>
 
