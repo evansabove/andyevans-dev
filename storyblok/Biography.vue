@@ -1,6 +1,6 @@
 <template>
   <div class="bio">
-    <img class="bio__image" :src="blok.Image.filename" :alt="blok.Image.alt" />
+    <img class="bio__image" :src="blok.Image?.filename" :alt="blok.Image?.alt" />
     <div class="bio__text" v-html="html" />
   </div>
 </template>

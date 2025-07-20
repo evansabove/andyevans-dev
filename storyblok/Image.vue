@@ -1,7 +1,7 @@
 <template>
   <div class="image-container">
-    <img class="image" :src="blok.Image.filename" :alt="blok.Image.alt"/>
-    <p class="image-caption">{{ blok.Image.title }}</p>
+    <img class="image" :src="blok.Image?.filename" :alt="blok.Image?.alt"/>
+    <p class="image-caption">{{ blok.Image?.title }}</p>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <div class="blog-title">{{ blok.Title }}</div>
     <div class="blog-description">{{ blok.Description }}</div>
     <div class="blog-image">
-      <img :src="blok.Image.filename" alt="Blog Image" />
+      <img :src="blok.Image?.filename" alt="Blog Image" />
     </div>
 
     <div class="blog-date">Written: {{ $dayjs(blok.WrittenDate).format("MMMM YYYY") }}</div>
