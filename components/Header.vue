@@ -42,12 +42,11 @@ const menuExpanded = ref(false);
     @apply top-0;
     @apply right-0;
     @apply bg-purple-900;
-    @apply w-40;
+    @apply w-80;
     @apply p-5;
     @apply flex;
     @apply flex-col;
     @apply gap-5;
-    @apply text-right;
     @apply rounded-bl-xl;
 
     &-exit {

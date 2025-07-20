@@ -34,7 +34,7 @@ export default defineNuxtConfig({
         return component
       }
     }
-  }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt'],
+  }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils'],
   fonts: {
     families: [ { name: 'Monserrat', provider: 'local' }]
   },
