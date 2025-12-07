@@ -10,8 +10,6 @@ const fetchStoryblokRoutes = async () => {
     const response = await fetch(storyblokApiUrl)
     const stories = (await response.json()).stories || []
 
-    console.log("Stories", stories.map(x => x.name ));
-
     return stories.map(story => `/${story.full_slug}`)
   } catch (error) {
     console.error('Error fetching Storyblok routes:', error)
@@ -67,7 +65,21 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/site.webmanifest' }
       ],
-      script: [],
+      script: [
+        {
+          src: "https://www.googletagmanager.com/gtag/js?id=G-TW963KWK84"
+        },
+        {
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TW963KWK84');
+          `,
+          type: 'text/javascript',
+        }
+      ],
       htmlAttrs: {
         lang: 'en'
       }
