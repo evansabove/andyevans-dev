@@ -6,7 +6,7 @@
           class="list-item-image" />
 
         <div class="list-item-content">
-          <div class="list-item-header">{{ story.content.body[0].Title }}</div>
+          <h2 class="list-item-header">{{ story.content.body[0].Title }}</h2>
           <div class="list-item-date">{{ $dayjs(story.content.body[0].WrittenDate).format("MMM YYYY") }}</div>
           <div>{{ story.content.body[0].Description }}</div>
           <div class="list-item-button">

@@ -32,9 +32,9 @@ export default defineNuxtConfig({
         return component
       }
     }
-  }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils'],
+  }], '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils'],
   fonts: {
-    families: [ { name: 'Monserrat', provider: 'local' }]
+    families: [ { name: 'Montserrat', provider: 'local' }]
   },
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
