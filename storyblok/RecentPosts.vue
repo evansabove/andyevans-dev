@@ -43,7 +43,7 @@ const { data } = await useAsyncData(
   'recent-posts',
   async () => {
     const { data } = await storyblokApi.get('cdn/stories', {
-      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+      version: 'published',
       starts_with: 'posts/',
       is_startpage: false,
       per_page: 3,
