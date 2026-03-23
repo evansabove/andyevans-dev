@@ -23,11 +23,15 @@ const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 
 const { render } = richTextResolver()
-const renderedContent = computed(() =>
-  props.blok.Content && typeof props.blok.Content === 'object'
-    ? render(props.blok.Content)
-    : props.blok.Content ?? ''
-)
+const renderedContent = computed(() => {
+  if (!props.blok.Content) return ''
+  if (typeof props.blok.Content !== 'object') return props.blok.Content
+  try {
+    return render(props.blok.Content)
+  } catch {
+    return props.blok.Content?.content?.map(n => n?.content?.map(c => c?.text ?? '').join('') ?? '').join('\n') ?? ''
+  }
+})
 
 useHead({
   title: computed(() => props.blok.Title),
