@@ -2,16 +2,16 @@
   <div class="blog-post-list">
     <div v-for="story in stories" :key="story.uuid">
       <NuxtLink :to="`/${story.full_slug}/`" class="list-item-container">
-        <img :src="story.content.body[0].Image?.filename" :alt="story.content.body[0].Image?.alt"
-          class="list-item-image" />
+        <div class="list-item-image-wrap">
+          <img :src="story.content.body[0].Image?.filename" :alt="story.content.body[0].Image?.alt || story.content.body[0].Title"
+            class="list-item-image" />
+        </div>
 
         <div class="list-item-content">
-          <div class="list-item-header">{{ story.content.body[0].Title }}</div>
           <div class="list-item-date">{{ $dayjs(story.content.body[0].WrittenDate).format("MMM YYYY") }}</div>
-          <div>{{ story.content.body[0].Description }}</div>
-          <div class="list-item-button">
-            <button>Read now</button>
-          </div>
+          <h2 class="list-item-header">{{ story.content.body[0].Title }}</h2>
+          <div class="list-item-description">{{ story.content.body[0].Description }}</div>
+          <div class="list-item-cta">Read post →</div>
         </div>
 
       </NuxtLink>
@@ -32,7 +32,6 @@ const { data } = await useAsyncData(
       version: process.env.NODE_ENV === 'production' || 'prerender' ? 'published' : 'draft',
       starts_with: 'posts/',
       is_startpage: false,
-
     })
 
     return data
@@ -48,36 +47,62 @@ const stories = computed(() => data.value?.stories)
   @apply flex flex-col;
 }
 
+.list-item-image-wrap {
+  @apply rounded-lg overflow-hidden shrink-0;
+  @apply w-full md:w-64;
+  aspect-ratio: 16 / 9;
+
+  @media (min-width: 768px) {
+    aspect-ratio: 1 / 1;
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
 .list-item-image {
-  @apply object-cover;
-  @apply rounded-lg;
-  @apply h-64 w-full md:w-64 md:h-64;
+  @apply w-full h-full object-cover;
+  @apply transition-transform duration-300;
 }
 
 .list-item-header {
   @apply text-2xl;
-  @apply mb-1;
+  @apply mb-2;
 }
 
 .list-item-date {
-  @apply font-bold;
-  @apply mb-3;
+  @apply text-sm text-purple-700 font-semibold;
+  @apply mb-1;
+}
+
+.list-item-description {
+  @apply text-gray-600;
+  @apply mb-4;
+}
+
+.list-item-cta {
+  @apply text-purple-900 font-semibold text-sm;
+  @apply mt-auto self-end;
 }
 
 .list-item-container {
   @apply flex flex-col md:flex-row;
-  @apply mb-20;
+  @apply mb-12;
   @apply no-underline;
+  @apply border-l-4 border-transparent;
+  @apply pl-0 transition-all duration-200;
+
+  &:hover {
+    @apply border-purple-700 pl-3;
+
+    .list-item-image {
+      @apply scale-105;
+    }
+  }
 }
 
 .list-item-content {
   @apply flex flex-col;
-  @apply md:ml-5;
+  @apply md:ml-6;
   @apply mt-5 md:mt-0;
-  @apply no-underline;
 }
-
-.list-item-button {
-  @apply mt-5;
-}
-</style>
+</style>

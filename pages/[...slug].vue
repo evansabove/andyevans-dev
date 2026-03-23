@@ -21,20 +21,62 @@ if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
 }
 
-useHead({
-  title: computed(() => data.value?.story?.name),
-})
-
 const runtimeConfig = useRuntimeConfig()
 
+const pageTitle = computed(() => data.value?.story?.content?.seo_title || data.value?.story?.name)
+
+useHead({
+  title: pageTitle,
+  titleTemplate: (t) => t ? `${t} | Andy Evans` : 'Andy Evans — Software Engineer',
+})
+
 useSeoMeta({
+  ogTitle: computed(() => `${pageTitle.value} | Andy Evans`),
   description: runtimeConfig.public.appDescription,
   ogDescription: runtimeConfig.public.appDescription,
   ogLocale: 'en_GB',
-  ogImage: runtimeConfig.public.appImage
+  ogImage: runtimeConfig.public.appImage,
+  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path}`),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => `${pageTitle.value} | Andy Evans`),
+  twitterDescription: runtimeConfig.public.appDescription,
+  twitterImage: runtimeConfig.public.appImage,
 })
 
 const story = computed(() => data.value?.story)
+
+// Add WebSite + Person structured data on the home page only
+if (route.path === '/') {
+  useHead({
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Andy Evans',
+          url: runtimeConfig.public.appUrl,
+        })
+      },
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Andy Evans',
+          url: runtimeConfig.public.appUrl,
+          image: runtimeConfig.public.appImage,
+          jobTitle: 'Software Engineer',
+          description: runtimeConfig.public.appDescription,
+          sameAs: [
+            'https://github.com/evansabove',
+            'https://www.linkedin.com/in/andy-evans-557b1125'
+          ]
+        })
+      }
+    ]
+  })
+}
 </script>
 
 <template>

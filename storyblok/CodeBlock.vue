@@ -14,6 +14,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
+import kotlin from 'highlight.js/lib/languages/kotlin';
 import 'highlight.js/styles/github.css';
 
 hljs.registerLanguage('csharp', csharp);
@@ -23,6 +24,7 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('dockerfile', dockerfile);
+hljs.registerLanguage('kotlin', kotlin);
 
 const props = defineProps({ blok: Object })
 
