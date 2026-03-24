@@ -4,7 +4,7 @@ const route = useRoute()
 
 // Fetch home page data
 const { data: homeData } = await useAsyncData('home-page', () =>
-  queryCollection('pages').path('home').first()
+  queryCollection('pages').where('id', '=', 'pages/home.yml').first()
 )
 
 // Fetch 3 most recent posts for the RecentPosts section

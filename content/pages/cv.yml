@@ -1,0 +1,98 @@
+biography:
+  image: /andyevans.jpeg
+  imageAlt: "Andy Evans"
+  text: |
+    <p>I'm Andy, software engineer from Sheffield, UK. I'm a flexible and adaptable senior engineer currently working for a software consultancy.</p>
+    <p>I'm a resilient and logical problem solver with creative ideas on solutions. I develop software in whatever tools the problem demands — primarily C# — and I take the lead on platform engineering, CI/CD, and Azure cloud deployments. I'm also passionate about mentoring and building great teams.</p>
+
+aboutMe:
+  - title: "I problem solve!"
+    text: "I'm a resilient and logical problem solver, with creative ideas on solutions. Although I work hard to find the ideal solution, I'm pragmatic enough to know when to look for alternative options."
+  - title: "Software engineering"
+    text: "I develop software to solve problems - using whatever tools I need. This is usually C#, but has in the past led to adventures in Vue, Python, and Android to name but a few. I'm also a certified Azure Developer Associate."
+  - title: "I learn"
+    text: "Tech is constantly evolving! If my existing skillset doesn't contain the tools for the problem at hand, I set about learning what I need - languages / tools / libraries - to get the job done."
+  - title: "Platform engineering"
+    text: "I've always said that it's no good writing code unless you can deploy it somewhere! I take the lead in deploying solutions to the Azure cloud, working with CI/CD pipelines, and also have experience with Kubernetes and on-prem infrastructure."
+  - title: "Planning and backlog management"
+    text: "I write user stories to represent the problems to be solved, and manage these stories in a backlog. I own the stories through development, testing and deployment, being a point of contact for the team. I also provide estimates for the work."
+  - title: "Mentoring"
+    text: "One of my most important roles is to mentor other team members - formally, or informally. I like to be a person that is trusted and approachable, and a person who can help to build the careers of others."
+
+experience:
+  - title: "Senior Software Developer"
+    business: "Razor Ltd"
+    start: "2021-04-01"
+    end: null
+    location: "Sheffield, UK"
+    tags: ["C#", "Vue", "Azure", "CI/CD", "IaC", "SQL Server", "EF Core", "Azure Functions", "XUnit", "Kubernetes", "Python", "Leadership"]
+    summary: "Senior engineer responsible for delivering quality solutions on time and in budget. Delivered high-quality software within tight constraints, brought clarity to projects through backlog management, provided technical oversight on client workshops, owned the technical direction of solutions, led multi-skilled teams, owned the platform engineering role for a core product, and mentored other team members."
+
+  - title: "Solution Architect"
+    business: "Arcadis Gen"
+    start: "2020-01-01"
+    end: "2021-04-01"
+    location: "Sheffield, UK"
+    tags: ["C#", "Azure", "Vue", "CI/CD", "SQL Server", "EF Core"]
+    summary: "Technical leader on a microservice-based SaaS web application — a platform at the core of a new business offering. Involved in architectural design, development, deployments and verification."
+
+  - title: "Senior Software Engineer"
+    business: "SEAMS"
+    start: "2018-10-01"
+    end: "2019-12-01"
+    location: "Sheffield, UK"
+    tags: ["C#", "Vue", "CI/CD", "SQL Server", "EF Core"]
+    summary: "Senior developer on the company's enterprise software and a new microservice-based SaaS application. Realised the SaaS product across the full stack including Azure deployment. Coached new developers and nurtured use of new technologies. Led a test automation project to aid regression testing."
+
+  - title: "Software Engineer"
+    business: "McMurtry Automotive Ltd"
+    start: "2017-05-01"
+    end: "2018-05-01"
+    location: "Wotton-under-Edge, Gloucestershire"
+    tags: ["Android", "Python", "C#", "WPF", "AWS"]
+    summary: "Developed from scratch a driver interface for a high-performance electric vehicle, integrating software with in-car electronics and CAN bus. Produced software utilities for vehicle development including an ECU configuration tool and remote data-logging via AWS."
+
+  - title: "Software Developer"
+    business: "Active Risk"
+    start: "2014-01-01"
+    end: "2017-04-01"
+    location: "Maidenhead, Berkshire"
+    tags: ["C#", ".NET Framework", "AngularJS", "SQL Server", "Oracle DB", "Entity Framework", "CI/CD", "NUnit"]
+    summary: "Web developer on a leading enterprise Risk Management product. Involved in the early development of a new SPA web application, ported older systems to newer technology, kicked off a test automation effort, and maintained build and deployment pipelines."
+
+  - title: "Business Development Project Team"
+    business: "Mercedes AMG High Performance Powertrains"
+    start: "2013-05-01"
+    end: "2013-12-01"
+    location: "Brixworth, Northamptonshire"
+    tags: ["Co-ordination", "Scoping", "SAP"]
+    summary: "Co-ordinator on a business-wide efficiency improvement project. Acted as liaison between business stakeholders and an external development team, producing a procurement system to replace existing SAP processes."
+
+  - title: "IT Graduate"
+    business: "Mercedes AMG High Performance Powertrains"
+    start: "2011-09-01"
+    end: "2013-05-01"
+    location: "Brixworth, Northamptonshire"
+    tags: ["IT Support", "Networking", "SAP"]
+    summary: "2-year graduate rotation programme covering 1st/2nd/3rd line support of daily IT operations and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
+
+  - title: "IT Intern"
+    business: "Macquarie Bank"
+    start: "2010-07-01"
+    end: "2010-09-01"
+    location: "Bristol, UK"
+    tags: ["SQL", "Excel"]
+    summary: "Developed custom SQL reports and Excel macros to assist the Banking and Financial Services team in account reconciliation and internal auditing."
+
+education:
+  - course: "BSc Computer Science"
+    study_location: "University of Sheffield"
+    year_start: 2008
+    year_end: 2011
+    grade: "2:1"
+
+certifications:
+  - name: "Microsoft Certified: Azure Developer Associate"
+    issuer: "Microsoft"
+    issued: "Jul 2023"
+    expires: "Jul 2026"
