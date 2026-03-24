@@ -1,18 +1,16 @@
 <template>
   <div class="bio">
-    <img class="bio__image" :src="blok.Image?.filename" :alt="blok.Image?.alt" />
-    <div class="bio__text" v-html="html" />
+    <img class="bio__image" :src="image" :alt="imageAlt" />
+    <div class="bio__text" v-html="text" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { richTextResolver } from '@storyblok/richtext'
-
-const props = defineProps({ blok: Object })
-
-const { render } = richTextResolver()
-
-const html = render(props.blok.Text)
+defineProps<{
+  image: string
+  imageAlt?: string
+  text: string
+}>()
 </script>
 
 <style scoped>

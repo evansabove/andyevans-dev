@@ -1,26 +1,26 @@
 <template>
-  <section v-editable="blok" class="recent-posts">
-    <h2 class="recent-posts__heading">{{ blok.Heading || 'Recent Posts' }}</h2>
+  <section class="recent-posts">
+    <h2 class="recent-posts__heading">{{ heading }}</h2>
     <div class="recent-posts__grid">
       <NuxtLink
-        v-for="story in stories"
-        :key="story.uuid"
-        :to="`/${story.full_slug}/`"
+        v-for="post in posts"
+        :key="post.path"
+        :to="`${post.path}/`"
         class="tile"
       >
         <div class="tile__image-wrap">
           <img
             class="tile__image"
-            :src="story.content.body[0].Image?.filename"
-            :alt="story.content.body[0].Image?.alt || story.content.body[0].Title"
+            :src="post.image"
+            :alt="post.imageAlt || post.title"
           />
         </div>
         <div class="tile__body">
-          <div class="tile__date">{{ $dayjs(story.content.body[0].WrittenDate).format('MMM YYYY') }}</div>
-          <h3 class="tile__title">{{ story.content.body[0].Title }}</h3>
-          <p class="tile__description">{{ story.content.body[0].Description }}</p>
+          <div class="tile__date">{{ $dayjs(post.date).format('MMM YYYY') }}</div>
+          <h3 class="tile__title">{{ post.title }}</h3>
+          <p class="tile__description">{{ post.description }}</p>
           <div class="tile__tags">
-            <TagList :bloks="story.content.body[0].Tags" />
+            <TagList :tags="post.tags ?? []" />
           </div>
           <span class="tile__cta">Read post →</span>
         </div>
@@ -33,27 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import { useStoryblokApi } from '@storyblok/vue'
-
-defineProps({ blok: Object })
-
-const storyblokApi = useStoryblokApi()
-
-const { data } = await useAsyncData(
-  'recent-posts',
-  async () => {
-    const { data } = await storyblokApi.get('cdn/stories', {
-      version: 'published',
-      starts_with: 'posts/',
-      is_startpage: false,
-      per_page: 3,
-      sort_by: 'content.WrittenDate:desc',
-    })
-    return data
-  }
-)
-
-const stories = computed(() => data.value?.stories ?? [])
+defineProps<{
+  posts: Record<string, any>[]
+  heading?: string
+}>()
 </script>
 
 <style scoped>
