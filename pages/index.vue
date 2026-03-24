@@ -4,7 +4,7 @@ const route = useRoute()
 
 // Fetch home page data
 const { data: homeData } = await useAsyncData('home-page', () =>
-  queryCollection('pages').where('id', '=', 'pages/home').first()
+  queryCollection('pages').path('home').first()
 )
 
 // Fetch 3 most recent posts for the RecentPosts section
@@ -65,6 +65,7 @@ useHead({
 
 <template>
   <AppTemplate>
+    <HomeHero />
     <RecentPosts
       :posts="recentPosts ?? []"
       :heading="homeData?.recentPostsHeading ?? 'Recent Posts'"
