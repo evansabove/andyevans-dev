@@ -3,7 +3,7 @@ title: "Water Temperature Monitoring in my Ford Fiesta"
 description: "My 2012 Ford Fiesta is marvellous in many ways. However, it was not blessed with a water temperature gauge from factory. In this post, I do something about that..."
 date: 2025-02-17
 tags: ["Python", "Arduino", "Electronics", "Automotive"]
-image: https://a.storyblok.com/f/325167/1024x1024/a39b3362d2/fiesta.webp
+image: /images/posts/water-temperature-monitoring-ford-fiesta/fiesta.webp
 imageAlt: ""
 ---
 
@@ -12,7 +12,7 @@ imageAlt: ""
 Back in the sands of time, I owned an Alfa Romeo 159. Beautiful car, but it overheated on the day I bought it. The dealer that sold it to me was not interested in helping me get that resolved, and so it was down to me, a young guy with no money to get it sorted out and back on the road. Since then, I've watched every water temperature gauge in every car I've ever driven like a hawk! But in the Fiesta, a basic model of car, there is no water temperature gauge fitted as standard.
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/4032x3024/2f6dd49465/clocks.jpg" alt="Fiesta clocks" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/clocks.jpg" alt="Fiesta clocks" />
 <figcaption>The Fiesta's clocks, with no temperature gauge</figcaption>
 </figure>
 
@@ -25,7 +25,7 @@ I bought an ELM327 Bluetooth dongle and wrote a simple Python app on my laptop. 
 At this point, I did write an app on a Raspberry Pi that used the Bluetooth dongle and displayed the temperature on a screen. It was great - a huge feeling of success when I finally got that working, but it was a clunky solution, the Pi was plugged into the cigarette lighter, without enough voltage, the equipment was rolling around inside my car and there wasn't a nice place to fix it anywhere - it just wasn't a nice hardware solution. The other problem was that the Bluetooth dongle needed to be constantly plugged into the OBDII port, and that bothered me. I wanted something better - I wanted _OEM plus._
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/3024x4032/df85204437/img_2911.jpg" alt="Cutting CAN bus wires" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/img_2911.jpg" alt="Cutting CAN bus wires" />
 <figcaption>Getting ready to cut the CAN bus wires with my toy scissors</figcaption>
 </figure>
 
@@ -217,7 +217,7 @@ void drawSplashScreen();
 ## The Installation
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/3024x4032/7f7e5bcbe1/img_2811.jpg" alt="Early prototype of the device" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/img_2811.jpg" alt="Early prototype of the device" />
 <figcaption>An early prototype</figcaption>
 </figure>
 
@@ -228,7 +228,7 @@ The best place I could think of was inside the blank plastic space behind the dr
 I drilled a large hole into the plastic window switch body, then glued and screwed my display onto the back.
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/3024x4032/6701943c49/img_2848.jpg" alt="Screen integrated into the window switch" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/img_2848.jpg" alt="Screen integrated into the window switch" />
 <figcaption>Screen integrated into the window switch</figcaption>
 </figure>
 
@@ -241,7 +241,7 @@ The CAN bus wires proved more tricky. After establishing that the CAN bus networ
 There is already a connector that passes wires through from the inside car loom to the door loom. There were a number of spare connection slots on those connectors - the problem was just going to be finding what connectors they were, and then buying the appropriate crimp tools etc...but then - a brainwave!
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/3024x4032/6d5e20ca2b/img_2905.jpg" alt="Passing CAN bus wires through using the factory connector" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/img_2905.jpg" alt="Passing CAN bus wires through using the factory connector" />
 <figcaption>Passing CAN bus wires through using the factory connector</figcaption>
 </figure>
 
@@ -250,7 +250,7 @@ I went on eBay and bought a second-hand door loom from another Fiesta with all t
 After that, it was a long, drawn-out process of packaging - cutting, soldering and heatshrinking wires until the loom was complete. I fixed the Arduino to the door itself, not the door card, using a sticky-backed breadboard. Everything is designed to be disconnectable if the door card needs to be removed in future.
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/3024x4032/95528e707d/img_2917.jpg" alt="One of the first 'integration tests'" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/img_2917.jpg" alt="One of the first 'integration tests'" />
 <figcaption>One of the first 'integration tests'</figcaption>
 </figure>
 
@@ -259,6 +259,6 @@ After that, it was a long, drawn-out process of packaging - cutting, soldering a
 The temperature gauge works every single time I use the car - this is what I love about embedded software. It has no dependencies that break on you, Windows update don't come in and spoil things - it's a controlled environment that I can now enjoy for as long as I own the car. And, I get the extra glory of _actually finishing_ a personal project, which is not something I often celebrate!
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/3024x4032/6867151a19/img_2933.jpg" alt="The finished article" />
+<img src="/images/posts/water-temperature-monitoring-ford-fiesta/img_2933.jpg" alt="The finished article" />
 <figcaption>The finished article</figcaption>
 </figure>

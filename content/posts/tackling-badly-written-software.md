@@ -3,7 +3,7 @@ title: "Tackling badly-written software"
 description: "For too long I had grappled with this codebase - tangled, confusing, complicated - and was finally able to turn it into the simple solution that it always could have been - here's how I did it!"
 date: 2026-03-18
 tags: ["People", "Architecture"]
-image: https://a.storyblok.com/f/325167/1536x1024/9683e769b1/chatgpt-image-mar-23-2026-10_51_27-pm.png
+image: /images/posts/tackling-badly-written-software/chatgpt-image-mar-23-2026-10_51_27-pm.png
 imageAlt: ""
 ---
 

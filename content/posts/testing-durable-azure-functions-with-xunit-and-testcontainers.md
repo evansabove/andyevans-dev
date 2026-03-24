@@ -3,7 +3,7 @@ title: "Testing Durable Azure Function Apps using XUnit and TestContainers"
 description: "My new approach to writing functional tests against Azure Durable Functions. Use a similar approach for any containerised web app!"
 date: 2025-06-28
 tags: ["Azure Functions", "XUnit", "Containerisation", "Durable Functions"]
-image: https://a.storyblok.com/f/325167/1024x1024/5cc48a8744/functional-testing.webp
+image: /images/posts/testing-durable-azure-functions-with-xunit-and-testcontainers/functional-testing.webp
 imageAlt: ""
 ---
 

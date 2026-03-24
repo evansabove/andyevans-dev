@@ -3,7 +3,7 @@ title: "Functional Testing for .NET 8 Isolated Azure Functions"
 description: "Follow along to learn how to create functional tests using UnitTestEx for your .NET 8 (Isolated) HTTP-triggered functions "
 date: 2025-02-15
 tags: ["C#", "Azure Functions", "XUnit"]
-image: https://a.storyblok.com/f/325167/1024x1024/5cc48a8744/functional-testing.webp
+image: /images/posts/functional-testing-with-isolated-azure-functions/functional-testing.webp
 imageAlt: "A futuristic image showing laptops and clouds and the words 'Functional Testing'"
 ---
 

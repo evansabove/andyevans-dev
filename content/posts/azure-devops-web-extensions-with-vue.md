@@ -3,7 +3,7 @@ title: "Azure DevOps Web Extensions with Vue"
 description: "Learn how to create an Azure DevOps extension using a statically generated Vue / Nuxt website and the VSS library"
 date: 2025-03-04
 tags: ["Azure DevOps", "Azure DevOps Extensions", "Vue"]
-image: https://a.storyblok.com/f/325167/1024x1024/457059a389/devops-extension-vue.webp
+image: /images/posts/azure-devops-web-extensions-with-vue/devops-extension-vue.webp
 imageAlt: ""
 ---
 
@@ -166,7 +166,7 @@ Once installed, your Azure DevOps extension should look a little bit like this!
 Check out the [full example here](https://github.com/evansabove/example-code/tree/main/devops-extensions-with-vue).
 
 <figure>
-<img src="https://a.storyblok.com/f/325167/1299x1331/d055423c40/finished-extension.PNG" alt="" />
+<img src="/images/posts/azure-devops-web-extensions-with-vue/finished-extension.png" alt="" />
 </figure>
 
 See also: [how to host a backend API for your DevOps extension](/posts/hosting-a-backend-api-for-an-azure-devops-extension).

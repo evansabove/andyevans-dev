@@ -3,7 +3,7 @@ title: "Being ignored? Find out why with git check-ignore"
 description: "Have you got files being ignored in source control and you don't know why? Git's got your back. Here I demonstrate git's secret weapon: check-ignore"
 date: 2025-07-14
 tags: ["Git"]
-image: https://a.storyblok.com/f/325167/1792x1024/6dcaf02cf9/automating-pr-descriptions.webp
+image: /images/posts/files-being-ignored-in-source-control-don-t-know-why-check-ignore-has-got-your-back/automating-pr-descriptions.webp
 imageAlt: ""
 ---
 

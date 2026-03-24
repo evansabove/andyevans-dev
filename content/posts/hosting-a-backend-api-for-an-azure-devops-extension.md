@@ -3,7 +3,7 @@ title: "Hosting an Azure Functions API for an Azure DevOps Extension"
 description: "Following on from my post about creating a web-based Azure DevOps extension using Vue, in this post I demonstrate how to securely host a backend API for your DevOps extension"
 date: 2025-03-04
 tags: ["Azure DevOps", "Azure Functions", "C#", "Azure DevOps Extensions"]
-image: https://a.storyblok.com/f/325167/1792x1024/974e4adb3d/devops-function-backend.webp
+image: /images/posts/hosting-a-backend-api-for-an-azure-devops-extension/devops-function-backend.webp
 imageAlt: ""
 ---
 

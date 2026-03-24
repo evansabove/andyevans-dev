@@ -3,7 +3,7 @@ title: "Ephemeral environments with Kubernetes and Azure DevOps in the cloud"
 description: "Learn how I introduced a whole new way to test - and boosted team productivity - by creating the ability for developers and testers create their own throwaway deployment of our product"
 date: 2025-12-13
 tags: ["Kubernetes", "Azure DevOps", "Helm", "AKS"]
-image: https://a.storyblok.com/f/325167/1536x1024/23cafb524d/chatgpt-image-mar-23-2026-10_50_33-pm.png
+image: /images/posts/ephemeral-environments-with-kubernetes-and-azure-devops/chatgpt-image-mar-23-2026-10_50_33-pm.png
 imageAlt: ""
 ---
 

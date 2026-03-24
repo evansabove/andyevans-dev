@@ -3,7 +3,7 @@ title: "Hosting apps on-prem using Cloudflare Tunnels"
 description: "Host apps on your own kit - and expose them to the internet - safely!"
 date: 2025-03-12
 tags: ["Cloudflare", "On-prem hosting"]
-image: https://a.storyblok.com/f/325167/1792x1024/5c6a255b26/cloudflare-tunnels.webp
+image: /images/posts/hosting-apps-on-prem-using-cloudflare-tunnels/cloudflare-tunnels.webp
 imageAlt: ""
 ---
 

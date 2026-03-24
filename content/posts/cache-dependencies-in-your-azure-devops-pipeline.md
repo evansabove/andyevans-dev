@@ -3,7 +3,7 @@ title: "Cache dependencies in your Azure DevOps pipeline"
 description: "We take a look at how caching your npm dependencies using the Cache task in Azure DevOps can improve performance and avoid upstream bandwidth limitations!"
 date: 2025-06-09
 tags: ["Azure DevOps"]
-image: https://a.storyblok.com/f/325167/1792x1024/6dcaf02cf9/automating-pr-descriptions.webp
+image: /images/posts/cache-dependencies-in-your-azure-devops-pipeline/automating-pr-descriptions.webp
 imageAlt: ""
 ---
 
