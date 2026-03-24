@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils'],
   fonts: {
-    families: [{ name: 'Montserrat', provider: 'local' }]
+    families: [{ name: 'Montserrat', provider: 'local', display: 'block' }]
   },
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
