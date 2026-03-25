@@ -1,75 +1,41 @@
-# Nuxt Minimal Starter
+# andyevans.dev
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal website and blog for Andy Evans, software engineer based in Sheffield, UK.
 
-## Setup
+## About
 
-Make sure to install dependencies:
+This site is built with [Nuxt](https://nuxt.com/) and [Nuxt Content](https://content.nuxt.com/), using Markdown files for blog posts. It is statically generated and deployed via Cloudflare Pages.
+
+
+
+## Writing a Blog Post
+
+Blog posts live in `content/posts/` as `.md` files. Each post requires the following frontmatter:
+
+```yaml
+---
+title: "Post title"
+description: "One-sentence description shown in post listings."
+date: YYYY-MM-DD
+tags: ["Tag1", "Tag2"]
+image: /images/posts/<slug>/header.png   # optional
+imageAlt: ""
+---
+```
+
+Post images should be placed in `public/images/posts/<slug>/`.
+
+## Development
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+The dev server starts at `http://localhost:3000`.
 
-Build the application for production:
+## Build
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
