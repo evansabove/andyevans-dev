@@ -32,7 +32,6 @@ const props = defineProps<{ post: Record<string, any> }>()
 
   &-description {
     margin-bottom: 2rem;
-    @apply italic;
   }
 
   &-image {
