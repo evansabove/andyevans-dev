@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post-list">
     <div v-for="post in posts" :key="post.path">
-      <NuxtLink :to="`${post.path}/`" class="list-item-container">
+      <NuxtLink :to="post.path" class="list-item-container">
         <div class="list-item-image-wrap">
           <img :src="post.image" :alt="post.imageAlt || post.title" class="list-item-image" />
         </div>
