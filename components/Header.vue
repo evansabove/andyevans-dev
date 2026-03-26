@@ -5,7 +5,7 @@
     <!-- Desktop nav -->
     <nav class="header-nav">
       <NuxtLink to="/" class="header-link" active-class="header-link--active" exact>Home</NuxtLink>
-      <NuxtLink to="/posts/" class="header-link" active-class="header-link--active">Posts</NuxtLink>
+      <NuxtLink to="/posts" class="header-link" active-class="header-link--active">Posts</NuxtLink>
     </nav>
 
     <!-- Mobile hamburger -->
@@ -20,7 +20,7 @@
           <Icon name="fa6-solid:xmark" />
         </button>
         <NuxtLink to="/" class="header-link" active-class="header-link--active" exact @click="open = false">Home</NuxtLink>
-        <NuxtLink to="/posts/" class="header-link" active-class="header-link--active" @click="open = false">Posts</NuxtLink>
+        <NuxtLink to="/posts" class="header-link" active-class="header-link--active" @click="open = false">Posts</NuxtLink>
       </div>
     </Transition>
 

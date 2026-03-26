@@ -27,7 +27,7 @@ useSeoMeta({
   ogImage: computed(() => post.value?.image ?? runtimeConfig.public.appImage),
   ogType: 'article',
   ogLocale: 'en_GB',
-  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path}`),
+  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path.replace(/\/$/, '')}`),
   twitterCard: 'summary_large_image',
   twitterTitle: computed(() => `${post.value?.title} | Andy Evans`),
   twitterDescription: computed(() => post.value?.description ?? runtimeConfig.public.appDescription),

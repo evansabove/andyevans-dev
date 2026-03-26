@@ -5,7 +5,7 @@
       <NuxtLink
         v-for="post in posts"
         :key="post.path"
-        :to="`${post.path}/`"
+        :to="post.path"
         class="tile"
       >
         <div class="tile__image-wrap">
@@ -27,7 +27,7 @@
       </NuxtLink>
     </div>
     <div class="recent-posts__footer">
-      <NuxtLink to="/posts/" class="recent-posts__view-all">View all posts →</NuxtLink>
+      <NuxtLink to="/posts" class="recent-posts__view-all">View all posts →</NuxtLink>
     </div>
   </section>
 </template>

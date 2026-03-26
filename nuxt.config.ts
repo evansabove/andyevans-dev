@@ -68,7 +68,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://andyevans.dev',
     name: 'andyevans.dev',
-    trailingSlash: true
+    trailingSlash: false
   },
   experimental: {
     payloadExtraction: false
