@@ -3,7 +3,7 @@
     <div v-for="post in posts" :key="post.path">
       <NuxtLink :to="post.path" class="list-item-container">
         <div class="list-item-image-wrap">
-          <img :src="post.image" :alt="post.imageAlt || post.title" class="list-item-image" />
+          <img :src="thumbSrc(post.image)" :alt="post.imageAlt || post.title" class="list-item-image" />
         </div>
 
         <div class="list-item-content">
@@ -19,6 +19,11 @@
 
 <script setup lang="ts">
 defineProps<{ posts: Record<string, any>[] }>()
+
+function thumbSrc(src: string): string {
+  if (!src) return src
+  return src.replace(/(\.[^.]+)$/, '-thumb.webp')
+}
 </script>
 
 <style scoped>

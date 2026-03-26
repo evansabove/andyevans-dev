@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils'],
   fonts: {
-    families: [{ name: 'Montserrat', provider: 'local', display: 'block' }]
+    families: [{ name: 'Montserrat', provider: 'local', display: 'swap' }]
   },
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
@@ -47,7 +47,8 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "https://www.googletagmanager.com/gtag/js?id=G-TW963KWK84"
+          src: "https://www.googletagmanager.com/gtag/js?id=G-TW963KWK84",
+          async: true,
         },
         {
           innerHTML: `
@@ -58,6 +59,7 @@ export default defineNuxtConfig({
             gtag('config', 'G-TW963KWK84');
           `,
           type: 'text/javascript',
+          defer: true,
         }
       ],
       htmlAttrs: {

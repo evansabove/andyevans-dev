@@ -20,7 +20,7 @@
         <NuxtLink to="/posts" class="hero__all-posts">View all posts →</NuxtLink>
       </div>
       <div class="hero__photo-wrap">
-        <img src="/andyevans.jpeg" alt="Andy Evans" class="hero__photo" width="256" height="256" />
+        <img src="/andyevans.jpeg" alt="Andy Evans" class="hero__photo" width="256" height="256" fetchpriority="high" loading="eager" />
       </div>
     </div>
   </section>

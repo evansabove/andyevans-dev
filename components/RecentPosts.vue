@@ -11,7 +11,7 @@
         <div class="tile__image-wrap">
           <img
             class="tile__image"
-            :src="post.image"
+            :src="thumbSrc(post.image)"
             :alt="post.imageAlt || post.title"
           />
         </div>
@@ -37,6 +37,11 @@ defineProps<{
   posts: Record<string, any>[]
   heading?: string
 }>()
+
+function thumbSrc(src: string): string {
+  if (!src) return src
+  return src.replace(/(\.[^.]+)$/, '-thumb.webp')
+}
 </script>
 
 <style scoped>
