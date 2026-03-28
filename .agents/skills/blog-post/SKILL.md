@@ -46,10 +46,12 @@ Read at least one existing post before writing. Key characteristics:
 3. Propose a rough outline (intro hook, 2–4 sections, closing line) and agree it with the user
 4. Ask for any code, screenshots or raw material the user wants to include
 5. Write the post — lean and punchy, not exhaustive
-6. Offer to generate a header image if none is provided (use `generate_image` tool)
+6. Always generate a header image (use `generate_image` tool). Place it in `public/images/posts/<slug>/` and reference it in frontmatter.
+7. After placing the image, run `npm run thumbnails` from the project root to auto-generate a thumbnail (`header-thumb.webp`). This is mandatory for every post.
 
 ## Images
 
 - If the post has a header image, it should be placed in `public/images/posts/<slug>/`
 - Reference it in frontmatter as `/images/posts/<slug>/<filename>`
+- After placing the image, always run `npm run thumbnails` to generate a `<name>-thumb.webp` thumbnail alongside it
 - Use `<figure>` + `<figcaption>` tags for inline images within the post body
