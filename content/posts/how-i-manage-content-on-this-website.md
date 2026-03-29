@@ -7,7 +7,7 @@ image: /images/posts/how-i-manage-content-on-this-website/header.png
 imageAlt: "Abstract illustration of a fast simple hosting setup"
 ---
 
-When I first developed this site, I used <a href="https://www.storyblok.com/" target="_blank" rel="noopener noreferrer">Storyblok</a> to manage the content. I'd used it for a few projects in the past - and rolled with it for this site too. Storyblok is a great platform, offering a very intuitive user interface and tools. It offers a free tier for freelancers and small businesses - so nothing to pay - but I really wanted to get away from 3rd party dependencies if I didn't absolutely need them.
+When I first developed this site, I used <a href="https://www.storyblok.com/" target="_blank" rel="noopener noreferrer">Storyblok</a> to manage the content. I'd used it for a few projects in the past - and rolled with it for this site too. Storyblok is a great platform, offering a very intuitive user interface and tools for non-technical users. It offers a free tier for freelancers and small businesses - so nothing to pay - but I really wanted to get away from 3rd party dependencies if I didn't absolutely need them.
 
 Another reason to move away from Storyblok and towards an 'in-repo' model as I'm about to show you, is AI tooling. If my content is in the git repository, then I can make better use of AI tooling for review, generation and improvement of my posts. Cool!
 
@@ -62,6 +62,10 @@ export default defineContentConfig({
 ```
 
 This also means I don't need to configure any web hooks from Storyblok or worry about expiring access tokens - for each new post, I just write a markdown file, commit it, and I'm done.
+
+One downside of this of course is that I can no longer take advantage of Storyblok's user interface. In theory, I could write and publish a new blog post from my phone on the go - from the beach, from the side of a mountain - but I never really did that anyway, and almost all of the time I'm sat at a laptop doing it, and so I can just use at minimum a text editor, a git client and an internet connection. I also don't have anyone else maintaining this website, so it's just me and I can design it around the tooling I'm happy with. 
+
+This approach isn't for everyone and every situation, but it does work for me!
 
 ## Markdown to HTML
 
