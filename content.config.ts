@@ -12,6 +12,7 @@ export default defineContentConfig({
         tags: z.array(z.string()).optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
+        dateModified: z.string().optional(),
       })
     }),
     pages: defineCollection({
