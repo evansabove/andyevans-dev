@@ -24,13 +24,15 @@ useSeoMeta({
   description: computed(() => post.value?.description ?? runtimeConfig.public.appDescription),
   ogDescription: computed(() => post.value?.description ?? runtimeConfig.public.appDescription),
   ogImage: computed(() => post.value?.image ?? runtimeConfig.public.appImage),
+  ogImageAlt: computed(() => post.value?.imageAlt),
   ogType: 'article',
   ogLocale: 'en_GB',
-  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path.replace(/\/$/, '')}`),
+  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path}`),
   twitterCard: 'summary_large_image',
   twitterTitle: computed(() => `${post.value?.title} | Andy Evans`),
   twitterDescription: computed(() => post.value?.description ?? runtimeConfig.public.appDescription),
   twitterImage: computed(() => post.value?.image ?? runtimeConfig.public.appImage),
+  keywords: computed(() => post.value?.tags?.join(', ')),
 })
 
 useHead({
@@ -45,10 +47,17 @@ useHead({
       },
       headline: post.value?.title,
       description: post.value?.description,
-      image: post.value?.image ? [`${runtimeConfig.public.appUrl}${post.value.image}`] : undefined,
+      keywords: post.value?.tags?.join(', '),
+      image: post.value?.image ? [{
+        '@type': 'ImageObject',
+        url: `${runtimeConfig.public.appUrl}${post.value.image}`,
+        description: post.value?.imageAlt,
+      }] : undefined,
       url: `${runtimeConfig.public.appUrl}${route.path}`,
-      datePublished: post.value?.date,
-      dateModified: (post.value as any)?.dateModified ?? post.value?.date,
+      datePublished: post.value?.date ? `${post.value.date}T00:00:00+00:00` : undefined,
+      dateModified: ((post.value as any)?.dateModified ?? post.value?.date)
+        ? `${((post.value as any)?.dateModified ?? post.value?.date)}T00:00:00+00:00`
+        : undefined,
       author: [{ '@type': 'Person', name: 'Andy Evans', url: runtimeConfig.public.appUrl }],
       publisher: {
         '@type': 'Organization',
