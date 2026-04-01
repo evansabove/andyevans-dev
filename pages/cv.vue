@@ -18,7 +18,7 @@ useSeoMeta({
   ogDescription: runtimeConfig.public.appDescription,
   ogLocale: 'en_GB',
   ogImage: runtimeConfig.public.appImage,
-  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path.replace(/\/$/, '')}`),
+  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path}`),
 })
 </script>
 

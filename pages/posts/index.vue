@@ -19,7 +19,7 @@ useSeoMeta({
   ogDescription: runtimeConfig.public.appDescription,
   ogLocale: 'en_GB',
   ogImage: runtimeConfig.public.appImage,
-  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path.replace(/\/$/, '')}`),
+  ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path}`),
   twitterCard: 'summary_large_image',
   twitterTitle: 'Blog | Andy Evans',
   twitterDescription: runtimeConfig.public.appDescription,
