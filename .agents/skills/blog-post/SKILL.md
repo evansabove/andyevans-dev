@@ -1,9 +1,9 @@
 ---
 name: blog-post
-description: Write a new blog post for andyevans.dev in Andy's writing style
+description: Scaffold a new blog post for andyevans.dev — structure only, Andy writes the prose
 ---
 
-# Writing a Blog Post for andyevans.dev
+# Scaffolding a Blog Post for andyevans.dev
 
 ## Site structure
 
@@ -41,13 +41,34 @@ Read at least one existing post before writing. Key characteristics:
 
 ## Workflow
 
-1. Ask the user for the post topic and context if not provided
-2. Read 1–2 existing posts (`content/posts/*.md`) to calibrate voice
-3. Propose a rough outline (intro hook, 2–4 sections, closing line) and agree it with the user
-4. Ask for any code, screenshots or raw material the user wants to include
-5. Write the post — lean and punchy, not exhaustive
-6. Always generate a header image (use `generate_image` tool). Place it in `public/images/posts/<slug>/` and reference it in frontmatter.
-7. After placing the image, run `npm run thumbnails` from the project root to auto-generate a thumbnail (`header-thumb.webp`). This is mandatory for every post.
+**Do not write the post content.** Andy writes the prose himself. Your job is to set up the structure so he can start writing immediately.
+
+1. Create a new git branch named `blog/<slug>`
+2. Create the `.md` file in `content/posts/` with complete frontmatter (fill in title, description placeholder, date, and suggested tags)
+3. Add section headings only — no body text under any heading, just `<!-- TODO -->` comments as placeholders
+4. Generate a header image (use `generate_image` tool). Place it in `public/images/posts/<slug>/` and reference it in frontmatter.
+5. Run `npm run thumbnails` from the project root to auto-generate a thumbnail. This is mandatory.
+6. Tell the user the file is ready and list the section headings you've suggested, inviting them to change any.
+
+## Scaffold format
+
+The body of the scaffolded post should look like this — headings only, no prose:
+
+```markdown
+## Section one heading
+
+<!-- TODO -->
+
+## Section two heading
+
+<!-- TODO -->
+
+## Section three heading
+
+<!-- TODO -->
+```
+
+Choose 3–5 headings that follow a logical story arc based on the topic. Make them specific and useful, not generic (avoid "Introduction", "Conclusion", "Summary" etc.).
 
 ## Images
 
