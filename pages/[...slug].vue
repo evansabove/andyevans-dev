@@ -23,7 +23,6 @@ useSeoMeta({
   ogTitle: computed(() => `${post.value?.title} | Andy Evans`),
   description: computed(() => post.value?.description ?? runtimeConfig.public.appDescription),
   ogDescription: computed(() => post.value?.description ?? runtimeConfig.public.appDescription),
-  image: computed(() => post.value?.image ?? runtimeConfig.public.appImage),
   ogImage: computed(() => post.value?.image ?? runtimeConfig.public.appImage),
   ogType: 'article',
   ogLocale: 'en_GB',
@@ -40,12 +39,26 @@ useHead({
     innerHTML: computed(() => JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Article',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${runtimeConfig.public.appUrl}${route.path}`,
+      },
       headline: post.value?.title,
       description: post.value?.description,
-      image: post.value?.image,
+      image: post.value?.image ? [`${runtimeConfig.public.appUrl}${post.value.image}`] : undefined,
+      url: `${runtimeConfig.public.appUrl}${route.path}`,
       datePublished: post.value?.date,
+      dateModified: (post.value as any)?.dateModified ?? post.value?.date,
       author: [{ '@type': 'Person', name: 'Andy Evans', url: runtimeConfig.public.appUrl }],
-      publisher: { '@type': 'Person', name: 'Andy Evans', url: runtimeConfig.public.appUrl },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Andy Evans',
+        url: runtimeConfig.public.appUrl,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${runtimeConfig.public.appUrl}/android-chrome-512x512.png`,
+        },
+      },
     }))
   }]
 })
