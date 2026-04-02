@@ -1,9 +1,9 @@
 ---
-title: "Troubleshooting the start-stop system failure on my VW Golf"
-description: "Usually I write these blog posts after I've fixed the problem - but this time I'm writing it as I go to show my debugging process."
-date: 2026-04-01
+title: "Troubleshooting the start-stop system failure on my VW Golf - Part 1"
+description: "Usually I write these blog posts after I've fixed the problem - but this time I'm writing it as I go. Join me as I gather information and build a list of ideas."
+date: 2026-04-02
 tags: ["Automotive", "Debugging"]
-image: /images/posts/troubleshooting-start-stop-system-failure-vw-golf/dash.jpg
+image: /images/posts/troubleshooting-start-stop-system-failure-vw-golf-part-1/dash.jpg
 imageAlt: "VW Golf dashboard with a start-stop system failure warning light illuminated"
 draft: true
 ---
@@ -26,13 +26,13 @@ I have tried a number of things, researched a bunch of ideas and haven't really 
 
 ## Why not just take it to a garage?
 
-I could absolutely do this, if I wanted to just get the problem solved and learn nothing! I don't have a desperate need for this feature, it won't cause the car to fail an MOT inspection. But it used to work, and all of a sudden it didn't - and I'm curious to know why. And I don't like seeing errors.
+I could absolutely do this, if I wanted to just get the problem solved and learn nothing! I don't have a desperate need for this feature, it won't cause the car to fail an MOT inspection. But it used to work, and all of a sudden it didn't - and I'm curious to know why. And I don't like seeing errors. Oh, and...I don't like spending money!
 
 ## Background info
 
-Before we dig in to the debugging process, here's a bit of background information on this particular car.
+Before we dig in to the debugging process, here's a bit of background information on this particular car. 
 
-This car did have a couple of water leaks when I bought it. First, it had a leak in the boot - a well documented problem with the Mk7 Golf. Secondly, it had a leak in the driver's footwell. I also fixed both of these leaks myself. Because of the presence of water in the cabin, I could be dealing with some water-induced wiring corrosion. That's just a theory though, and is definite guesswork at this stage!
+It's a 2013 VW Golf Mk7 2.0 TDI, and it did have a couple of water leaks when I bought it. First, it had a leak in the boot - a well documented problem with the Mk7 Golf. Secondly, it had a leak in the driver's footwell. I also fixed both of these leaks myself. Because of the presence of water in the cabin, I could be dealing with some water-induced wiring corrosion. That's just a theory though, and is definite guesswork at this stage!
 
 ## The Approach
 
@@ -63,12 +63,10 @@ Idea 2: Faulty sensor or switch
 
 ## 2. ChatGPT
 
-...or your latest / greatest / favourite AI chat platform.
-
 I asked ChatGPT the following question:
 
 ```
-VW Golf Mk7. Suddenly getting the following error when starting the vehicle: "Error: SS system". It happens every time I start the car. This used to work, but all of a sudden stopped working.
+VW Golf Mk7. Getting the following error when starting the vehicle: "Error: SS system". It happens every time I start the car. This used to work, but all of a sudden stopped working.
 ```
 
 ChatGPT surmises that this is a very common issue on this make and model of vehicle, and that the SS system is very sensitive to a number of conditions, which if not met precisely then cause the SS system to be disabled.
