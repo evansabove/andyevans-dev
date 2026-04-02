@@ -5,7 +5,7 @@ date: 2026-04-02
 tags: ["Automotive", "Debugging"]
 image: /images/posts/troubleshooting-start-stop-system-failure-vw-golf-part-1/dash.jpg
 imageAlt: "VW Golf dashboard with a start-stop system failure warning light illuminated"
-draft: true
+draft: false
 ---
 
 ## The problem
