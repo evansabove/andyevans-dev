@@ -2,11 +2,11 @@
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 
-const { data: posts } = await useAsyncData('blog-post-list', () =>
-  queryCollection('posts')
-    .order('date', 'DESC')
-    .all()
-)
+const { data: posts } = await useAsyncData('blog-post-list', () => {
+  const query = queryCollection('posts').order('date', 'DESC')
+  if (!import.meta.dev) query.where('draft', '<>', true)
+  return query.all()
+})
 
 useHead({
   title: 'Blog',

@@ -87,7 +87,7 @@ h2 {
 }
 
 h3 {
-    @apply text-xl;
+    @apply text-lg;
     @apply font-semibold;
     @apply mt-8 mb-3;
 }
