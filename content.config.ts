@@ -13,7 +13,7 @@ export default defineContentConfig({
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         dateModified: z.string().optional(),
-        draft: z.boolean().optional(),
+        draft: z.boolean().optional().default(false),
       })
     }),
     pages: defineCollection({
