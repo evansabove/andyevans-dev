@@ -19,6 +19,34 @@ useSeoMeta({
   ogLocale: 'en_GB',
   ogImage: runtimeConfig.public.appImage,
   ogUrl: computed(() => `${runtimeConfig.public.appUrl}${route.path}`),
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'CV | Andy Evans',
+  twitterDescription: runtimeConfig.public.appDescription,
+  twitterImage: runtimeConfig.public.appImage,
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'Andy Evans',
+          jobTitle: 'Software Engineer',
+          url: runtimeConfig.public.appUrl,
+          image: runtimeConfig.public.appImage,
+          description: runtimeConfig.public.appDescription,
+          sameAs: [
+            'https://www.linkedin.com/in/andy-evans-557b1125',
+            'https://github.com/evansabove'
+          ]
+        }
+      })
+    }
+  ]
 })
 </script>
 

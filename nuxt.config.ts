@@ -65,7 +65,7 @@ export default defineNuxtConfig({
         }
       ],
       htmlAttrs: {
-        lang: 'en'
+        lang: 'en-GB'
       }
     }
   },

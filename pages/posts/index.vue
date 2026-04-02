@@ -25,6 +25,30 @@ useSeoMeta({
   twitterDescription: runtimeConfig.public.appDescription,
   twitterImage: runtimeConfig.public.appImage,
 })
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: computed(() => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        name: 'Blog | Andy Evans',
+        description: runtimeConfig.public.appDescription,
+        url: `${runtimeConfig.public.appUrl}${route.path}`,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Andy Evans',
+          url: runtimeConfig.public.appUrl,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${runtimeConfig.public.appUrl}/android-chrome-512x512.png`
+          }
+        }
+      }))
+    }
+  ]
+})
 </script>
 
 <template>
