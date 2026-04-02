@@ -10,7 +10,7 @@ const { data: post } = await useAsyncData(
   () => queryCollection('posts').path(contentPath.value).first()
 )
 
-if (!post.value) {
+if (!post.value || (!import.meta.dev && (post.value as any).draft === true)) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 

@@ -31,7 +31,7 @@ defineProps<{
 }
 
 .code-block__pre {
-  @apply p-5 overflow-x-auto;
+  @apply p-5 whitespace-pre-wrap;
   @apply text-sm leading-relaxed;
   @apply m-0 rounded-none;
   font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
