@@ -14,24 +14,47 @@
     </button>
 
     <!-- Mobile menu -->
-    <Transition name="slide">
-      <div v-if="open" class="header-mobile-menu">
-        <button class="header-close" aria-label="Close menu" @click="open = false">
-          <Icon name="fa6-solid:xmark" />
-        </button>
-        <NuxtLink to="/" class="header-link" active-class="header-link--active" exact @click="open = false">Home</NuxtLink>
-        <NuxtLink to="/posts" class="header-link" active-class="header-link--active" @click="open = false">Posts</NuxtLink>
-      </div>
-    </Transition>
+    <TransitionRoot appear :show="open" as="template">
+      <Dialog as="div" @close="open = false" class="relative z-50 md:hidden">
+        <!-- Backdrop -->
+        <TransitionChild
+          as="template"
+          enter="transition opacity duration-200"
+          enter-from="opacity-0"
+          enter-to="opacity-100"
+          leave="transition opacity duration-200"
+          leave-from="opacity-100"
+          leave-to="opacity-0"
+        >
+          <div class="header-backdrop" aria-hidden="true" />
+        </TransitionChild>
 
-    <!-- Backdrop -->
-    <Transition name="fade">
-      <div v-if="open" class="header-backdrop" @click="open = false" />
-    </Transition>
+        <TransitionChild
+          as="template"
+          enter="transition transform duration-250 ease"
+          enter-from="translate-x-full"
+          enter-to="translate-x-0"
+          leave="transition transform duration-250 ease"
+          leave-from="translate-x-0"
+          leave-to="translate-x-full"
+        >
+          <DialogPanel class="header-mobile-menu">
+            <button class="header-close" aria-label="Close menu" @click="open = false">
+              <Icon name="fa6-solid:xmark" />
+            </button>
+            <NuxtLink to="/" class="header-link" active-class="header-link--active" exact @click="open = false">Home</NuxtLink>
+            <NuxtLink to="/posts" class="header-link" active-class="header-link--active" @click="open = false">Posts</NuxtLink>
+          </DialogPanel>
+        </TransitionChild>
+      </Dialog>
+    </TransitionRoot>
   </header>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { Dialog, DialogPanel, TransitionRoot, TransitionChild } from '@headlessui/vue'
+
 const config = useRuntimeConfig()
 const open = ref(false)
 </script>
@@ -83,10 +106,4 @@ const open = ref(false)
   @apply fixed inset-0 z-40;
   background: rgba(0, 0, 0, 0.4);
 }
-
-.fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
-.fade-enter-from, .fade-leave-to { opacity: 0; }
-
-.slide-enter-active, .slide-leave-active { transition: transform 0.25s ease; }
-.slide-enter-from, .slide-leave-to { transform: translateX(100%); }
 </style>
