@@ -16,7 +16,10 @@
           />
         </div>
         <div class="tile__body">
-          <div class="tile__date">{{ $dayjs(post.date).format('MMM YYYY') }}</div>
+          <div class="tile__date">
+            <span v-if="post.draft" class="tile__draft-badge">Draft</span>
+            <span>{{ $dayjs(post.date).format('MMM YYYY') }}</span>
+          </div>
           <h3 class="tile__title">{{ post.title }}</h3>
           <p class="tile__description">{{ post.description }}</p>
           <div class="tile__tags">
@@ -104,8 +107,15 @@ function thumbSrc(src: string): string {
   }
 
   &__date {
+    @apply flex items-center gap-2;
     @apply text-sm text-purple-700 font-semibold;
     @apply mb-2;
+  }
+
+  &__draft-badge {
+    @apply text-[10px] font-bold uppercase tracking-wider;
+    @apply bg-amber-100 text-amber-700 border border-amber-300;
+    @apply rounded px-1.5 py-0.5;
   }
 
   &__title {

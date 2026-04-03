@@ -8,12 +8,13 @@ const { data: homeData } = await useAsyncData('home-page', () =>
 )
 
 // Fetch 3 most recent posts for the RecentPosts section
-const { data: recentPosts } = await useAsyncData('recent-posts-home', () =>
-  queryCollection('posts')
+const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
+  const query = queryCollection('posts')
     .order('date', 'DESC')
     .limit(3)
-    .all()
-)
+  if (!import.meta.dev) query.where('draft', '<>', true)
+  return query.all()
+})
 
 useHead({
   titleTemplate: () => 'Andy Evans — Software Engineer',
