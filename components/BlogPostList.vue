@@ -7,7 +7,10 @@
         </div>
 
         <div class="list-item-content">
-          <div class="list-item-date">{{ $dayjs(post.date).format("MMM YYYY") }}</div>
+          <div class="list-item-date">
+            <span v-if="post.draft" class="list-item-draft-badge">Draft</span>
+            <span>{{ $dayjs(post.date).format("MMM YYYY") }}</span>
+          </div>
           <h2 class="list-item-header">{{ post.title }}</h2>
           <div class="list-item-description">{{ post.description }}</div>
           <div class="list-item-cta">Read post →</div>
@@ -54,8 +57,15 @@ function thumbSrc(src: string): string {
 }
 
 .list-item-date {
+  @apply flex items-center gap-2;
   @apply text-sm text-purple-700 font-semibold;
   @apply mb-1;
+}
+
+.list-item-draft-badge {
+  @apply text-[10px] font-bold uppercase tracking-wider;
+  @apply bg-amber-100 text-amber-700 border border-amber-300;
+  @apply rounded px-1.5 py-0.5;
 }
 
 .list-item-description {

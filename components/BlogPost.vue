@@ -1,5 +1,12 @@
 <template>
   <div class="blog-post">
+
+    <!-- Draft banner — only visible in development -->
+    <div v-if="post.draft" class="blog-draft-banner">
+      <Icon name="fa6-solid:pencil" />
+      <span>Draft — this post is not published yet</span>
+    </div>
+
     <h1 class="blog-title">{{ post.title }}</h1>
     <div class="blog-description">{{ post.description }}</div>
     <div class="blog-tags">
@@ -28,6 +35,12 @@ const props = defineProps<{ post: Record<string, any> }>()
 .blog {
   &-post {
     @apply flex flex-col;
+  }
+
+  &-draft-banner {
+    @apply flex items-center gap-2 mb-6;
+    @apply bg-amber-50 border border-amber-300 text-amber-800;
+    @apply rounded-xl px-4 py-3 text-sm font-semibold;
   }
 
   &-title {
