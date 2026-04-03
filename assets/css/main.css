@@ -19,7 +19,7 @@ figure {
 
 figcaption {
     text-align: center;
-    @apply text-sm text-gray-500 mt-2;
+    @apply text-sm text-gray-700 mt-2;
 }
 
 img {

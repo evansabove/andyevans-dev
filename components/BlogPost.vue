@@ -55,7 +55,7 @@ const props = defineProps<{ post: Record<string, any> }>()
   &-image {
     max-height: 20rem;
     overflow: hidden;
-    @apply mb-6;
+    @apply mb-6 rounded-xl;
     @apply flex items-center justify-center;
 
     img {

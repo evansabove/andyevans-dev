@@ -10,8 +10,8 @@ defineProps<{ tag: string }>()
 .tag {
   @apply inline-block;
   @apply bg-purple-100 text-purple-800;
-  @apply text-xs font-semibold;
-  @apply px-2 py-1 rounded-full;
-  @apply mr-1 mb-1;
+  @apply text-sm font-semibold;
+  @apply px-3 py-1 rounded-full;
+  @apply mr-2 mb-2;
 }
 </style>
