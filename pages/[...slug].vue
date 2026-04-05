@@ -14,6 +14,18 @@ if (!post.value || (!import.meta.dev && (post.value as any).draft === true)) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+const { data: readNextPosts } = await useAsyncData(
+  `read-next-${contentPath.value}`,
+  () => {
+    const query = queryCollection('posts')
+      .where('path', '<>', contentPath.value)
+      .order('date', 'DESC')
+      .limit(3)
+    if (!import.meta.dev) query.where('draft', '<>', true)
+    return query.all()
+  }
+)
+
 const resolveAbsoluteImage = (imagePath?: string) => {
   const path = imagePath ?? runtimeConfig.public.appImage
   if (!path) return ''
@@ -92,5 +104,8 @@ useHead({
 <template>
   <AppTemplate>
     <BlogPost v-if="post" :post="post" />
+    <div v-if="readNextPosts?.length" class="mt-16 pt-8 border-t border-purple-100">
+      <RecentPosts :posts="readNextPosts" heading="Read next" />
+    </div>
   </AppTemplate>
 </template>
