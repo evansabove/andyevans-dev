@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
-const tagSlug = route.params.tag as string
+const tagSlug = route.params.topic as string
 
 const { data: allPosts } = await useAsyncData(`posts-for-tag-${tagSlug}`, () => {
   const query = queryCollection('posts').order('date', 'DESC')

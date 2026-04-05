@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/tags/${formattedTag}`" class="tag">{{ tag }}</NuxtLink>
+  <NuxtLink :to="`/topics/${formattedTag}`" class="tag">{{ tag }}</NuxtLink>
 </template>
 
 <script setup lang="ts">

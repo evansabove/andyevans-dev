@@ -30,8 +30,8 @@
         </div>
       </div>
     </div>
-    <div class="recent-posts__footer">
-      <NuxtLink to="/posts" class="recent-posts__view-all">View all posts →</NuxtLink>
+    <div v-if="!hideFooter" class="recent-posts__footer">
+      <NuxtLink :to="viewAllUrl || '/posts'" class="recent-posts__view-all">{{ viewAllText || 'View all posts →' }}</NuxtLink>
     </div>
   </section>
 </template>
@@ -40,6 +40,9 @@
 defineProps<{
   posts: Record<string, any>[]
   heading?: string
+  hideFooter?: boolean
+  viewAllUrl?: string
+  viewAllText?: string
 }>()
 
 function thumbSrc(src: string): string {
