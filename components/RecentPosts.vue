@@ -2,11 +2,10 @@
   <section class="recent-posts">
     <h2 class="recent-posts__heading">{{ heading }}</h2>
     <div class="recent-posts__grid">
-      <NuxtLink
+      <div
         v-for="post in posts"
         :key="post.path"
-        :to="post.path"
-        class="tile"
+        class="tile group relative"
       >
         <div class="tile__image-wrap">
           <img
@@ -20,17 +19,19 @@
             <span v-if="post.draft" class="tile__draft-badge">Draft</span>
             <span>{{ $dayjs(post.date).format('MMM YYYY') }}</span>
           </div>
-          <h3 class="tile__title">{{ post.title }}</h3>
+          <h3 class="tile__title">
+            <NuxtLink :to="post.path" class="tile__main-link">{{ post.title }}</NuxtLink>
+          </h3>
           <p class="tile__description">{{ post.description }}</p>
-          <div class="tile__tags">
+          <div class="tile__tags relative z-10">
             <TagList :tags="post.tags ?? []" />
           </div>
           <span class="tile__cta">Read post →</span>
         </div>
-      </NuxtLink>
+      </div>
     </div>
-    <div class="recent-posts__footer">
-      <NuxtLink to="/posts" class="recent-posts__view-all">View all posts →</NuxtLink>
+    <div v-if="!hideFooter" class="recent-posts__footer">
+      <NuxtLink :to="viewAllUrl || '/posts'" class="recent-posts__view-all">{{ viewAllText || 'View all posts →' }}</NuxtLink>
     </div>
   </section>
 </template>
@@ -39,6 +40,9 @@
 defineProps<{
   posts: Record<string, any>[]
   heading?: string
+  hideFooter?: boolean
+  viewAllUrl?: string
+  viewAllText?: string
 }>()
 
 function thumbSrc(src: string): string {
@@ -50,7 +54,6 @@ function thumbSrc(src: string): string {
 <style scoped>
 .recent-posts {
   @apply w-full;
-  @apply py-10;
   @apply flex flex-col;
 
   &__heading {
@@ -122,6 +125,15 @@ function thumbSrc(src: string): string {
     @apply text-lg font-bold;
     @apply mb-2;
     @apply leading-snug;
+  }
+
+  &__main-link {
+    @apply no-underline text-inherit;
+    
+    &::after {
+      content: '';
+      @apply absolute inset-0 z-0;
+    }
   }
 
   &__description {

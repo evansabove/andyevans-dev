@@ -48,6 +48,10 @@ const props = defineProps<{ post: Record<string, any> }>()
     @apply mb-5;
   }
 
+  &-content {
+    @apply mt-10;
+  }
+
   &-description {
     margin-bottom: 2rem;
   }

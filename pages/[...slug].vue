@@ -14,6 +14,30 @@ if (!post.value || (!import.meta.dev && (post.value as any).draft === true)) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+const { data: readNextPosts } = await useAsyncData(
+  `read-next-${contentPath.value}`,
+  async () => {
+    const query = queryCollection('posts').where('path', '<>', contentPath.value)
+    if (!import.meta.dev) query.where('draft', '<>', true)
+    
+    const allOtherPosts = await query.all()
+    const currentTags = (post.value as any)?.tags || []
+    
+    const scoredPosts = allOtherPosts.map(p => {
+      const pTags = p.tags || []
+      const score = pTags.filter((t: string) => currentTags.includes(t)).length
+      return { post: p, score }
+    })
+
+    scoredPosts.sort((a, b) => {
+      if (a.score !== b.score) return b.score - a.score
+      return new Date(b.post.date).getTime() - new Date(a.post.date).getTime()
+    })
+
+    return scoredPosts.slice(0, 3).map(sp => sp.post)
+  }
+)
+
 const resolveAbsoluteImage = (imagePath?: string) => {
   const path = imagePath ?? runtimeConfig.public.appImage
   if (!path) return ''
@@ -92,5 +116,8 @@ useHead({
 <template>
   <AppTemplate>
     <BlogPost v-if="post" :post="post" />
+    <div v-if="readNextPosts?.length" class="mt-16 pt-8 border-t border-purple-100">
+      <RecentPosts :posts="readNextPosts" heading="Read next" />
+    </div>
   </AppTemplate>
 </template>
