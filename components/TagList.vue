@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ tags: string[] }>()
+defineProps<{ 
+  tags: string[]
+}>()
 </script>
 
 <style scoped>

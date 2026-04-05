@@ -3,7 +3,11 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ tag: string }>()
+import { computed } from 'vue'
+
+const props = defineProps<{ 
+  tag: string
+}>()
 </script>
 
 <style scoped>
