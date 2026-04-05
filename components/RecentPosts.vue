@@ -54,7 +54,6 @@ function thumbSrc(src: string): string {
 <style scoped>
 .recent-posts {
   @apply w-full;
-  @apply py-10;
   @apply flex flex-col;
 
   &__heading {

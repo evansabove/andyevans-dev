@@ -59,9 +59,9 @@ useSeoMeta({
 
 <template>
   <AppTemplate>
-    <div class="mb-12">
+    <div class="mb-2">
       <h1 class="text-4xl font-bold mb-4">Explore Topics</h1>
-      <p class="text-gray-600 text-lg">Browse all the topics I've written about!</p>
+      <p class="text-gray-600 text-lg">Browse posts by topic.</p>
     </div>
     
     <div class="flex flex-col">
