@@ -73,9 +73,25 @@ I was also able to prove that the Intelligent Battery Sensor (IBS) was working c
 
 ### Battery coding
 
-TBC
+"Coding" the battery takes two forms on the OBD11 app. Firstly the "Battery Type" and secondly the "Battery Capacity".
 
-So that's the battery and charging system ticked off the list - all good here! 
+I first checked the battery type via the app. This was correctly set to 'AGM' for the Absorbent Glass Mat battery that I have in the car:
+
+<figure>
+<img src="/images/posts/troubleshooting-start-stop-system-failure-vw-golf-part-2/battery-type.jpeg" alt="Battery type" />
+<figcaption>Battery type</figcaption>
+</figure>
+
+Then I checked the battery capacity. This was actually incorrect - this is a 70Ah battery, but it was set to 30Ah. Hooray - something that's definitely incorrect!
+
+<figure>
+<img src="/images/posts/troubleshooting-start-stop-system-failure-vw-golf-part-2/battery-capacity.jpeg" alt="Battery capacity" />
+<figcaption>Battery capacity</figcaption>
+</figure>
+
+I cleared the fault codes and tried again, but it didn't make any difference. I then took the car for a short drive, but still no luck. Starting the car again still showed the same fault. 
+
+I suppose it is possible that now the battery capacity has been correctly set, it might take a longer drive, or a couple of days for this to resolve itself. I live in hope, but let's proceed with the troubleshooting anyway!
 
 Let's take a look at the list of remaining ideas:
 
@@ -86,4 +102,3 @@ Idea 7: CAN bus C physical wiring problem
 Idea 8: DPF regen is considered active (even if it isn't)
 Idea 9: Driver door considered open (even if it isn't)
 ```
-
