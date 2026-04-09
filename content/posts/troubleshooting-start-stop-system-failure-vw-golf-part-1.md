@@ -57,7 +57,6 @@ Idea 1: Weak or failing battery
 It also suggests that a problem with a sensor or switch could be to blame - e.g. the clutch pedal switch or engine temperature sensor. This makes sense - in order for the SS system to work, it takes signals from several places around the car in order to sense whether it's safe / efficient to stop the engine. If one of these isn't working, it could disable the SS feature. Let's add that to the list too, keeping it high level for now:
 
 ```
-Idea 1: Weak or failing battery
 Idea 2: Faulty sensor or switch
 ```
 
@@ -81,8 +80,6 @@ Again it suggests a weak or failing battery, along with the following ideas:
 These ideas can go on the list as well:
 
 ```
-Idea 1: Weak or failing battery
-Idea 2: Faulty sensor or switch
 Idea 3: Faulty IBS sensor
 Idea 4: Stored ECU fault codes
 Idea 5: Alternator or charging faults
@@ -128,12 +125,6 @@ Now this is the one that caught my eye. What could be going on here? It suggests
 According to Google, The VW Golf CAN Bus C (Powertrain CAN) is "a high-speed, 500 kbit/s network connecting critical modules like the ECM, ABS, and DSG/transmission". However, ChatGPT is telling me that CAN Bus C is actually the 'comfort' bus - things like electric windows and interior lights. So I'll need to do a bit more investigation to figure out which bus this relates to. Let's add it to the list:
 
 ```
-Idea 1: Weak or failing battery
-Idea 2: Faulty sensor or switch
-Idea 3: Faulty IBS sensor
-Idea 4: Stored ECU fault codes
-Idea 5: Alternator or charging faults
-Idea 6: Battery coding failure
 Idea 7: CAN bus C physical wiring problem
 ```
 
@@ -152,13 +143,6 @@ From a quick search and ChatGPT prompt, it seems like (at least) the following c
 Let's add these new thoughts to our list - all is on the table at this point:
 
 ```
-Idea 1: Weak or failing battery
-Idea 2: Faulty sensor or switch
-Idea 3: Faulty IBS sensor
-Idea 4: Stored ECU fault codes
-Idea 5: Alternator or charging faults
-Idea 6: Battery coding failure
-Idea 7: CAN bus C physical wiring problem
 Idea 8: DPF regen is considered active (even if it isn't)
 Idea 9: Driver door considered open (even if it isn't)
 ```
