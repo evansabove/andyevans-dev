@@ -115,6 +115,9 @@ function renderCvMarkdown(cv: Record<string, any>): string {
       if ((role.highlights ?? []).length) {
         parts.push(role.highlights.map((h: string) => `- ${h}`).join('\n'))
       }
+      if ((role.links ?? []).length) {
+        parts.push(role.links.map((l: any) => `${l.label}: ${l.url}`).join('\n'))
+      }
       if ((role.tags ?? []).length) parts.push(`Technologies: ${role.tags.join(', ')}`)
       out.push(parts.join('\n\n'))
     }

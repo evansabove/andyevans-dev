@@ -19,6 +19,16 @@
     <ul v-if="highlights?.length" class="experience__highlights">
       <li v-for="(highlight, i) in highlights" :key="i">{{ highlight }}</li>
     </ul>
+    <p v-if="links?.length" class="experience__links">
+      <a
+        v-for="link in links"
+        :key="link.url"
+        :href="link.url"
+        target="_blank"
+        rel="noopener"
+        class="experience__link"
+      >{{ link.label }} ↗</a>
+    </p>
     <div v-if="tags?.length" class="experience__tags">
       <CvChips :items="tags" />
     </div>
@@ -34,6 +44,7 @@ defineProps<{
   location?: string
   summary?: string
   highlights?: string[]
+  links?: { label: string, url: string }[]
   tags?: string[]
 }>()
 
@@ -90,6 +101,19 @@ function formatDate(d: string) {
   li {
     @apply my-1.5;
   }
+}
+
+.experience__links {
+  @apply flex flex-wrap gap-4 mt-3;
+  margin-bottom: 0;
+}
+
+.experience__link {
+  @apply text-sm font-semibold text-purple-700 no-underline;
+}
+
+.experience__link:hover {
+  @apply underline;
 }
 
 .experience__tags {

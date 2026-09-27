@@ -8,11 +8,12 @@ biography:
   imageAlt: "Andy Evans, senior software engineer based in Sheffield, UK"
   text: |
     <p>I'm Andy Evans, a senior software engineer based in Sheffield, UK, with over 12 years building production software. I work primarily in C# and .NET, and I take the lead on the parts most teams find hardest: platform engineering, CI/CD, and getting things deployed and running reliably on Azure.</p>
+    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric race car at McMurtry, and I started out in IT and internal systems inside Mercedes AMG High Performance Powertrains. It has left me comfortable with domain experts, messy real-world data, and software that has to hold up outside an office.</p>
     <p>I'm a resilient and logical problem solver. I write software in whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
 
 availability:
   status: "Open to conversations"
-  text: "I'm happy to talk to teams doing interesting work. I'm most useful where hands-on .NET engineering meets platform and cloud work, and where technical leadership is part of the job rather than a separate track."
+  text: "I'm happy to talk to teams doing interesting work. I'm most useful where hands-on .NET engineering meets platform and cloud work, and where technical leadership is part of the job rather than a separate track. My background leans heavily towards manufacturing and motorsport, and I'd be glad to keep working in those domains, but I'm not looking to be limited to them."
   roles:
     - "Senior / Lead Software Engineer (.NET)"
     - "Platform Engineer / DevOps Engineer"
@@ -57,6 +58,9 @@ experience:
     location: "Sheffield, UK"
     tags: ["C#", ".NET 10", "Azure", "Azure Functions", "Durable Functions", "AKS", "Kubernetes", "Helm", "Ansible", "Azure DevOps", "CI/CD", "IaC", "On-prem infrastructure", "SQL Server", "EF Core", "XUnit", "TestContainers", "Vue", "Python", "Technical leadership"]
     summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for DataQI, an AI platform that turns fragmented manufacturing data into real-time operational insight."
+    links:
+      - label: "DataQI"
+        url: "https://dataqi.ai"
     highlights:
       - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
       - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
