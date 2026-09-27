@@ -13,11 +13,16 @@ biography:
 
 availability:
   status: "Open to conversations"
-  text: "I'm happy to talk to teams doing interesting work. I'm most useful where hands-on .NET engineering meets platform and cloud work, and where technical leadership is part of the job rather than a separate track. My background leans heavily towards manufacturing and motorsport, and I'd be glad to keep working in those domains, but I'm not looking to be limited to them."
+  text: "I'm happy to talk to teams doing interesting work. I'm most useful where hands-on .NET engineering meets platform and cloud work, and where technical leadership is part of the job rather than a separate track. My manufacturing and motorsport background travels well, but I'm not tied to it, and I'd like what comes next to be something I care about the outcome of."
   roles:
     - "Senior / Lead Software Engineer (.NET)"
     - "Platform Engineer / DevOps Engineer"
     - "Solution Architect / Technical Lead"
+  industries:
+    - "Green and renewable energy"
+    - "Meteorology"
+    - "Motorsport"
+    - "Charities and good causes"
   location: "Remote (UK), open to hybrid around Sheffield and South Yorkshire"
   contactUrl: "https://www.linkedin.com/in/andy-evans-557b1125/"
   contactLabel: "Get in touch on LinkedIn"
