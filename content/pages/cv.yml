@@ -56,7 +56,7 @@ experience:
     end: null
     location: "Sheffield, UK"
     tags: ["C#", ".NET 10", "Azure", "Azure Functions", "Durable Functions", "AKS", "Kubernetes", "Helm", "Ansible", "Azure DevOps", "CI/CD", "IaC", "On-prem infrastructure", "SQL Server", "EF Core", "XUnit", "TestContainers", "Vue", "Python", "Technical leadership"]
-    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for DataQI."
+    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for DataQI, an AI platform that turns fragmented manufacturing data into real-time operational insight."
     highlights:
       - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
       - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
