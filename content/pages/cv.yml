@@ -59,7 +59,7 @@ experience:
     summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for a core product."
     highlights:
       - "Own the platform engineering role for a core product: Azure infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
-      - "Introduced ephemeral environments on AKS, so any developer or tester can spin up a throwaway deployment of the product on demand - removing the shared-environment bottleneck from the test cycle."
+      - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of the product in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
       - "Established functional and integration testing approaches for .NET 8 isolated and Durable Azure Functions using XUnit and TestContainers, giving the team confidence to change serverless code safely."
       - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
       - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
@@ -101,9 +101,9 @@ experience:
     end: "2018-05-01"
     location: "Wotton-under-Edge, Gloucestershire, UK"
     tags: ["Android", "Python", "C#", "WPF", "AWS", "CAN bus", "Embedded integration"]
-    summary: "Built the driver interface for a high-performance electric vehicle from scratch, integrating software with in-car electronics over CAN bus."
+    summary: "Built the driver interface from scratch for a high-performance electric prototype vehicle, integrating software with in-car electronics over CAN bus."
     highlights:
-      - "Delivered the in-car driver interface end to end, integrating directly with vehicle electronics and CAN bus."
+      - "Delivered the in-car driver interface end to end for a works prototype, integrating directly with vehicle electronics over CAN bus. The prototype preceded McMurtry's record-setting Spéirling, and the thinking carried forward into it."
       - "Produced development tooling for the engineering team, including an ECU configuration tool and remote data-logging via AWS."
 
   - title: "Software Developer"
