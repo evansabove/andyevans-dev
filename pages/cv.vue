@@ -63,7 +63,7 @@ useHead({
 const personSchema = computed(() => {
   const skills: string[] = (cv.value.skills ?? []).flatMap((group: any) => group.items ?? [])
   const experience: any[] = cv.value.experience ?? []
-  const current = experience.find(role => !role.end)
+  const current = experience.find(role => !role.end && role.type !== 'break')
 
   return {
     '@context': 'https://schema.org',
@@ -160,11 +160,10 @@ useHead({
 
       <template v-if="cv.experience?.length">
         <h2 class="cv__section">Experience</h2>
-        <CvExperience
-          v-for="(exp, i) in cv.experience"
-          :key="i"
-          v-bind="exp"
-        />
+        <template v-for="(exp, i) in cv.experience" :key="i">
+          <CvCareerBreak v-if="exp.type === 'break'" v-bind="exp" />
+          <CvExperience v-else v-bind="exp" />
+        </template>
       </template>
 
       <template v-if="cv.howIWork?.length">

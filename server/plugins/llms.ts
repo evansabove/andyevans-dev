@@ -46,7 +46,7 @@ async function loadCv(event: any): Promise<Record<string, any> | null> {
 /** Compact prose for the llms.txt section description. */
 function summariseCv(cv: Record<string, any>): string {
   const lines: string[] = []
-  const current = (cv.experience ?? []).find((role: any) => !role.end)
+  const current = (cv.experience ?? []).find((role: any) => !role.end && role.type !== 'break')
 
   if (cv.description) lines.push(cv.description)
   if (current) lines.push(`Currently ${current.title} at ${current.business}, ${current.location}.`)
@@ -108,7 +108,7 @@ function renderCvMarkdown(cv: Record<string, any>): string {
     for (const role of cv.experience) {
       const end = role.end ? formatMonth(role.end) : 'Present'
       const parts = [
-        `### ${role.title}, ${role.business}`,
+        `### ${role.business ? `${role.title}, ${role.business}` : role.title}`,
         `${formatMonth(role.start)} to ${end}${role.location ? ` — ${role.location}` : ''}`,
       ]
       if (role.summary) parts.push(role.summary)

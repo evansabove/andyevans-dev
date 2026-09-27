@@ -88,6 +88,13 @@ experience:
       - "Led a test automation project that cut the manual effort in regression testing."
       - "Coached new developers and drove adoption of newer technologies across the team."
 
+  - type: "break"
+    title: "Career break"
+    start: "2018-06-01"
+    end: "2018-10-01"
+    location: "New Zealand and Australia"
+    summary: "Five months travelling in New Zealand and Australia."
+
   - title: "Software Engineer"
     business: "McMurtry Automotive Ltd"
     start: "2017-05-01"
