@@ -12,13 +12,13 @@ const { data: allPosts } = await useAsyncData(`posts-for-tag-${tagSlug}`, () => 
 const posts = computed(() => {
   if (!allPosts.value) return []
   return allPosts.value.filter(post => 
-    post.tags?.some((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tagSlug)
+    post.tags?.some((t: string) => slugifyTag(t) === tagSlug)
   )
 })
 
 const tagName = computed(() => {
   if (posts.value.length > 0) {
-    const originalTag = posts.value[0].tags?.find((t: string) => t.toLowerCase().replace(/\s+/g, '-') === tagSlug)
+    const originalTag = posts.value[0].tags?.find((t: string) => slugifyTag(t) === tagSlug)
     if (originalTag) return originalTag
   }
   // Try to capitalize nicely as a fallback

@@ -1,23 +1,53 @@
+title: "Andy Evans — Senior Software Engineer, .NET & Azure"
+description: "Senior software engineer and platform engineer with 12+ years building C#/.NET applications, APIs and Azure cloud infrastructure. Based in Sheffield, UK. Available for remote or hybrid senior, lead and platform engineering roles."
+role: "Senior Software Engineer"
+location: "Sheffield, UK"
+
 biography:
   image: /andyevans.jpeg
-  imageAlt: "Andy Evans"
+  imageAlt: "Andy Evans, senior software engineer based in Sheffield, UK"
   text: |
-    <p>I'm Andy, software engineer from Sheffield, UK. I'm a flexible and adaptable senior engineer currently working for a software consultancy.</p>
-    <p>I'm a resilient and logical problem solver with creative ideas on solutions. I develop software in whatever tools the problem demands — primarily C# — and I take the lead on platform engineering, CI/CD, and Azure cloud deployments. I'm also passionate about mentoring and building great teams.</p>
+    <p>I'm Andy Evans, a senior software engineer based in Sheffield, UK, with over 12 years building production software. I work primarily in C# and .NET, and I take the lead on the parts most teams find hardest: platform engineering, CI/CD, and getting things deployed and running reliably on Azure.</p>
+    <p>I'm a resilient and logical problem solver. I write software in whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
 
-aboutMe:
-  - title: "I problem solve!"
-    text: "I'm a resilient and logical problem solver, with creative ideas on solutions. Although I work hard to find the ideal solution, I'm pragmatic enough to know when to look for alternative options."
-  - title: "Software engineering"
-    text: "I develop software to solve problems - using whatever tools I need. This is usually C#, but has in the past led to adventures in Vue, Python, and Android to name but a few. I'm also a certified Azure Developer Associate."
-  - title: "I learn"
-    text: "Tech is constantly evolving! If my existing skillset doesn't contain the tools for the problem at hand, I set about learning what I need - languages / tools / libraries - to get the job done."
-  - title: "Platform engineering"
-    text: "I've always said that it's no good writing code unless you can deploy it somewhere! I take the lead in deploying solutions to the Azure cloud, working with CI/CD pipelines, and also have experience with Kubernetes and on-prem infrastructure."
-  - title: "Planning and backlog management"
-    text: "I write user stories to represent the problems to be solved, and manage these stories in a backlog. I own the stories through development, testing and deployment, being a point of contact for the team. I also provide estimates for the work."
-  - title: "Mentoring"
-    text: "One of my most important roles is to mentor other team members - formally, or informally. I like to be a person that is trusted and approachable, and a person who can help to build the careers of others."
+availability:
+  status: "Open to conversations"
+  text: "I'm happy to talk to teams doing interesting work. I'm most useful where hands-on .NET engineering meets platform and cloud work, and where technical leadership is part of the job rather than a separate track."
+  roles:
+    - "Senior / Lead Software Engineer (.NET)"
+    - "Platform Engineer / DevOps Engineer"
+    - "Solution Architect / Technical Lead"
+  location: "Remote (UK), open to hybrid around Sheffield and South Yorkshire"
+  contactUrl: "https://www.linkedin.com/in/andy-evans-557b1125/"
+  contactLabel: "Get in touch on LinkedIn"
+
+skills:
+  - category: "Languages"
+    items: ["C#", ".NET 8", ".NET Framework", "ASP.NET Core", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL"]
+  - category: "Cloud & platform"
+    items: ["Microsoft Azure", "Azure Functions", "Durable Functions", "Azure Kubernetes Service (AKS)", "Kubernetes", "Helm", "Infrastructure as Code", "Cloudflare", "AWS", "On-prem infrastructure"]
+  - category: "DevOps & CI/CD"
+    items: ["Azure DevOps", "CI/CD pipelines", "Build & release automation", "Docker", "Containerisation", "Git"]
+  - category: "Data"
+    items: ["SQL Server", "Entity Framework Core", "Oracle Database"]
+  - category: "Testing"
+    items: ["XUnit", "NUnit", "TestContainers", "Functional testing", "Integration testing", "Test automation"]
+  - category: "Web & APIs"
+    items: ["REST APIs", "Microservices", "Vue", "Nuxt", "AngularJS", "WPF"]
+  - category: "Architecture & leadership"
+    items: ["Software architecture", "Technical leadership", "Mentoring", "Backlog management", "User stories & estimation", "Agile delivery", "Client workshops"]
+
+howIWork:
+  - title: "I solve problems"
+    text: "I'm a resilient and logical problem solver, with creative ideas on solutions. I work hard to find the ideal solution, but I'm pragmatic enough to know when to look for alternative options."
+  - title: "I own delivery end to end"
+    text: "It's no good writing code unless you can deploy it somewhere. I take the lead on deploying solutions to Azure, building CI/CD pipelines, and running workloads on Kubernetes and on-prem infrastructure. I own work from user story through development, testing and release."
+  - title: "I learn what the problem needs"
+    text: "Tech is constantly evolving. If my existing skillset doesn't contain the tools for the problem at hand, I set about learning what I need - languages, tools, libraries - to get the job done. That's led to adventures in Vue, Python, Kotlin and Android alongside my day-to-day C#."
+  - title: "I simplify what I inherit"
+    text: "I've taken tangled, confusing codebases and turned them into the simple solutions they always could have been. Leaving a codebase easier to work in than I found it is one of the most valuable things I can do for a team."
+  - title: "I mentor and build teams"
+    text: "One of my most important roles is mentoring other team members, formally or informally. I like to be a person who is trusted and approachable, and who can help build the careers of others."
 
 experience:
   - title: "Senior Software Developer"
@@ -25,56 +55,76 @@ experience:
     start: "2021-04-01"
     end: null
     location: "Sheffield, UK"
-    tags: ["C#", "Vue", "Azure", "CI/CD", "IaC", "SQL Server", "EF Core", "Azure Functions", "XUnit", "Kubernetes", "Python", "Leadership"]
-    summary: "Senior engineer responsible for delivering quality solutions on time and in budget. Delivered high-quality software within tight constraints, brought clarity to projects through backlog management, provided technical oversight on client workshops, owned the technical direction of solutions, led multi-skilled teams, owned the platform engineering role for a core product, and mentored other team members."
+    tags: ["C#", ".NET 8", "Azure", "Azure Functions", "Durable Functions", "AKS", "Kubernetes", "Helm", "Azure DevOps", "CI/CD", "IaC", "SQL Server", "EF Core", "XUnit", "TestContainers", "Vue", "Python", "Technical leadership"]
+    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for a core product."
+    highlights:
+      - "Own the platform engineering role for a core product: Azure infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
+      - "Introduced ephemeral environments on AKS, so any developer or tester can spin up a throwaway deployment of the product on demand - removing the shared-environment bottleneck from the test cycle."
+      - "Established functional and integration testing approaches for .NET 8 isolated and Durable Azure Functions using XUnit and TestContainers, giving the team confidence to change serverless code safely."
+      - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
+      - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
+      - "Mentor other engineers across the business, formally and informally."
 
   - title: "Solution Architect"
     business: "Arcadis Gen"
     start: "2020-01-01"
     end: "2021-04-01"
     location: "Sheffield, UK"
-    tags: ["C#", "Azure", "Vue", "CI/CD", "SQL Server", "EF Core"]
-    summary: "Technical leader on a microservice-based SaaS web application — a platform at the core of a new business offering. Involved in architectural design, development, deployments and verification."
+    tags: ["C#", "Azure", "Microservices", "Vue", "CI/CD", "SQL Server", "EF Core", "Software architecture"]
+    summary: "Technical leader on a microservice-based SaaS platform that sat at the core of a new business offering."
+    highlights:
+      - "Owned architectural design for a greenfield microservice SaaS platform, then stayed hands-on through development, deployment and verification."
+      - "Set the technical standards and Azure deployment approach the delivery teams built against."
 
   - title: "Senior Software Engineer"
     business: "SEAMS"
     start: "2018-10-01"
     end: "2019-12-01"
     location: "Sheffield, UK"
-    tags: ["C#", "Vue", "CI/CD", "SQL Server", "EF Core"]
-    summary: "Senior developer on the company's enterprise software and a new microservice-based SaaS application. Realised the SaaS product across the full stack including Azure deployment. Coached new developers and nurtured use of new technologies. Led a test automation project to aid regression testing."
+    tags: ["C#", "Azure", "Vue", "Microservices", "CI/CD", "SQL Server", "EF Core", "Test automation"]
+    summary: "Senior developer on the company's enterprise software and a new microservice-based SaaS application."
+    highlights:
+      - "Realised a new SaaS product across the full stack, including its Azure deployment."
+      - "Led a test automation project that cut the manual effort in regression testing."
+      - "Coached new developers and drove adoption of newer technologies across the team."
 
   - title: "Software Engineer"
     business: "McMurtry Automotive Ltd"
     start: "2017-05-01"
     end: "2018-05-01"
-    location: "Wotton-under-Edge, Gloucestershire"
-    tags: ["Android", "Python", "C#", "WPF", "AWS"]
-    summary: "Developed from scratch a driver interface for a high-performance electric vehicle, integrating software with in-car electronics and CAN bus. Produced software utilities for vehicle development including an ECU configuration tool and remote data-logging via AWS."
+    location: "Wotton-under-Edge, Gloucestershire, UK"
+    tags: ["Android", "Python", "C#", "WPF", "AWS", "CAN bus", "Embedded integration"]
+    summary: "Built the driver interface for a high-performance electric vehicle from scratch, integrating software with in-car electronics over CAN bus."
+    highlights:
+      - "Delivered the in-car driver interface end to end, integrating directly with vehicle electronics and CAN bus."
+      - "Produced development tooling for the engineering team, including an ECU configuration tool and remote data-logging via AWS."
 
   - title: "Software Developer"
     business: "Active Risk"
     start: "2014-01-01"
     end: "2017-04-01"
-    location: "Maidenhead, Berkshire"
+    location: "Maidenhead, Berkshire, UK"
     tags: ["C#", ".NET Framework", "AngularJS", "SQL Server", "Oracle DB", "Entity Framework", "CI/CD", "NUnit"]
-    summary: "Web developer on a leading enterprise Risk Management product. Involved in the early development of a new SPA web application, ported older systems to newer technology, kicked off a test automation effort, and maintained build and deployment pipelines."
+    summary: "Web developer on a leading enterprise risk management product."
+    highlights:
+      - "Worked on the early development of a new single-page web application and ported older systems onto newer technology."
+      - "Kicked off the test automation effort and maintained the build and deployment pipelines."
 
   - title: "Business Development Project Team"
     business: "Mercedes AMG High Performance Powertrains"
     start: "2013-05-01"
     end: "2013-12-01"
-    location: "Brixworth, Northamptonshire"
-    tags: ["Co-ordination", "Scoping", "SAP"]
-    summary: "Co-ordinator on a business-wide efficiency improvement project. Acted as liaison between business stakeholders and an external development team, producing a procurement system to replace existing SAP processes."
+    location: "Brixworth, Northamptonshire, UK"
+    tags: ["Co-ordination", "Requirements scoping", "SAP"]
+    summary: "Co-ordinator on a business-wide efficiency improvement project, acting as liaison between business stakeholders and an external development team to replace existing SAP procurement processes."
 
   - title: "IT Graduate"
     business: "Mercedes AMG High Performance Powertrains"
     start: "2011-09-01"
     end: "2013-05-01"
-    location: "Brixworth, Northamptonshire"
+    location: "Brixworth, Northamptonshire, UK"
     tags: ["IT Support", "Networking", "SAP"]
-    summary: "2-year graduate rotation programme covering 1st/2nd/3rd line support of daily IT operations and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
+    summary: "Two-year graduate rotation programme covering 1st, 2nd and 3rd line support of daily IT operations, and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
 
   - title: "IT Intern"
     business: "Macquarie Bank"
@@ -82,7 +132,7 @@ experience:
     end: "2010-09-01"
     location: "Bristol, UK"
     tags: ["SQL", "Excel"]
-    summary: "Developed custom SQL reports and Excel macros to assist the Banking and Financial Services team in account reconciliation and internal auditing."
+    summary: "Developed custom SQL reports and Excel macros to assist the Banking and Financial Services team with account reconciliation and internal auditing."
 
 education:
   - course: "BSc Computer Science"
@@ -96,3 +146,4 @@ certifications:
     issuer: "Microsoft"
     issued: "Jul 2023"
     expires: "Jul 2026"
+    credentialUrl: null

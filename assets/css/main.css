@@ -93,3 +93,30 @@ h3 {
 span img {
     @apply inline;
 }
+/* Print: recruiters still print and save CVs, so drop the site furniture. */
+@media print {
+    html {
+        font-size: 11pt;
+    }
+
+    header,
+    footer,
+    .skip-link {
+        display: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+        max-width: none !important;
+    }
+
+    a {
+        @apply no-underline;
+        color: black;
+    }
+
+    * {
+        background: white !important;
+        box-shadow: none !important;
+    }
+}

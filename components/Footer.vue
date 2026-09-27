@@ -1,6 +1,11 @@
 <template>
   <footer class="footer bg-purple-900 text-white py-2">
     <div class="footer-content">
+      <nav class="footer-nav">
+        <NuxtLink to="/cv" class="footer-link">CV</NuxtLink>
+        <NuxtLink to="/posts" class="footer-link">Posts</NuxtLink>
+        <NuxtLink to="/topics" class="footer-link">Topics</NuxtLink>
+      </nav>
       <p>&copy; {{ new Date().getFullYear() }} {{ config.public.appName }}</p>
       <div class="icon-set">
         <a href="https://github.com/evansabove" target="_blank" aria-label="Andy Evans GitHub"> 
@@ -26,6 +31,18 @@ const config = useRuntimeConfig();
   text-align: center;
   font-size: 0.8rem;
   margin-bottom: 1rem;
+}
+
+.footer-nav {
+  @apply flex justify-center gap-6 mb-3 mt-3;
+}
+
+.footer-link {
+  @apply text-white no-underline opacity-75;
+}
+
+.footer-link:hover {
+  @apply opacity-100 underline;
 }
 
 .icon-set {

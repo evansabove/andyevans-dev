@@ -17,7 +17,10 @@
             LinkedIn
           </a>
         </div>
-        <NuxtLink to="/posts" class="hero__all-posts">View all posts →</NuxtLink>
+        <div class="hero__cta-row">
+          <NuxtLink to="/cv" class="hero__cv">Read my CV →</NuxtLink>
+          <NuxtLink to="/posts" class="hero__all-posts">View all posts →</NuxtLink>
+        </div>
       </div>
       <div class="hero__photo-wrap">
         <img src="/andyevans.jpeg" alt="Andy Evans" class="hero__photo" width="256" height="256" fetchpriority="high" loading="eager" />
@@ -93,8 +96,13 @@
   /* override global img centering */
   margin: 0 !important;
 }
+.hero__cta-row {
+  @apply flex flex-wrap gap-6 mt-8;
+}
+
+.hero__cv,
 .hero__all-posts {
-  @apply mt-8 font-bold text-purple-700;
+  @apply font-bold text-purple-700;
   display: inline-block;
 }
 </style>

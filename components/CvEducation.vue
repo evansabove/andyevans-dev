@@ -2,7 +2,7 @@
   <div class="education">
     <div class="education__header">
       <div>
-        <p class="education__course">{{ course }}</p>
+        <h3 class="education__course">{{ course }}</h3>
         <p class="education__location">{{ study_location }}</p>
       </div>
       <div class="education__meta">
@@ -34,21 +34,28 @@ defineProps<{
 
 .education__course {
   @apply font-semibold text-purple-900;
+  /* override the global h3 sizing and margins */
+  font-size: 1.0625rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .education__location {
   @apply text-gray-600;
+  margin-bottom: 0;
 }
 
 .education__meta {
-  @apply text-sm text-gray-500 sm:text-right;
+  @apply text-sm text-gray-500 sm:text-right flex-shrink-0;
 }
 
 .education__years {
   @apply font-medium;
+  margin-bottom: 0;
 }
 
 .education__grade {
   @apply italic;
+  margin-bottom: 0;
 }
 </style>

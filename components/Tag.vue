@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 
 const formattedTag = computed(() => {
-  return props.tag.toLowerCase().replace(/\s+/g, '-')
+  return slugifyTag(props.tag)
 })
 </script>
 

@@ -1,20 +1,28 @@
 <template>
-  <div class="experience">
+  <article class="experience">
     <div class="experience__header">
       <div>
-        <p class="experience__title">{{ title }}</p>
+        <h3 class="experience__title">{{ title }}</h3>
         <p class="experience__business">{{ business }}</p>
       </div>
       <div class="experience__meta">
-        <p class="experience__dates">{{ formatDate(start) }} – {{ end ? formatDate(end) : 'Present' }}</p>
+        <p class="experience__dates">
+          <time :datetime="start">{{ formatDate(start) }}</time>
+          –
+          <time v-if="end" :datetime="end">{{ formatDate(end) }}</time>
+          <span v-else>Present</span>
+        </p>
         <p class="experience__location">{{ location }}</p>
       </div>
     </div>
     <p v-if="summary" class="experience__summary">{{ summary }}</p>
+    <ul v-if="highlights?.length" class="experience__highlights">
+      <li v-for="(highlight, i) in highlights" :key="i">{{ highlight }}</li>
+    </ul>
     <div v-if="tags?.length" class="experience__tags">
-      <TagList :tags="tags" />
+      <CvChips :items="tags" />
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -25,6 +33,7 @@ defineProps<{
   end?: string | null
   location?: string
   summary?: string
+  highlights?: string[]
   tags?: string[]
 }>()
 
@@ -44,25 +53,46 @@ function formatDate(d: string) {
 
 .experience__title {
   @apply font-semibold text-purple-900;
+  /* override the global h3 sizing and margins */
+  font-size: 1.0625rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .experience__business {
   @apply text-gray-600;
+  margin-bottom: 0;
 }
 
 .experience__meta {
-  @apply text-sm text-gray-500 sm:text-right;
+  @apply text-sm text-gray-500 sm:text-right flex-shrink-0;
 }
 
 .experience__dates {
   @apply font-medium;
+  margin-bottom: 0;
+}
+
+.experience__location {
+  margin-bottom: 0;
 }
 
 .experience__summary {
-  @apply text-gray-700 text-sm mt-2;
+  @apply text-gray-700 mt-2;
+  margin-bottom: 0;
+}
+
+.experience__highlights {
+  @apply text-gray-700 text-sm mt-3;
+  @apply list-disc ms-5;
+  margin-bottom: 0;
+
+  li {
+    @apply my-1.5;
+  }
 }
 
 .experience__tags {
-  @apply mt-3;
+  @apply mt-4;
 }
 </style>
