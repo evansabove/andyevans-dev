@@ -23,7 +23,7 @@ availability:
 
 skills:
   - category: "Languages"
-    items: ["C#", ".NET 8", ".NET Framework", "ASP.NET Core", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL"]
+    items: ["C#", ".NET 10", ".NET Framework", "ASP.NET Core", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL"]
   - category: "Cloud & platform"
     items: ["Microsoft Azure", "Azure Functions", "Durable Functions", "Azure Kubernetes Service (AKS)", "Kubernetes", "Helm", "Ansible", "Infrastructure as Code", "Cloudflare", "AWS", "On-prem infrastructure"]
   - category: "DevOps & CI/CD"
@@ -55,13 +55,13 @@ experience:
     start: "2021-04-01"
     end: null
     location: "Sheffield, UK"
-    tags: ["C#", ".NET 8", "Azure", "Azure Functions", "Durable Functions", "AKS", "Kubernetes", "Helm", "Ansible", "Azure DevOps", "CI/CD", "IaC", "On-prem infrastructure", "SQL Server", "EF Core", "XUnit", "TestContainers", "Vue", "Python", "Technical leadership"]
-    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for a core product."
+    tags: ["C#", ".NET 10", "Azure", "Azure Functions", "Durable Functions", "AKS", "Kubernetes", "Helm", "Ansible", "Azure DevOps", "CI/CD", "IaC", "On-prem infrastructure", "SQL Server", "EF Core", "XUnit", "TestContainers", "Vue", "Python", "Technical leadership"]
+    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for DataQI."
     highlights:
-      - "Own the platform engineering role for a core product, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
-      - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of the product in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
+      - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
+      - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
       - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting £600 a month from the Azure bill. Built and provisioned the cluster myself with Ansible."
-      - "Established functional and integration testing approaches for .NET 8 isolated and Durable Azure Functions using XUnit and TestContainers, giving the team confidence to change serverless code safely."
+      - "Established functional and integration testing approaches for isolated and Durable Azure Functions using XUnit and TestContainers, giving the team confidence to change serverless code safely."
       - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
       - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
       - "Mentor other engineers across the business, formally and informally."
