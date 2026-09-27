@@ -145,5 +145,4 @@ certifications:
   - name: "Microsoft Certified: Azure Developer Associate"
     issuer: "Microsoft"
     issued: "Jul 2023"
-    expires: "Jul 2026"
     credentialUrl: null

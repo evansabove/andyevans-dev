@@ -4,7 +4,7 @@ const appName = 'andyevans.dev'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils'],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/sitemap', '@nuxt/icon', 'dayjs-nuxt', 'nuxt-seo-utils', 'nuxt-llms'],
   fonts: {
     families: [{ name: 'Montserrat', provider: 'local', display: 'swap' }]
   },
@@ -68,6 +68,16 @@ export default defineNuxtConfig({
         lang: 'en-GB'
       }
     }
+  },
+  // @nuxt/content feeds the posts in automatically; server/plugins/llms.ts adds the CV.
+  llms: {
+    domain: 'https://andyevans.dev',
+    title: 'Andy Evans — Senior Software Engineer (.NET & Azure)',
+    description: "Andy Evans is a senior software engineer and platform engineer based in Sheffield, UK, with over 12 years of experience building production software. He works primarily in C# and .NET, and leads on platform engineering, CI/CD and Azure cloud deployments.",
+    full: {
+      title: 'Andy Evans — Senior Software Engineer (.NET & Azure)',
+      description: 'Full CV and the complete text of every post on andyevans.dev.',
+    },
   },
   site: {
     url: 'https://andyevans.dev',
