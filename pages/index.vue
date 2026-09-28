@@ -17,18 +17,18 @@ const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
 })
 
 useHead({
-  titleTemplate: () => 'Andy Evans — Software Engineer',
+  titleTemplate: () => 'Andy Evans — Senior Platform Engineer',
 })
 
 useSeoMeta({
-  ogTitle: 'Andy Evans — Software Engineer',
+  ogTitle: 'Andy Evans — Senior Platform Engineer',
   description: runtimeConfig.public.appDescription,
   ogDescription: runtimeConfig.public.appDescription,
   ogLocale: 'en_GB',
   ogImage: runtimeConfig.public.appImage,
   ogUrl: runtimeConfig.public.appUrl,
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Andy Evans — Software Engineer',
+  twitterTitle: 'Andy Evans — Senior Platform Engineer',
   twitterDescription: runtimeConfig.public.appDescription,
   twitterImage: runtimeConfig.public.appImage,
 })
@@ -52,7 +52,7 @@ useHead({
         name: 'Andy Evans',
         url: runtimeConfig.public.appUrl,
         image: runtimeConfig.public.appImage,
-        jobTitle: 'Software Engineer',
+        jobTitle: 'Senior Platform Engineer',
         description: runtimeConfig.public.appDescription,
         sameAs: [
           'https://github.com/evansabove',

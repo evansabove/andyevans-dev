@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     public: {
       appName: appName,
       appUrl: 'https://andyevans.dev',
-      appDescription: "I'm Andy Evans, a software engineer based in Sheffield, UK. I write about web development, software engineering, and other tech topics.",
+      appDescription: "I'm Andy Evans, a platform engineer based in Sheffield, UK. I write about Azure, Kubernetes, CI/CD, .NET and the tooling that makes development teams faster.",
       appImage: 'https://andyevans.dev/andyevans.jpeg',
     }
   },

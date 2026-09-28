@@ -1,22 +1,23 @@
-title: "Andy Evans — Senior Software Engineer, .NET & Azure"
-description: "Senior software engineer and platform engineer with 12+ years building C#/.NET applications, APIs and Azure cloud infrastructure. Based in Sheffield, UK. Available for remote or hybrid senior, lead and platform engineering roles."
-role: "Senior Software Engineer"
+title: "Andy Evans — Senior Platform Engineer (Azure & .NET)"
+description: "Senior platform engineer based in Sheffield, UK, building and running the Azure and Kubernetes platforms that development teams ship on, backed by 15 years of hands-on C# and .NET. Open to remote or hybrid platform, DevOps and lead engineering roles."
+role: "Senior Platform Engineer"
 location: "Sheffield, UK"
 
 biography:
   image: /andyevans.jpeg
-  imageAlt: "Andy Evans, senior software engineer based in Sheffield, UK"
+  imageAlt: "Andy Evans, senior platform engineer based in Sheffield, UK"
   text: |
-    <p>I'm Andy Evans, a senior software engineer based in Sheffield, UK, with over 12 years building production software. I work primarily in C# and .NET, and I take the lead on the parts most teams find hardest: platform engineering, CI/CD, and getting things deployed and running reliably on Azure.</p>
+    <p>I'm Andy Evans, a platform engineer based in Sheffield, UK. I build and run the infrastructure, pipelines and tooling that development teams ship on: Azure, Kubernetes, CI/CD, and the developer experience around them. I came to it through around 15 years of hands-on software engineering, mostly in C# and .NET, so I build platforms for developers as someone who is one.</p>
     <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric race car at McMurtry, and I started out in IT and internal systems inside Mercedes AMG High Performance Powertrains. It has left me comfortable with domain experts, messy real-world data, and software that has to hold up outside an office.</p>
     <p>I'm a resilient and logical problem solver. I write software in whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
 
 availability:
   status: "Open to conversations"
-  text: "I'm happy to talk to teams doing interesting work. I'm most useful where hands-on .NET engineering meets platform and cloud work, and where technical leadership is part of the job rather than a separate track. My manufacturing and motorsport background travels well, but I'm not tied to it, and I'd like what comes next to be something I care about the outcome of."
+  text: "I'm looking to start conversations with teams doing work I am passionate about. I'm most useful where platform and cloud work meets hands-on .NET engineering, and where technical leadership is part of the job rather than a separate track. My manufacturing and motorsport background travels well, but I'm not tied to it, and I'd like what comes next to be something I care about the outcome of."
   roles:
+    - "Senior / Lead Platform Engineer"
+    - "DevOps / Cloud Engineer"
     - "Senior / Lead Software Engineer (.NET)"
-    - "Platform Engineer / DevOps Engineer"
     - "Solution Architect / Technical Lead"
   industries:
     - "Green and renewable energy"
@@ -29,14 +30,14 @@ availability:
   contactLabel: "Get in touch on LinkedIn"
 
 skills:
-  - category: "Languages"
-    items: ["C#", ".NET 10", ".NET Framework", "ASP.NET Core", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL"]
-  - category: "AI"
-    items: ["LLM API integration", "Prompt engineering", "AI-assisted development", "Agentic coding tools", "Claude Code"]
   - category: "Cloud & platform"
     items: ["Microsoft Azure", "Azure Functions", "Durable Functions", "Azure Kubernetes Service (AKS)", "Kubernetes", "Helm", "Ansible", "Infrastructure as Code", "Cloudflare", "AWS", "On-prem infrastructure"]
   - category: "DevOps & CI/CD"
     items: ["Azure DevOps", "CI/CD pipelines", "Build & release automation", "Docker", "Containerisation", "Git"]
+  - category: "AI"
+    items: ["LLM API integration", "Prompt engineering", "AI-assisted development", "Agentic coding tools", "Claude Code"]
+  - category: "Languages"
+    items: ["C#", ".NET 10", ".NET Framework", "ASP.NET Core", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL"]
   - category: "Data"
     items: ["SQL Server", "Entity Framework Core", "Oracle Database"]
   - category: "Testing"

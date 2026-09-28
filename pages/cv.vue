@@ -25,12 +25,12 @@ const selectedWriting = computed(() =>
     .slice(0, 4)
 )
 
-const pageTitle = 'Andy Evans — Senior Software Engineer (.NET & Azure) | CV'
+const pageTitle = computed(() => `${cv.value.title ?? 'Andy Evans'} | CV`)
 const pageDescription = computed(() => cv.value.description ?? runtimeConfig.public.appDescription)
 const pageUrl = computed(() => `${runtimeConfig.public.appUrl}${route.path.replace(/\/?$/, '/')}`)
 
 useHead({
-  titleTemplate: () => pageTitle,
+  titleTemplate: () => pageTitle.value,
 })
 
 // app.vue sets blog-oriented keywords site-wide; override them for the CV.
