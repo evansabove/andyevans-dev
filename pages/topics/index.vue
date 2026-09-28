@@ -20,7 +20,7 @@ const uniqueTags = computed(() => {
   posts.value.forEach(post => {
     if (!post.tags) return
     post.tags.forEach((tag: string) => {
-      const slug = tag.toLowerCase().replace(/\s+/g, '-')
+      const slug = slugifyTag(tag)
       if (!tagCounts[slug]) {
         // Assume the first casing we see is the preferred one
         tagCounts[slug] = { name: tag, slug, allPostsCount: 0, postsPreview: [] }

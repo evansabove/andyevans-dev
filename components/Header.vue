@@ -7,6 +7,7 @@
       <NuxtLink to="/" class="header-link" active-class="header-link--active" exact>Home</NuxtLink>
       <NuxtLink to="/posts" class="header-link" active-class="header-link--active">Posts</NuxtLink>
       <NuxtLink to="/topics" class="header-link" active-class="header-link--active">Topics</NuxtLink>
+      <NuxtLink to="/cv" class="header-link" active-class="header-link--active">CV</NuxtLink>
     </nav>
 
     <!-- Mobile hamburger -->
@@ -46,6 +47,7 @@
             <NuxtLink to="/" class="header-link" active-class="header-link--active" exact @click="open = false">Home</NuxtLink>
             <NuxtLink to="/posts" class="header-link" active-class="header-link--active" @click="open = false">Posts</NuxtLink>
             <NuxtLink to="/topics" class="header-link" active-class="header-link--active" @click="open = false">Topics</NuxtLink>
+            <NuxtLink to="/cv" class="header-link" active-class="header-link--active" @click="open = false">CV</NuxtLink>
           </DialogPanel>
         </TransitionChild>
       </Dialog>

@@ -1,23 +1,62 @@
+title: "Andy Evans — Senior Platform Engineer (Azure & .NET)"
+description: "Senior platform engineer based in Sheffield, UK, building and running the Azure and Kubernetes platforms that development teams ship on, backed by 15 years of hands-on C# and .NET. Open to remote or hybrid platform, DevOps and lead engineering roles."
+role: "Senior Platform Engineer"
+location: "Sheffield, UK"
+
 biography:
   image: /andyevans.jpeg
-  imageAlt: "Andy Evans"
+  imageAlt: "Andy Evans, senior platform engineer based in Sheffield, UK"
   text: |
-    <p>I'm Andy, software engineer from Sheffield, UK. I'm a flexible and adaptable senior engineer currently working for a software consultancy.</p>
-    <p>I'm a resilient and logical problem solver with creative ideas on solutions. I develop software in whatever tools the problem demands — primarily C# — and I take the lead on platform engineering, CI/CD, and Azure cloud deployments. I'm also passionate about mentoring and building great teams.</p>
+    <p>I'm Andy Evans, a platform engineer based in Sheffield, UK. I build and run the infrastructure, pipelines and tooling that development teams ship on: Azure, Kubernetes, CI/CD, and the developer experience around them. I came to it through around 15 years of hands-on software engineering, mostly in C# and .NET, so I build platforms for developers as someone who is one.</p>
+    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric vehicle at McMurtry Automotive, and I started out in IT and internal systems at F1 engine suppliers Mercedes AMG High Performance Powertrains. I'm used to working with engineers who aren't software people, data that comes off real machines rather than out of a clean database, and code that has to keep running where nobody can reach it.</p>
+    <p>I'm a resilient and logical problem solver. I build systems using whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
 
-aboutMe:
-  - title: "I problem solve!"
-    text: "I'm a resilient and logical problem solver, with creative ideas on solutions. Although I work hard to find the ideal solution, I'm pragmatic enough to know when to look for alternative options."
-  - title: "Software engineering"
-    text: "I develop software to solve problems - using whatever tools I need. This is usually C#, but has in the past led to adventures in Vue, Python, and Android to name but a few. I'm also a certified Azure Developer Associate."
-  - title: "I learn"
-    text: "Tech is constantly evolving! If my existing skillset doesn't contain the tools for the problem at hand, I set about learning what I need - languages / tools / libraries - to get the job done."
-  - title: "Platform engineering"
-    text: "I've always said that it's no good writing code unless you can deploy it somewhere! I take the lead in deploying solutions to the Azure cloud, working with CI/CD pipelines, and also have experience with Kubernetes and on-prem infrastructure."
-  - title: "Planning and backlog management"
-    text: "I write user stories to represent the problems to be solved, and manage these stories in a backlog. I own the stories through development, testing and deployment, being a point of contact for the team. I also provide estimates for the work."
-  - title: "Mentoring"
-    text: "One of my most important roles is to mentor other team members - formally, or informally. I like to be a person that is trusted and approachable, and a person who can help to build the careers of others."
+availability:
+  status: "Open to conversations"
+  text: "I'm looking to start conversations with teams doing work I am passionate about. I'm most useful where platform and cloud work meets hands-on .NET and web engineering, and where technical leadership is part of the job. Much of my career has been in manufacturing and motorsport focused organisations - I'd happily stay in that world, but I'm just as interested in something new."
+  roles:
+    - "Senior / Lead Platform Engineer"
+    - "DevOps / Cloud Engineer"
+    - "Senior / Lead Software Engineer (.NET)"
+    - "Solution Architect / Technical Lead"
+  industries:
+    - "Green and renewable energy"
+    - "Motorsport"
+    - "Engineering"
+    - "Meteorology"
+    - "Science and research"
+    - "Good causes"
+  location: "Remote (UK), or hybrid in Sheffield and the East Midlands"
+  contactUrl: "https://www.linkedin.com/in/andy-evans-557b1125/"
+  contactLabel: "Get in touch on LinkedIn"
+
+skills:
+  - category: "Cloud & platform"
+    items: ["Azure", "Kubernetes", "AKS", "Ansible", "Infrastructure as Code", "Cloudflare", "On-prem infrastructure"]
+  - category: "DevOps & CI/CD"
+    items: ["Azure DevOps", "GitHub Actions", "CI/CD", "Docker", "Containerisation"]
+  - category: "AI"
+    items: ["LLM API integration", "AI-assisted development", "Agentic coding tools", "Claude Code"]
+  - category: "Languages"
+    items: ["C#", ".NET 10", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL", ".NET Framework"]
+  - category: "Data & web"
+    items: ["SQL Server", "Entity Framework", "REST APIs", "Vue", "Nuxt"]
+  - category: "Testing"
+    items: ["XUnit", "TestContainers", "Functional testing", "Integration testing", "Test automation"]
+  - category: "Architecture & leadership"
+    items: ["Software architecture", "Microservices", "Technical leadership", "Mentoring", "Backlog management", "User stories & estimation", "Client workshops"]
+
+howIWork:
+  - title: "I solve problems"
+    text: "I'm a resilient and logical problem solver, with creative ideas on solutions. I work hard to find the ideal solution, but I'm pragmatic enough to know when to look for alternative options."
+  - title: "I own delivery end to end"
+    text: "It's no good writing code unless you can deploy it somewhere. I take the lead on deploying solutions to Azure, building CI/CD pipelines, and running workloads on Kubernetes and on-prem infrastructure. I own work from user story through development, testing and release."
+  - title: "I learn what the problem needs"
+    text: "Tech is constantly evolving. If my existing skillset doesn't contain the tools for the problem at hand, I set about learning what I need - languages, tools, libraries - to get the job done. That's led to adventures in Vue, Python, Kotlin and Android alongside my day-to-day C#."
+  - title: "I simplify what I inherit"
+    text: "I've taken tangled, confusing codebases and turned them into the simple solutions they always could have been. Leaving a codebase easier to work in than I found it is one of the most valuable things I can do for a team."
+  - title: "I mentor and build teams"
+    text: "One of my most important roles is mentoring other team members, formally or informally. I like to be a person who is trusted and approachable, and who can help build the careers of others."
 
 experience:
   - title: "Senior Software Developer"
@@ -25,56 +64,86 @@ experience:
     start: "2021-04-01"
     end: null
     location: "Sheffield, UK"
-    tags: ["C#", "Vue", "Azure", "CI/CD", "IaC", "SQL Server", "EF Core", "Azure Functions", "XUnit", "Kubernetes", "Python", "Leadership"]
-    summary: "Senior engineer responsible for delivering quality solutions on time and in budget. Delivered high-quality software within tight constraints, brought clarity to projects through backlog management, provided technical oversight on client workshops, owned the technical direction of solutions, led multi-skilled teams, owned the platform engineering role for a core product, and mentored other team members."
+    tags: ["Kubernetes", "Ansible", "CI/CD", "GitHub Actions", "IaC", "On-prem infrastructure", "C#", ".NET 10", "Azure", "SQL Server", "Entity Framework", "XUnit", "Vue", "Python", "AI tooling", "Technical leadership"]
+    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack. Also owning the platform engineering role for DataQI, an AI platform."
+    highlights:
+      - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
+      - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
+      - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting £600 a month from the Azure bill. Built and provisioned the cluster myself with Ansible."
+      - "Built an AI code summariser for the team, fronted by an Azure DevOps extension and backed by a secured Azure Functions API running the LLM calls."
+      - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
+      - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
+      - "Mentor other engineers across the business, formally and informally."
 
   - title: "Solution Architect"
     business: "Arcadis Gen"
     start: "2020-01-01"
     end: "2021-04-01"
     location: "Sheffield, UK"
-    tags: ["C#", "Azure", "Vue", "CI/CD", "SQL Server", "EF Core"]
-    summary: "Technical leader on a microservice-based SaaS web application — a platform at the core of a new business offering. Involved in architectural design, development, deployments and verification."
+    tags: ["C#", "Azure", "Microservices", "Vue", "Kubernetes", "SQL Server", "Entity Framework", "Software architecture"]
+    summary: "Technical leader on a microservice-based SaaS platform that sat at the core of a new business offering."
+    highlights:
+      - "Architect and lead developer for a greenfield microservice SaaS platform, including its deployment and verification."
+      - "Set the technical standards and Azure deployment approach the delivery teams built against."
 
   - title: "Senior Software Engineer"
     business: "SEAMS"
     start: "2018-10-01"
     end: "2019-12-01"
     location: "Sheffield, UK"
-    tags: ["C#", "Vue", "CI/CD", "SQL Server", "EF Core"]
-    summary: "Senior developer on the company's enterprise software and a new microservice-based SaaS application. Realised the SaaS product across the full stack including Azure deployment. Coached new developers and nurtured use of new technologies. Led a test automation project to aid regression testing."
+    tags: ["C#", "Azure", "Vue", "Microservices", "CI/CD", "SQL Server", "Entity Framework", "Test automation"]
+    summary: "Senior developer on the company's enterprise software and a new microservice-based SaaS application."
+    highlights:
+      - "Feature development, bug fixing and maintenance of the company's enterprise software."
+      - "Led a test automation project that cut the manual effort in regression testing."
+      - "Coached new developers and drove adoption of newer technologies across the team."
+
+  - type: "break"
+    title: "Career break"
+    start: "2018-06-01"
+    end: "2018-10-01"
+    location: "New Zealand and Australia"
+    summary: "Five months travelling in New Zealand and Australia."
 
   - title: "Software Engineer"
     business: "McMurtry Automotive Ltd"
     start: "2017-05-01"
     end: "2018-05-01"
-    location: "Wotton-under-Edge, Gloucestershire"
-    tags: ["Android", "Python", "C#", "WPF", "AWS"]
-    summary: "Developed from scratch a driver interface for a high-performance electric vehicle, integrating software with in-car electronics and CAN bus. Produced software utilities for vehicle development including an ECU configuration tool and remote data-logging via AWS."
+    location: "Wotton-under-Edge, Gloucestershire, UK"
+    tags: ["Android", "Python", "C#", "WPF", "AWS", "CAN bus", "Embedded integration"]
+    summary: "Built a driver interface for a high-performance electric vehicle, integrating software with in-car electronics over CAN bus."
+    highlights:
+      - "Delivered the in-car driver interface end to end for a works prototype, integrating directly with vehicle electronics over CAN bus. The prototype laid the groundwork for McMurtry's record-setting Spéirling."
+      - "Produced development tooling for the engineering team, including an ECU configuration tool and remote data logging via AWS."
 
   - title: "Software Developer"
     business: "Active Risk"
     start: "2014-01-01"
     end: "2017-04-01"
-    location: "Maidenhead, Berkshire"
+    location: "Maidenhead, Berkshire, UK"
     tags: ["C#", ".NET Framework", "AngularJS", "SQL Server", "Oracle DB", "Entity Framework", "CI/CD", "NUnit"]
-    summary: "Web developer on a leading enterprise Risk Management product. Involved in the early development of a new SPA web application, ported older systems to newer technology, kicked off a test automation effort, and maintained build and deployment pipelines."
+    summary: "Web developer on a leading enterprise risk management product."
+    highlights:
+      - "Maintenance and development of the flagship enterprise risk management product, including a major rewrite of the front-end in AngularJS."
+      - "Introduced test automation suites and maintained the build and deployment pipelines, increasing reliability and confidence in the finished product."
 
   - title: "Business Development Project Team"
     business: "Mercedes AMG High Performance Powertrains"
     start: "2013-05-01"
     end: "2013-12-01"
-    location: "Brixworth, Northamptonshire"
-    tags: ["Co-ordination", "Scoping", "SAP"]
-    summary: "Co-ordinator on a business-wide efficiency improvement project. Acted as liaison between business stakeholders and an external development team, producing a procurement system to replace existing SAP processes."
+    location: "Brixworth, Northamptonshire, UK"
+    tags: ["Co-ordination", "Requirements scoping", "SAP"]
+    summary: "Co-ordinator on a business-wide efficiency improvement project, acting as liaison between business stakeholders and an external software development team to replace existing SAP procurement processes."
+    highlights:
+      - "Gathered requirements from stakeholders across the business, often with conflicting views, and turned them into a single coherent specification for the external development team."
 
   - title: "IT Graduate"
     business: "Mercedes AMG High Performance Powertrains"
     start: "2011-09-01"
     end: "2013-05-01"
-    location: "Brixworth, Northamptonshire"
+    location: "Brixworth, Northamptonshire, UK"
     tags: ["IT Support", "Networking", "SAP"]
-    summary: "2-year graduate rotation programme covering 1st/2nd/3rd line support of daily IT operations and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
+    summary: "Two-year graduate rotation programme covering 1st, 2nd and 3rd line support of daily IT operations, and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
 
   - title: "IT Intern"
     business: "Macquarie Bank"
@@ -82,7 +151,7 @@ experience:
     end: "2010-09-01"
     location: "Bristol, UK"
     tags: ["SQL", "Excel"]
-    summary: "Developed custom SQL reports and Excel macros to assist the Banking and Financial Services team in account reconciliation and internal auditing."
+    summary: "Developed custom SQL reports and Excel macros to assist the Banking and Financial Services team with account reconciliation and internal auditing."
 
 education:
   - course: "BSc Computer Science"
@@ -95,4 +164,4 @@ certifications:
   - name: "Microsoft Certified: Azure Developer Associate"
     issuer: "Microsoft"
     issued: "Jul 2023"
-    expires: "Jul 2026"
+    credentialUrl: null

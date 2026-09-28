@@ -4,20 +4,9 @@
       <div class="hero__text">
         <p class="hero__greeting">Hey, I'm</p>
         <h1 class="hero__name">Andy Evans</h1>
-        <p class="hero__title">Software Engineer · Sheffield, UK</p>
-        <p class="hero__bio">I'm a software engineer based in Sheffield, UK. I build web applications, APIs and cloud infrastructure. I specialise in .NET, Azure and platform engineering — and I'm particularly interested in developer tooling, clean architecture and building great teams.</p>
-        <p class="hero__bio">This is where I write about the things I'm building, the problems I'm solving, and the lessons I pick up along the way.</p>
-        <div class="hero__links">
-          <a href="https://github.com/evansabove" target="_blank" rel="noopener" class="hero__link">
-            <Icon name="mdi:github" class="hero__link-icon" />
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/andy-evans-557b1125" target="_blank" rel="noopener" class="hero__link">
-            <Icon name="mdi:linkedin" class="hero__link-icon" />
-            LinkedIn
-          </a>
-        </div>
-        <NuxtLink to="/posts" class="hero__all-posts">View all posts →</NuxtLink>
+        <p class="hero__title">Senior Platform Engineer · Sheffield, UK</p>
+        <p class="hero__bio">I'm a platform engineer based in Sheffield, UK. I build and run the platforms that development teams ship on, often using Azure and Kubernetes, backed by around 15 years of hands-on software engineering in C# and .NET. I'm particularly interested in developer tooling, efficient computing and building great teams.</p>
+        <p class="hero__bio hero__bio--last">This is where I write about the things I'm building, the problems I'm solving, and the lessons I pick up along the way.</p>
       </div>
       <div class="hero__photo-wrap">
         <img src="/andyevans.jpeg" alt="Andy Evans" class="hero__photo" width="256" height="256" fetchpriority="high" loading="eager" />
@@ -62,20 +51,8 @@
   @apply text-gray-700 text-base leading-relaxed mb-6;
 }
 
-.hero__links {
-  @apply flex gap-4;
-}
-
-.hero__link {
-  @apply inline-flex items-center gap-1.5;
-  @apply bg-purple-900 text-white;
-  @apply px-4 py-2 rounded-md;
-  @apply text-sm font-medium no-underline;
-  @apply hover:bg-purple-700 transition-colors;
-}
-
-.hero__link-icon {
-  @apply w-5 h-5;
+.hero__bio--last {
+  margin-bottom: 0;
 }
 
 .hero__photo-wrap {
@@ -92,9 +69,5 @@
   @apply border-4 border-white;
   /* override global img centering */
   margin: 0 !important;
-}
-.hero__all-posts {
-  @apply mt-8 font-bold text-purple-700;
-  display: inline-block;
 }
 </style>
