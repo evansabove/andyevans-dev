@@ -8,12 +8,12 @@ biography:
   imageAlt: "Andy Evans, senior platform engineer based in Sheffield, UK"
   text: |
     <p>I'm Andy Evans, a platform engineer based in Sheffield, UK. I build and run the infrastructure, pipelines and tooling that development teams ship on: Azure, Kubernetes, CI/CD, and the developer experience around them. I came to it through around 15 years of hands-on software engineering, mostly in C# and .NET, so I build platforms for developers as someone who is one.</p>
-    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric race car at McMurtry, and I started out in IT and internal systems inside Mercedes AMG High Performance Powertrains. It has left me comfortable with domain experts, messy real-world data, and software that has to hold up outside an office.</p>
-    <p>I'm a resilient and logical problem solver. I write software in whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
+    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric road car at McMurtry Automotive, and I started out in IT and internal systems at F1 engine suppliers Mercedes AMG High Performance Powertrains. I'm used to working with engineers who aren't software people, data that comes off real machines rather than out of a clean database, and code that has to keep running where nobody can reach it.</p>
+    <p>I'm a resilient and logical problem solver. I build systems using whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
 
 availability:
   status: "Open to conversations"
-  text: "I'm looking to start conversations with teams doing work I am passionate about. I'm most useful where platform and cloud work meets hands-on .NET and web engineering, and where technical leadership is part of the job. Most of my career has been in manufacturing and motorsport. I'd happily stay in that world, but I'm just as interested in something new."
+  text: "I'm looking to start conversations with teams doing work I am passionate about. I'm most useful where platform and cloud work meets hands-on .NET and web engineering, and where technical leadership is part of the job. Much of my career has been in manufacturing and motorsport focused organisations - I'd happily stay in that world, but I'm just as interested in something new."
   roles:
     - "Senior / Lead Platform Engineer"
     - "DevOps / Cloud Engineer"
@@ -21,31 +21,28 @@ availability:
     - "Solution Architect / Technical Lead"
   industries:
     - "Green and renewable energy"
-    - "Meteorology"
     - "Motorsport"
     - "Engineering"
+    - "Meteorology"
+    - "Science and research"
     - "Good causes"
-  location: "Remote (UK), open to hybrid around Sheffield and South Yorkshire"
+  location: "Remote (UK), open to hybrid around East Midlands"
   contactUrl: "https://www.linkedin.com/in/andy-evans-557b1125/"
   contactLabel: "Get in touch on LinkedIn"
 
 skills:
   - category: "Cloud & platform"
-    items: ["Microsoft Azure", "Azure Functions", "Durable Functions", "Azure Kubernetes Service (AKS)", "Kubernetes", "Helm", "Ansible", "Infrastructure as Code", "Cloudflare", "AWS", "On-prem infrastructure"]
+    items: ["Azure", "Kubernetes", "AKS", "Ansible", "Infrastructure as Code", "Cloudflare", "On-prem infrastructure"]
   - category: "DevOps & CI/CD"
-    items: ["Azure DevOps", "CI/CD pipelines", "Build & release automation", "Docker", "Containerisation", "Git"]
+    items: ["Azure DevOps", "GitHub Actions", "CI/CD", "Docker", "Containerization"]
   - category: "AI"
-    items: ["LLM API integration", "Prompt engineering", "AI-assisted development", "Agentic coding tools", "Claude Code"]
+    items: ["AI-assisted development", "Agentic coding tools", "Claude Code"]
   - category: "Languages"
-    items: ["C#", ".NET 10", ".NET Framework", "ASP.NET Core", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL"]
-  - category: "Data"
-    items: ["SQL Server", "Entity Framework Core", "Oracle Database"]
+    items: ["C#", ".NET 10", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL", ".NET Framework"]
   - category: "Testing"
-    items: ["XUnit", "NUnit", "TestContainers", "Functional testing", "Integration testing", "Test automation"]
-  - category: "Web & APIs"
-    items: ["REST APIs", "Microservices", "Vue", "Nuxt", "AngularJS", "WPF"]
+    items: ["XUnit", "TestContainers", "Functional testing", "Integration testing", "Test automation"]
   - category: "Architecture & leadership"
-    items: ["Software architecture", "Technical leadership", "Mentoring", "Backlog management", "User stories & estimation", "Agile delivery", "Client workshops"]
+    items: ["Software architecture", "Microservices", "Technical leadership", "Mentoring", "Backlog management", "User stories & estimation", "Client workshops"]
 
 howIWork:
   - title: "I solve problems"
@@ -65,17 +62,12 @@ experience:
     start: "2021-04-01"
     end: null
     location: "Sheffield, UK"
-    tags: ["C#", ".NET 10", "Azure", "Azure Functions", "Durable Functions", "AKS", "Kubernetes", "Helm", "Ansible", "Azure DevOps", "CI/CD", "IaC", "On-prem infrastructure", "SQL Server", "EF Core", "XUnit", "TestContainers", "Vue", "Python", "AI tooling", "Technical leadership"]
-    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack and owning the platform engineering role for DataQI, an AI platform that turns fragmented manufacturing data into real-time operational insight."
-    links:
-      - label: "DataQI"
-        url: "https://dataqi.ai"
+    tags: ["Kubernetes", "Ansible", "CI/CD", "GitHub Actions", "IaC", "On-prem infrastructure", "C#", ".NET 10", "Azure", "SQL Server", "Entity Framework", "XUnit", "Vue", "Python", "AI tooling", "Technical leadership"]
+    summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack. Also owning the platform engineering role for DataQI, an AI platform."
     highlights:
       - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
       - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
       - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting £600 a month from the Azure bill. Built and provisioned the cluster myself with Ansible."
-      - "Built an AI code summariser for the team, fronted by an Azure DevOps extension and backed by a secured Azure Functions API running the AI workload."
-      - "Established functional and integration testing approaches for isolated and Durable Azure Functions using XUnit and TestContainers, giving the team confidence to change serverless code safely."
       - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
       - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
       - "Mentor other engineers across the business, formally and informally."
@@ -85,10 +77,10 @@ experience:
     start: "2020-01-01"
     end: "2021-04-01"
     location: "Sheffield, UK"
-    tags: ["C#", "Azure", "Microservices", "Vue", "CI/CD", "SQL Server", "EF Core", "Software architecture"]
+    tags: ["C#", "Azure", "Microservices", "Vue", "Kubernetes", "SQL Server", "Entity Framework", "Software architecture"]
     summary: "Technical leader on a microservice-based SaaS platform that sat at the core of a new business offering."
     highlights:
-      - "Owned architectural design for a greenfield microservice SaaS platform, then stayed hands-on through development, deployment and verification."
+      - "Lead developer for a greenfield microservice SaaS platform, including its deployment and verification."
       - "Set the technical standards and Azure deployment approach the delivery teams built against."
 
   - title: "Senior Software Engineer"
@@ -96,10 +88,10 @@ experience:
     start: "2018-10-01"
     end: "2019-12-01"
     location: "Sheffield, UK"
-    tags: ["C#", "Azure", "Vue", "Microservices", "CI/CD", "SQL Server", "EF Core", "Test automation"]
+    tags: ["C#", "Azure", "Vue", "Microservices", "CI/CD", "SQL Server", "Entity Framework", "Test automation"]
     summary: "Senior developer on the company's enterprise software and a new microservice-based SaaS application."
     highlights:
-      - "Realised a new SaaS product across the full stack, including its Azure deployment."
+      - "Feature development, bug fixing and maintenance of the company's enterprise software."
       - "Led a test automation project that cut the manual effort in regression testing."
       - "Coached new developers and drove adoption of newer technologies across the team."
 
@@ -116,10 +108,10 @@ experience:
     end: "2018-05-01"
     location: "Wotton-under-Edge, Gloucestershire, UK"
     tags: ["Android", "Python", "C#", "WPF", "AWS", "CAN bus", "Embedded integration"]
-    summary: "Built the driver interface from scratch for a high-performance electric prototype vehicle, integrating software with in-car electronics over CAN bus."
+    summary: "Built a driver interface for a high-performance electric vehicle, integrating software with in-car electronics over CAN bus."
     highlights:
-      - "Delivered the in-car driver interface end to end for a works prototype, integrating directly with vehicle electronics over CAN bus. The prototype preceded McMurtry's record-setting Spéirling, and the thinking carried forward into it."
-      - "Produced development tooling for the engineering team, including an ECU configuration tool and remote data-logging via AWS."
+      - "Delivered the in-car driver interface end to end for a works prototype, integrating directly with vehicle electronics over CAN bus. The prototype laid the groundwork for McMurtry's record-setting Spéirling."
+      - "Produced development tooling for the engineering team, including an ECU configuration tool and remote data logging via AWS."
 
   - title: "Software Developer"
     business: "Active Risk"
@@ -129,8 +121,8 @@ experience:
     tags: ["C#", ".NET Framework", "AngularJS", "SQL Server", "Oracle DB", "Entity Framework", "CI/CD", "NUnit"]
     summary: "Web developer on a leading enterprise risk management product."
     highlights:
-      - "Worked on the early development of a new single-page web application and ported older systems onto newer technology."
-      - "Kicked off the test automation effort and maintained the build and deployment pipelines."
+      - "Maintenance and development of the flagship enterprise risk management product, including a major rewrite of the front-end in AngularJS."
+      - "Introduced test automation suites and maintained the build and deployment pipelines, increasing reliability and confidence in the finished product."
 
   - title: "Business Development Project Team"
     business: "Mercedes AMG High Performance Powertrains"
@@ -138,7 +130,9 @@ experience:
     end: "2013-12-01"
     location: "Brixworth, Northamptonshire, UK"
     tags: ["Co-ordination", "Requirements scoping", "SAP"]
-    summary: "Co-ordinator on a business-wide efficiency improvement project, acting as liaison between business stakeholders and an external development team to replace existing SAP procurement processes."
+    summary: "Co-ordinator on a business-wide efficiency improvement project, acting as liaison between business stakeholders and an external software development team to replace existing SAP procurement processes."
+    highlights:
+      - "This position required great communication skills to talk to a wide variety of stakeholders, often with conflicting views, and to translate their requirements into a coherent specification for the external development team."
 
   - title: "IT Graduate"
     business: "Mercedes AMG High Performance Powertrains"
@@ -146,7 +140,7 @@ experience:
     end: "2013-05-01"
     location: "Brixworth, Northamptonshire, UK"
     tags: ["IT Support", "Networking", "SAP"]
-    summary: "Two-year graduate rotation programme covering 1st, 2nd and 3rd line support of daily IT operations, and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
+    summary: "Two-year graduate rotation programme covering 1st, 2nd and 3rd line support of daily IT operations, and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician. This position provided an outstanding basis for my future direction and problem solving skills."
 
   - title: "IT Intern"
     business: "Macquarie Bank"

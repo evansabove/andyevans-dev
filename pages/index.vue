@@ -15,10 +15,10 @@ const { data: cvData } = await useAsyncData('home-cv', async () => {
 const cv = computed<Record<string, any>>(() => (cvData.value as any)?.meta ?? (cvData.value as any) ?? {})
 
 // Enough skills to make the case, not so many that the posts get pushed off the page.
-const HOME_SKILL_CATEGORIES = ['Cloud & platform', 'DevOps & CI/CD', 'AI', 'Languages']
-const topSkills = computed(() =>
-  (cv.value.skills ?? []).filter((group: any) => HOME_SKILL_CATEGORIES.includes(group.category)),
-)
+// Taken by position rather than by name, so renaming a category in cv.yml can't silently
+// empty this section.
+const HOME_SKILL_GROUPS = 4
+const topSkills = computed(() => (cv.value.skills ?? []).slice(0, HOME_SKILL_GROUPS))
 
 const currentRole = computed(() =>
   (cv.value.experience ?? []).find((role: any) => !role.end && role.type !== 'break'),
