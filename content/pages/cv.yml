@@ -8,7 +8,7 @@ biography:
   imageAlt: "Andy Evans, senior platform engineer based in Sheffield, UK"
   text: |
     <p>I'm Andy Evans, a platform engineer based in Sheffield, UK. I build and run the infrastructure, pipelines and tooling that development teams ship on: Azure, Kubernetes, CI/CD, and the developer experience around them. I came to it through around 15 years of hands-on software engineering, mostly in C# and .NET, so I build platforms for developers as someone who is one.</p>
-    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric road car at McMurtry Automotive, and I started out in IT and internal systems at F1 engine suppliers Mercedes AMG High Performance Powertrains. I'm used to working with engineers who aren't software people, data that comes off real machines rather than out of a clean database, and code that has to keep running where nobody can reach it.</p>
+    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric vehicle at McMurtry Automotive, and I started out in IT and internal systems at F1 engine suppliers Mercedes AMG High Performance Powertrains. I'm used to working with engineers who aren't software people, data that comes off real machines rather than out of a clean database, and code that has to keep running where nobody can reach it.</p>
     <p>I'm a resilient and logical problem solver. I build systems using whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
 
 availability:
@@ -34,11 +34,13 @@ skills:
   - category: "Cloud & platform"
     items: ["Azure", "Kubernetes", "AKS", "Ansible", "Infrastructure as Code", "Cloudflare", "On-prem infrastructure"]
   - category: "DevOps & CI/CD"
-    items: ["Azure DevOps", "GitHub Actions", "CI/CD", "Docker", "Containerization"]
+    items: ["Azure DevOps", "GitHub Actions", "CI/CD", "Docker", "Containerisation"]
   - category: "AI"
-    items: ["AI-assisted development", "Agentic coding tools", "Claude Code"]
+    items: ["LLM API integration", "AI-assisted development", "Agentic coding tools", "Claude Code"]
   - category: "Languages"
     items: ["C#", ".NET 10", "TypeScript", "JavaScript", "Python", "Kotlin", "SQL", ".NET Framework"]
+  - category: "Data & web"
+    items: ["SQL Server", "Entity Framework", "REST APIs", "Vue", "Nuxt"]
   - category: "Testing"
     items: ["XUnit", "TestContainers", "Functional testing", "Integration testing", "Test automation"]
   - category: "Architecture & leadership"
@@ -68,6 +70,7 @@ experience:
       - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
       - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
       - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting £600 a month from the Azure bill. Built and provisioned the cluster myself with Ansible."
+      - "Built an AI code summariser for the team, fronted by an Azure DevOps extension and backed by a secured Azure Functions API running the LLM calls."
       - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
       - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
       - "Mentor other engineers across the business, formally and informally."
@@ -80,7 +83,7 @@ experience:
     tags: ["C#", "Azure", "Microservices", "Vue", "Kubernetes", "SQL Server", "Entity Framework", "Software architecture"]
     summary: "Technical leader on a microservice-based SaaS platform that sat at the core of a new business offering."
     highlights:
-      - "Lead developer for a greenfield microservice SaaS platform, including its deployment and verification."
+      - "Architect and lead developer for a greenfield microservice SaaS platform, including its deployment and verification."
       - "Set the technical standards and Azure deployment approach the delivery teams built against."
 
   - title: "Senior Software Engineer"
@@ -132,7 +135,7 @@ experience:
     tags: ["Co-ordination", "Requirements scoping", "SAP"]
     summary: "Co-ordinator on a business-wide efficiency improvement project, acting as liaison between business stakeholders and an external software development team to replace existing SAP procurement processes."
     highlights:
-      - "This position required great communication skills to talk to a wide variety of stakeholders, often with conflicting views, and to translate their requirements into a coherent specification for the external development team."
+      - "Gathered requirements from stakeholders across the business, often with conflicting views, and turned them into a single coherent specification for the external development team."
 
   - title: "IT Graduate"
     business: "Mercedes AMG High Performance Powertrains"
@@ -140,7 +143,7 @@ experience:
     end: "2013-05-01"
     location: "Brixworth, Northamptonshire, UK"
     tags: ["IT Support", "Networking", "SAP"]
-    summary: "Two-year graduate rotation programme covering 1st, 2nd and 3rd line support of daily IT operations, and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician. This position provided an outstanding basis for my future direction and problem solving skills."
+    summary: "Two-year graduate rotation programme covering 1st, 2nd and 3rd line support of daily IT operations, and improving internal software systems. Became Microsoft certified as a Windows 7 Enterprise Desktop Support Technician."
 
   - title: "IT Intern"
     business: "Macquarie Bank"
