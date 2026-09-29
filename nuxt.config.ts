@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/cv/print/'],
       ignore: [],
       failOnError: false,
     }
@@ -78,6 +78,10 @@ export default defineNuxtConfig({
       title: 'Andy Evans — Senior Software Engineer (.NET & Azure)',
       description: 'Full CV and the complete text of every post on andyevans.dev.',
     },
+  },
+  // /cv is the page to index; the print version only exists to be rendered to PDF.
+  sitemap: {
+    exclude: ['/cv/print/**'],
   },
   site: {
     url: 'https://andyevans.dev',

@@ -93,15 +93,20 @@ h3 {
 span img {
     @apply inline;
 }
-/* Print: recruiters still print and save CVs, so drop the site furniture. */
+/* Print: recruiters still print and save CVs, and the downloadable PDF is rendered through
+   these rules too (see scripts/generate-cv-pdf.mjs). */
 @media print {
     html {
-        font-size: 11pt;
+        font-size: 10.5pt;
     }
 
-    header,
-    footer,
-    .skip-link {
+    /* The site's own chrome only. A bare `header` selector also hid the CV masthead,
+       which is a <header> too, and took the name off every printed copy. */
+    .header,
+    .footer,
+    .skip-link,
+    .availability__cta,
+    .cv__download {
         display: none !important;
     }
 
@@ -118,5 +123,79 @@ span img {
     * {
         background: white !important;
         box-shadow: none !important;
+    }
+
+    /* Montserrat joins "fi" and "fl" into single ligature glyphs, and a PDF's extracted text
+       keeps them: "Sheffield" comes out as "Shefﬁeld", and recruiter systems searching the
+       text miss it. Spell every word out letter by letter. */
+    * {
+        font-variant-ligatures: none !important;
+        font-feature-settings: "liga" 0, "clig" 0, "dlig" 0 !important;
+    }
+
+    /* A document, not a web page: drop the card boxes so the content sets the length.
+       Component styles are scoped, hence !important throughout. */
+    .experience,
+    .career-break,
+    .education,
+    .cert,
+    .skills,
+    .cv__panel,
+    .availability {
+        border: 0 !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 9pt !important;
+    }
+
+    .cv__section {
+        margin-top: 14pt !important;
+        margin-bottom: 7pt !important;
+    }
+
+    .cv__masthead {
+        margin-bottom: 12pt !important;
+    }
+
+    .cv__photo {
+        width: 5.5rem !important;
+        height: 5.5rem !important;
+        border-width: 2px !important;
+    }
+
+    /* Skills as a plain dotted list: denser than chips, and reads cleanly as text. */
+    .chips__item {
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 0.35em 0 0 !important;
+        font-weight: 500 !important;
+    }
+
+    .chips__item:not(:last-child)::after {
+        content: " ·";
+    }
+
+    .skills__group {
+        margin-bottom: 5pt !important;
+    }
+
+    .how-i-work__marker {
+        display: none !important;
+    }
+
+    /* Long roles may run across a page, but a heading never ends a page on its own. */
+    .career-break,
+    .education,
+    .cert,
+    .how-i-work,
+    .skills__group,
+    .experience__header {
+        break-inside: avoid;
+    }
+
+    .experience__header,
+    h2,
+    h3 {
+        break-after: avoid;
     }
 }

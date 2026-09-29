@@ -26,6 +26,11 @@ export default defineNitroPlugin((nitroApp) => {
           description: cv.description ?? '',
           href: `${options.domain}/cv/`,
         },
+        {
+          title: 'CV (PDF)',
+          description: 'The same CV as a downloadable PDF.',
+          href: `${options.domain}/andy-evans-cv.pdf`,
+        },
       ],
     })
   })
