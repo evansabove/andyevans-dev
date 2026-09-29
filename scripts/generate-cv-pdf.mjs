@@ -9,7 +9,9 @@ import { readFile, stat } from 'node:fs/promises'
 import { extname, join } from 'node:path'
 import { chromium } from 'playwright'
 
-const OUTPUT_DIR = '.output/public'
+// `nuxt generate` writes to .output/public and links dist to it locally; Cloudflare's
+// cloudflare-pages-static preset writes to dist directly. dist is what gets deployed either way.
+const OUTPUT_DIR = 'dist'
 const PAGE_PATH = '/cv/print/'
 const PDF_FILE = 'andy-evans-cv.pdf'
 
@@ -34,13 +36,6 @@ const CONTENT_TYPES = {
   '.ttf': 'font/ttf',
 }
 
-// The email address goes on the PDF only. It is kept out of content/pages/cv.yml, which Nuxt
-// ships to the browser on every page, and out of the repo, which is public. Locally it comes
-// from .env; on Cloudflare Pages it is a build environment variable.
-try { process.loadEnvFile() } catch { /* no .env file */ }
-const CV_EMAIL = process.env.CV_EMAIL?.trim()
-const EMAIL_MARKER = /<span[^>]*\bdata-cv-email\b[^>]*><\/span>/
-
 if (process.env.SKIP_CV_PDF) {
   console.log('[cv-pdf] SKIP_CV_PDF is set, not generating the CV PDF')
   process.exit(0)
@@ -56,30 +51,15 @@ async function readBuiltFile(pathname) {
   }
 }
 
-function escapeHtml(text) {
-  return text.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
-}
-
-// Put the email into the print page as it is served to the renderer, so it only ever exists
-// in the PDF and never in the published HTML.
-function withEmail(html) {
-  if (!EMAIL_MARKER.test(html)) throw new Error('The email marker is missing from the print page. Has CvDocument.vue changed?')
-  if (!CV_EMAIL) {
-    console.warn('[cv-pdf] CV_EMAIL is not set, so the PDF will have no email address')
-    return html.replace(EMAIL_MARKER, '')
-  }
-  const email = escapeHtml(CV_EMAIL)
-  return html.replace(EMAIL_MARKER, `<a href="mailto:${email}">${email}</a>`)
-}
-
 async function launchChromium() {
   try {
     return await chromium.launch()
   } catch (error) {
-    // Fresh CI machines won't have the browser yet. Fetch it once and try again.
+    // Fresh CI machines won't have the browser yet. Fetch it once and try again. Headless
+    // rendering only needs the headless shell, not the full browser and FFmpeg as well.
     if (!/Executable doesn't exist|playwright install/i.test(String(error))) throw error
     console.log('[cv-pdf] Chromium not installed, downloading it')
-    const install = spawnSync('npx', ['playwright', 'install', 'chromium'], { stdio: 'inherit', shell: true })
+    const install = spawnSync('npx', ['playwright', 'install', 'chromium', '--only-shell'], { stdio: 'inherit', shell: true })
     if (install.status !== 0) throw new Error('playwright install chromium failed')
     return await chromium.launch()
   }
@@ -96,13 +76,12 @@ try {
     if (url.origin !== ORIGIN) return route.abort() // analytics and anything else external
     const file = await readBuiltFile(url.pathname)
     if (!file) return route.fulfill({ status: 404, body: '' })
-    const body = url.pathname === PAGE_PATH ? withEmail(file.body.toString('utf-8')) : file.body
-    return route.fulfill({ status: 200, body, contentType: file.contentType })
+    return route.fulfill({ status: 200, body: file.body, contentType: file.contentType })
   })
 
   const page = await context.newPage()
   const response = await page.goto(`${ORIGIN}${PAGE_PATH}`, { waitUntil: 'networkidle' })
-  if (!response?.ok()) throw new Error(`${PAGE_PATH} was not in the build output. Is it in nitro.prerender.routes?`)
+  if (!response?.ok()) throw new Error(`${PAGE_PATH} was not in ${OUTPUT_DIR}. Is it in nitro.prerender.routes, and is ${OUTPUT_DIR} the build output?`)
 
   const footer = `
     <div style="width: 100%; font-size: 8px; color: #6b7280; text-align: center; font-family: sans-serif;">

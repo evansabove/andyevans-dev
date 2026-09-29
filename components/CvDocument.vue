@@ -16,15 +16,15 @@
         <p class="cv__subtitle">{{ cv.role ?? 'Senior Software Engineer' }} · {{ cv.location ?? 'Sheffield, UK' }}</p>
         <p v-if="print && cv.availability?.location" class="cv__subtitle">{{ cv.availability.location }}</p>
 
-        <!-- The PDF travels without the site around it, so it carries its own contact details. -->
-        <p v-if="print" class="cv__contact">
-          <!-- Filled in by scripts/generate-cv-pdf.mjs from CV_EMAIL. The address is kept out of
-               cv.yml because everything there is shipped to the browser on every page. -->
-          <span data-cv-email />
-          <a href="https://andyevans.dev/cv/">andyevans.dev/cv</a>
-          <a href="https://www.linkedin.com/in/andy-evans-557b1125/">linkedin.com/in/andy-evans-557b1125</a>
+        <p class="cv__contact">
+          <a v-if="cv.email" :href="`mailto:${cv.email}`">{{ cv.email }}</a>
+          <!-- The PDF travels without the site around it, so it carries its own links back. -->
+          <template v-if="print">
+            <a href="https://andyevans.dev/cv/">andyevans.dev/cv</a>
+            <a href="https://www.linkedin.com/in/andy-evans-557b1125/">linkedin.com/in/andy-evans-557b1125</a>
+          </template>
         </p>
-        <a v-else :href="pdfPath" download="Andy-Evans-CV.pdf" class="cv__download">Download CV (PDF)</a>
+        <a v-if="!print" :href="pdfPath" download="Andy-Evans-CV.pdf" class="cv__download">Download CV (PDF)</a>
       </div>
     </header>
 

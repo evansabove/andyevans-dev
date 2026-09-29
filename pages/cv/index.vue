@@ -58,6 +58,7 @@ const personSchema = computed(() => {
       description: pageDescription.value,
       url: pageUrl.value,
       image: runtimeConfig.public.appImage,
+      ...(cv.value.email ? { email: cv.value.email } : {}),
       knowsAbout: skills,
       address: {
         '@type': 'PostalAddress',
