@@ -34,7 +34,7 @@ skills:
   - category: "Cloud & platform"
     items: ["Azure", "Kubernetes", "AKS", "Backstage", "Ansible", "Infrastructure as Code", "Cloudflare", "On-prem infrastructure"]
   - category: "DevOps & CI/CD"
-    items: ["Azure DevOps", "GitHub Actions", "CI/CD", "Docker", "Containerisation"]
+    items: ["Argo CD", "GitOps", "Azure DevOps", "GitHub Actions", "CI/CD", "Docker", "Containerisation"]
   - category: "AI"
     items: ["LLM API integration", "AI-assisted development", "Agentic coding tools", "Claude Code"]
   - category: "Languages"
@@ -64,11 +64,12 @@ experience:
     start: "2021-04-01"
     end: null
     location: "Sheffield, UK"
-    tags: ["Kubernetes", "Backstage", "Ansible", "CI/CD", "GitHub Actions", "IaC", "On-prem infrastructure", "C#", ".NET 10", "Azure", "SQL Server", "Entity Framework", "XUnit", "Vue", "Python", "AI tooling", "Technical leadership"]
+    tags: ["Kubernetes", "Argo CD", "GitOps", "Backstage", "Ansible", "CI/CD", "GitHub Actions", "IaC", "On-prem infrastructure", "C#", ".NET 10", "Azure", "SQL Server", "Entity Framework", "XUnit", "Vue", "Python", "AI tooling", "Technical leadership"]
     summary: "Senior engineer at a software consultancy, delivering client solutions across the full stack. Also owning the platform engineering role for DataQI, an AI platform."
     highlights:
       - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
-      - "Introduced ephemeral environments on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
+      - "Investigated and introduced Argo CD, then made GitOps the way the whole business deploys. It now runs every DataQI environment."
+      - "Introduced ephemeral environments on top of Argo CD, initially hosted on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
       - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting £600 a month from the Azure bill. Built and provisioned the cluster myself with Ansible."
       - "Built self-service environments with Backstage, so non-technical colleagues can create their own instance of DataQI on demand, without needing an engineer."
       - "Built an AI code summariser for the team, fronted by an Azure DevOps extension and backed by a secured Azure Functions API running the LLM calls."
