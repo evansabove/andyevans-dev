@@ -34,6 +34,13 @@ const CONTENT_TYPES = {
   '.ttf': 'font/ttf',
 }
 
+// The email address goes on the PDF only. It is kept out of content/pages/cv.yml, which Nuxt
+// ships to the browser on every page, and out of the repo, which is public. Locally it comes
+// from .env; on Cloudflare Pages it is a build environment variable.
+try { process.loadEnvFile() } catch { /* no .env file */ }
+const CV_EMAIL = process.env.CV_EMAIL?.trim()
+const EMAIL_MARKER = /<span[^>]*\bdata-cv-email\b[^>]*><\/span>/
+
 if (process.env.SKIP_CV_PDF) {
   console.log('[cv-pdf] SKIP_CV_PDF is set, not generating the CV PDF')
   process.exit(0)
@@ -47,6 +54,22 @@ async function readBuiltFile(pathname) {
   } catch {
     return null
   }
+}
+
+function escapeHtml(text) {
+  return text.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+}
+
+// Put the email into the print page as it is served to the renderer, so it only ever exists
+// in the PDF and never in the published HTML.
+function withEmail(html) {
+  if (!EMAIL_MARKER.test(html)) throw new Error('The email marker is missing from the print page. Has CvDocument.vue changed?')
+  if (!CV_EMAIL) {
+    console.warn('[cv-pdf] CV_EMAIL is not set, so the PDF will have no email address')
+    return html.replace(EMAIL_MARKER, '')
+  }
+  const email = escapeHtml(CV_EMAIL)
+  return html.replace(EMAIL_MARKER, `<a href="mailto:${email}">${email}</a>`)
 }
 
 async function launchChromium() {
@@ -73,7 +96,8 @@ try {
     if (url.origin !== ORIGIN) return route.abort() // analytics and anything else external
     const file = await readBuiltFile(url.pathname)
     if (!file) return route.fulfill({ status: 404, body: '' })
-    return route.fulfill({ status: 200, body: file.body, contentType: file.contentType })
+    const body = url.pathname === PAGE_PATH ? withEmail(file.body.toString('utf-8')) : file.body
+    return route.fulfill({ status: 200, body, contentType: file.contentType })
   })
 
   const page = await context.newPage()

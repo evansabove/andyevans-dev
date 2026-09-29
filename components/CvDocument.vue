@@ -14,10 +14,13 @@
       <div>
         <h1 class="cv__heading">Andy Evans</h1>
         <p class="cv__subtitle">{{ cv.role ?? 'Senior Software Engineer' }} · {{ cv.location ?? 'Sheffield, UK' }}</p>
+        <p v-if="print && cv.availability?.location" class="cv__subtitle">{{ cv.availability.location }}</p>
 
         <!-- The PDF travels without the site around it, so it carries its own contact details. -->
         <p v-if="print" class="cv__contact">
-          <a v-if="cv.email" :href="`mailto:${cv.email}`">{{ cv.email }}</a>
+          <!-- Filled in by scripts/generate-cv-pdf.mjs from CV_EMAIL. The address is kept out of
+               cv.yml because everything there is shipped to the browser on every page. -->
+          <span data-cv-email />
           <a href="https://andyevans.dev/cv/">andyevans.dev/cv</a>
           <a href="https://www.linkedin.com/in/andy-evans-557b1125/">linkedin.com/in/andy-evans-557b1125</a>
         </p>
@@ -25,11 +28,11 @@
       </div>
     </header>
 
-    <CvAvailability v-if="cv.availability" v-bind="cv.availability" />
+    <CvAvailability v-if="cv.availability && !print" v-bind="cv.availability" />
 
     <template v-if="cv.biography?.text">
       <h2 class="cv__section">About me</h2>
-      <div class="cv__bio" v-html="cv.biography.text" />
+      <div class="cv__bio" v-html="bioHtml" />
     </template>
 
     <template v-if="cv.skills?.length">
@@ -74,7 +77,7 @@
       />
     </template>
 
-    <template v-if="writing.length">
+    <template v-if="writing.length && !print">
       <h2 class="cv__section">Selected writing</h2>
       <div class="cv__panel">
         <p class="cv__writing-intro">
@@ -93,7 +96,7 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   cv: Record<string, any>
   writing: { path: string, title: string, description?: string }[]
   // Rendering the version the PDF is made from: contact details instead of a download link.
@@ -103,6 +106,15 @@ withDefaults(defineProps<{
 })
 
 const pdfPath = CV_PDF_PATH
+
+// The PDF keeps the first two paragraphs of the biography. The third says what "How I work"
+// already covers, and a recruiter should reach the experience sooner.
+const PRINT_BIO_PARAGRAPHS = 2
+const bioHtml = computed(() => {
+  const text: string = props.cv.biography?.text ?? ''
+  if (!props.print) return text
+  return (text.match(/<p>[\s\S]*?<\/p>/g) ?? [text]).slice(0, PRINT_BIO_PARAGRAPHS).join('')
+})
 </script>
 
 <style scoped>
