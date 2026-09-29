@@ -26,6 +26,11 @@ export default defineNitroPlugin((nitroApp) => {
           description: cv.description ?? '',
           href: `${options.domain}/cv/`,
         },
+        {
+          title: 'CV (PDF)',
+          description: 'The same CV as a downloadable PDF.',
+          href: `${options.domain}/andy-evans-cv.pdf`,
+        },
       ],
     })
   })
@@ -61,7 +66,8 @@ function summariseCv(cv: Record<string, any>): string {
         roles && `Open to: ${roles}.`,
         (availability.industries ?? []).length && `Industries of interest: ${availability.industries.join('; ')}.`,
         availability.location && `Location: ${availability.location}.`,
-        availability.contactUrl && `Contact: ${availability.contactUrl}`,
+        cv.email && `Email: ${cv.email}.`,
+        availability.contactUrl && `LinkedIn: ${availability.contactUrl}`,
       ].filter(Boolean).join(' '),
     )
   }
@@ -93,7 +99,8 @@ function renderCvMarkdown(cv: Record<string, any>): string {
         (availability.roles ?? []).length ? `Roles: ${availability.roles.join('; ')}` : '',
         (availability.industries ?? []).length ? `Industries of interest: ${availability.industries.join('; ')}` : '',
         availability.location ? `Location: ${availability.location}` : '',
-        availability.contactUrl ? `Contact: ${availability.contactUrl}` : '',
+        cv.email ? `Email: ${cv.email}` : '',
+        availability.contactUrl ? `LinkedIn: ${availability.contactUrl}` : '',
       ].filter(Boolean).join('\n'),
     )
   }

@@ -5,10 +5,11 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && node scripts/generate-cv-pdf.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "thumbnails": "node scripts/generate-thumbnails.mjs"
+    "thumbnails": "node scripts/generate-thumbnails.mjs",
+    "cv:pdf": "node scripts/generate-cv-pdf.mjs"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.2.5",
+    "playwright": "^1.63.0",
     "sharp": "^0.34.5"
   }
 }
