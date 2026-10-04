@@ -1,33 +1,34 @@
-title: "Andy Evans — Senior Platform Engineer (Azure & .NET)"
-description: "Senior platform engineer based in Sheffield, UK, building and running the Azure and Kubernetes platforms that development teams ship on, backed by 15 years of hands-on C# and .NET. Open to remote or hybrid platform, DevOps and lead engineering roles."
-role: "Senior Platform Engineer"
+title: "Andy Evans — Senior Software Engineer (Azure & .NET)"
+description: "Senior software engineer based in Sheffield, UK, building and running the Azure and Kubernetes platforms that development teams ship on, backed by 15 years of hands-on C# and .NET. Open to remote or hybrid platform, DevOps and lead engineering roles."
+role: "Senior Software Engineer"
 location: "Sheffield, UK"
 email: "hello@andyevans.dev"
 
 biography:
   image: /andyevans.jpeg
-  imageAlt: "Andy Evans, senior platform engineer based in Sheffield, UK"
+  imageAlt: "Andy Evans, senior software engineer based in Sheffield, UK"
   text: |
-    <p>I'm Andy Evans, a platform engineer based in Sheffield, UK. I build and run the infrastructure, pipelines and tooling that development teams ship on: Azure, Kubernetes, CI/CD, and the developer experience around them. I came to it through around 15 years of hands-on software engineering, mostly in C# and .NET, so I build platforms for developers as someone who is one.</p>
-    <p>A lot of my career has been spent close to things being physically made. I work on manufacturing operations data at DataQI, I built the driver interface for a works prototype electric vehicle at McMurtry Automotive, and I started out in IT and internal systems at F1 engine suppliers Mercedes AMG High Performance Powertrains. I'm used to working with engineers who aren't software people, data that comes off real machines rather than out of a clean database, and code that has to keep running where nobody can reach it.</p>
-    <p>I'm a resilient and logical problem solver. I build systems using whatever tools the problem demands, I care about the codebase being simple enough for the next person to understand, and I've spent most of my career as the person a team turns to when something is broken or unclear. I'm also passionate about mentoring and building great teams.</p>
+    <p>I'm Andy Evans, a software engineer based in Sheffield, UK. I currently work for Razor Ltd, a software and AI consultancy.</p>
+    <p>My background is in full-stack software development, building complex web-based systems for a variety of industries and applications.
+    I've worked with a huge range of languages and tools over the years, with a basis in .NET.</p>
+    <p>More recently, I've had the opportunity to take on a platform engineering role. This has given me the chance to treat other engineers and individuals as my clients
+    - building tools to make their lives easier, and to make the build and delivery of software more efficient and reliable.
 
 availability:
   status: "Open to conversations"
-  text: "I'm looking to start conversations with teams doing work I am passionate about. I'm most useful where platform and cloud work meets hands-on .NET and web engineering, and where technical leadership is part of the job. Much of my career has been in manufacturing and motorsport focused organisations - I'd happily stay in that world, but I'm just as interested in something new."
+  text: "I am looking for my next challenge! If you're on the hunt for a Software or Platform Engineer and you are seeking someone to bring experience and impact, then I would love to hear from you."
   roles:
     - "Senior / Lead Platform Engineer"
     - "DevOps / Cloud Engineer"
-    - "Senior / Lead Software Engineer (.NET)"
+    - "Senior / Lead Software Engineer"
     - "Solution Architect / Technical Lead"
   industries:
     - "Green and renewable energy"
-    - "Motorsport"
     - "Engineering"
     - "Meteorology"
     - "Science and research"
     - "Good causes"
-  location: "Remote (UK), or hybrid in Sheffield and the East Midlands"
+  location: "Remote (UK), or hybrid in Sheffield / East Midlands"
   contactUrl: "https://www.linkedin.com/in/andy-evans-557b1125/"
   contactLabel: "Get in touch on LinkedIn"
 

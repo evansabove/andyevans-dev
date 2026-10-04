@@ -4,7 +4,6 @@
       <span class="availability__dot" aria-hidden="true" />
       {{ status }}
     </p>
-    <h2 id="availability-heading" class="availability__heading">What I'm looking for</h2>
     <p v-if="text" class="availability__text">{{ text }}</p>
 
     <dl class="availability__details">
