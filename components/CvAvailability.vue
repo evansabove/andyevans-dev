@@ -1,10 +1,9 @@
 <template>
-  <aside class="availability" aria-labelledby="availability-heading">
+  <aside class="availability" aria-label="Availability">
     <p class="availability__status">
       <span class="availability__dot" aria-hidden="true" />
       {{ status }}
     </p>
-    <h2 id="availability-heading" class="availability__heading">What I'm looking for</h2>
     <p v-if="text" class="availability__text">{{ text }}</p>
 
     <dl class="availability__details">
@@ -13,14 +12,6 @@
         <dd class="availability__value">
           <ul class="availability__roles">
             <li v-for="role in roles" :key="role">{{ role }}</li>
-          </ul>
-        </dd>
-      </div>
-      <div v-if="industries?.length" class="availability__detail">
-        <dt class="availability__label">Industries I'd like to work in</dt>
-        <dd class="availability__value">
-          <ul class="availability__roles">
-            <li v-for="industry in industries" :key="industry">{{ industry }}</li>
           </ul>
         </dd>
       </div>
@@ -41,7 +32,6 @@ defineProps<{
   status: string
   text?: string
   roles?: string[]
-  industries?: string[]
   location?: string
   contactUrl?: string
   contactLabel?: string
@@ -60,14 +50,6 @@ defineProps<{
 
 .availability__dot {
   @apply inline-block w-2 h-2 rounded-full bg-green-500 flex-shrink-0;
-}
-
-.availability__heading {
-  @apply text-lg font-bold text-purple-900 mb-2;
-  /* override the global h2 sizing and margins */
-  font-size: 1.125rem !important;
-  margin-top: 0 !important;
-  margin-bottom: 0.5rem !important;
 }
 
 .availability__text {

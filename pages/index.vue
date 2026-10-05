@@ -20,10 +20,6 @@ const cv = computed<Record<string, any>>(() => (cvData.value as any)?.meta ?? (c
 const HOME_SKILL_GROUPS = 4
 const topSkills = computed(() => (cv.value.skills ?? []).slice(0, HOME_SKILL_GROUPS))
 
-const currentRole = computed(() =>
-  (cv.value.experience ?? []).find((role: any) => !role.end && role.type !== 'break'),
-)
-
 // Fetch 3 most recent posts for the RecentPosts section
 const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
   const query = queryCollection('posts')
@@ -33,7 +29,7 @@ const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
   return query.all()
 })
 
-const pageTitle = 'Andy Evans — Senior Platform Engineer'
+const pageTitle = 'Andy Evans — Senior Software Engineer'
 
 useHead({
   titleTemplate: () => pageTitle,
@@ -74,9 +70,9 @@ useHead({
         name: 'Andy Evans',
         url: runtimeConfig.public.appUrl,
         image: runtimeConfig.public.appImage,
-        jobTitle: 'Senior Platform Engineer',
+        jobTitle: 'Senior Software Engineer',
         description: runtimeConfig.public.appDescription,
-        mainEntityOfPage: `${runtimeConfig.public.appUrl}/cv/`,
+        mainEntityOfPage: `${runtimeConfig.public.appUrl}/about/`,
         sameAs: [
           'https://github.com/evansabove',
           'https://www.linkedin.com/in/andy-evans-557b1125'
@@ -91,17 +87,10 @@ useHead({
   <AppTemplate>
     <HomeHero />
 
-    <div v-if="cv.availability" class="home-availability">
-      <CvAvailability v-bind="cv.availability" />
-    </div>
-
     <section v-if="topSkills.length" class="home-skills">
       <h2 class="home-skills__heading">What I work with</h2>
-      <p v-if="currentRole" class="home-skills__current">
-        Currently {{ currentRole.title }} at {{ currentRole.business }}, {{ currentRole.location }}.
-      </p>
       <CvSkills :groups="topSkills" />
-      <NuxtLink to="/cv" class="home-skills__link">See the full CV →</NuxtLink>
+      <NuxtLink to="/about" class="home-skills__link">Read more about me →</NuxtLink>
     </section>
 
     <RecentPosts
@@ -112,10 +101,6 @@ useHead({
 </template>
 
 <style scoped>
-.home-availability {
-  @apply max-w-4xl mx-auto;
-}
-
 .home-skills {
   @apply max-w-4xl mx-auto mb-10;
 }
@@ -125,10 +110,6 @@ useHead({
   @apply border-b border-stone-200;
   font-size: 1.25rem !important;
   margin-top: 0 !important;
-}
-
-.home-skills__current {
-  @apply text-gray-600;
 }
 
 .home-skills__link {

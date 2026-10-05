@@ -12,7 +12,7 @@ const pageTitle = computed(() => `${cv.value.title ?? 'Andy Evans'} | CV`)
 useHead({
   titleTemplate: () => pageTitle.value,
   meta: [{ name: 'robots', content: 'noindex, nofollow' }],
-  link: [{ rel: 'canonical', href: `${runtimeConfig.public.appUrl}/cv/` }],
+  link: [{ rel: 'canonical', href: `${runtimeConfig.public.appUrl}/about/` }],
 })
 </script>
 

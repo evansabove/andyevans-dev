@@ -18,13 +18,13 @@ export default defineNitroPlugin((nitroApp) => {
 
     options.sections = options.sections ?? []
     options.sections.unshift({
-      title: 'CV',
+      title: 'About me and CV',
       description: summariseCv(cv),
       links: [
         {
           title: cv.title ?? 'CV',
           description: cv.description ?? '',
-          href: `${options.domain}/cv/`,
+          href: `${options.domain}/about/`,
         },
         {
           title: 'CV (PDF)',
@@ -64,7 +64,6 @@ function summariseCv(cv: Record<string, any>): string {
         `${availability.status}.`,
         availability.text,
         roles && `Open to: ${roles}.`,
-        (availability.industries ?? []).length && `Industries of interest: ${availability.industries.join('; ')}.`,
         availability.location && `Location: ${availability.location}.`,
         cv.email && `Email: ${cv.email}.`,
         availability.contactUrl && `LinkedIn: ${availability.contactUrl}`,
@@ -97,7 +96,6 @@ function renderCvMarkdown(cv: Record<string, any>): string {
         `Status: ${availability.status}`,
         availability.text,
         (availability.roles ?? []).length ? `Roles: ${availability.roles.join('; ')}` : '',
-        (availability.industries ?? []).length ? `Industries of interest: ${availability.industries.join('; ')}` : '',
         availability.location ? `Location: ${availability.location}` : '',
         cv.email ? `Email: ${cv.email}` : '',
         availability.contactUrl ? `LinkedIn: ${availability.contactUrl}` : '',

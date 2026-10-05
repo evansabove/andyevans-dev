@@ -4,7 +4,7 @@ const route = useRoute()
 
 const { cv, selectedWriting } = await useCv()
 
-const pageTitle = computed(() => `${cv.value.title ?? 'Andy Evans'} | CV`)
+const pageTitle = computed(() => `${cv.value.title ?? 'Andy Evans'} | About me`)
 const pageDescription = computed(() => cv.value.description ?? runtimeConfig.public.appDescription)
 const pageUrl = computed(() => `${runtimeConfig.public.appUrl}${route.path.replace(/\/?$/, '/')}`)
 
