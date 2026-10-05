@@ -4,8 +4,8 @@
       <div class="hero__text">
         <p class="hero__greeting">Hey, I'm</p>
         <h1 class="hero__name">Andy Evans</h1>
-        <p class="hero__title">Senior Platform Engineer · Sheffield, UK</p>
-        <p class="hero__bio">I'm a platform engineer based in Sheffield, UK. I build and run the platforms that development teams ship on, often using Azure and Kubernetes, backed by around 15 years of hands-on software engineering in C# and .NET. I'm particularly interested in developer tooling, efficient computing and building great teams.</p>
+        <p class="hero__title">Senior Software Engineer · Sheffield, UK</p>
+        <p class="hero__bio">I'm Andy Evans, a software engineer based in Sheffield, UK. My background is in full-stack software development, building complex web-based systems for a variety of industries and applications.</p>
         <p class="hero__bio hero__bio--last">This is where I write about the things I'm building, the problems I'm solving, and the lessons I pick up along the way.</p>
       </div>
       <div class="hero__photo-wrap">

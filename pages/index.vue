@@ -33,7 +33,7 @@ const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
   return query.all()
 })
 
-const pageTitle = 'Andy Evans — Senior Platform Engineer'
+const pageTitle = 'Andy Evans — Senior Software Engineer'
 
 useHead({
   titleTemplate: () => pageTitle,
@@ -74,7 +74,7 @@ useHead({
         name: 'Andy Evans',
         url: runtimeConfig.public.appUrl,
         image: runtimeConfig.public.appImage,
-        jobTitle: 'Senior Platform Engineer',
+        jobTitle: 'Senior Software Engineer',
         description: runtimeConfig.public.appDescription,
         mainEntityOfPage: `${runtimeConfig.public.appUrl}/cv/`,
         sameAs: [
@@ -91,17 +91,10 @@ useHead({
   <AppTemplate>
     <HomeHero />
 
-    <div v-if="cv.availability" class="home-availability">
-      <CvAvailability v-bind="cv.availability" />
-    </div>
-
     <section v-if="topSkills.length" class="home-skills">
       <h2 class="home-skills__heading">What I work with</h2>
-      <p v-if="currentRole" class="home-skills__current">
-        Currently {{ currentRole.title }} at {{ currentRole.business }}, {{ currentRole.location }}.
-      </p>
       <CvSkills :groups="topSkills" />
-      <NuxtLink to="/cv" class="home-skills__link">See the full CV →</NuxtLink>
+      <NuxtLink to="/cv" class="home-skills__link">Read more about me →</NuxtLink>
     </section>
 
     <RecentPosts

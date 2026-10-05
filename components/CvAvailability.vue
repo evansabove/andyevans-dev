@@ -15,14 +15,6 @@
           </ul>
         </dd>
       </div>
-      <div v-if="industries?.length" class="availability__detail">
-        <dt class="availability__label">Industries I'd like to work in</dt>
-        <dd class="availability__value">
-          <ul class="availability__roles">
-            <li v-for="industry in industries" :key="industry">{{ industry }}</li>
-          </ul>
-        </dd>
-      </div>
       <div v-if="location" class="availability__detail">
         <dt class="availability__label">Location</dt>
         <dd class="availability__value">{{ location }}</dd>
