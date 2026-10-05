@@ -48,7 +48,7 @@
       </template>
     </template>
 
-    <template v-if="cv.howIWork?.length">
+    <template v-if="cv.howIWork?.length && !print">
       <h2 class="cv__section">How I work</h2>
       <div class="cv__panel">
         <CvHowIWork
