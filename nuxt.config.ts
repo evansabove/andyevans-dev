@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     public: {
       appName: appName,
       appUrl: 'https://andyevans.dev',
-      appDescription: "I'm Andy Evans, a platform engineer based in Sheffield, UK. I write about Azure, Kubernetes, CI/CD, .NET and the tooling that makes development teams faster.",
+      appDescription: "I'm Andy Evans, a software engineer based in Sheffield, UK. I write about .NET, Azure, Kubernetes, CI/CD and the tooling that makes development teams faster.",
       appImage: 'https://andyevans.dev/andyevans.jpeg',
     }
   },
@@ -72,10 +72,10 @@ export default defineNuxtConfig({
   // @nuxt/content feeds the posts in automatically; server/plugins/llms.ts adds the CV.
   llms: {
     domain: 'https://andyevans.dev',
-    title: 'Andy Evans — Senior Software Engineer (.NET & Azure)',
-    description: "Andy Evans is a senior software engineer and platform engineer based in Sheffield, UK, with over 12 years of experience building production software. He works primarily in C# and .NET, and leads on platform engineering, CI/CD and Azure cloud deployments.",
+    title: 'Andy Evans — Senior Software Engineer (Azure & .NET)',
+    description: "Andy Evans is a senior software engineer based in Sheffield, UK, with 15 years of experience building production software. His background is full-stack web development in C# and .NET, and more recently he has taken on platform engineering: CI/CD, Azure and Kubernetes.",
     full: {
-      title: 'Andy Evans — Senior Software Engineer (.NET & Azure)',
+      title: 'Andy Evans — Senior Software Engineer (Azure & .NET)',
       description: 'Full CV and the complete text of every post on andyevans.dev.',
     },
   },

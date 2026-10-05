@@ -1,5 +1,5 @@
 <template>
-  <aside class="availability" aria-labelledby="availability-heading">
+  <aside class="availability" aria-label="Availability">
     <p class="availability__status">
       <span class="availability__dot" aria-hidden="true" />
       {{ status }}
@@ -32,7 +32,6 @@ defineProps<{
   status: string
   text?: string
   roles?: string[]
-  industries?: string[]
   location?: string
   contactUrl?: string
   contactLabel?: string
@@ -51,14 +50,6 @@ defineProps<{
 
 .availability__dot {
   @apply inline-block w-2 h-2 rounded-full bg-green-500 flex-shrink-0;
-}
-
-.availability__heading {
-  @apply text-lg font-bold text-purple-900 mb-2;
-  /* override the global h2 sizing and margins */
-  font-size: 1.125rem !important;
-  margin-top: 0 !important;
-  margin-bottom: 0.5rem !important;
 }
 
 .availability__text {

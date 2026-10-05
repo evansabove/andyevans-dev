@@ -20,10 +20,6 @@ const cv = computed<Record<string, any>>(() => (cvData.value as any)?.meta ?? (c
 const HOME_SKILL_GROUPS = 4
 const topSkills = computed(() => (cv.value.skills ?? []).slice(0, HOME_SKILL_GROUPS))
 
-const currentRole = computed(() =>
-  (cv.value.experience ?? []).find((role: any) => !role.end && role.type !== 'break'),
-)
-
 // Fetch 3 most recent posts for the RecentPosts section
 const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
   const query = queryCollection('posts')
@@ -105,10 +101,6 @@ useHead({
 </template>
 
 <style scoped>
-.home-availability {
-  @apply max-w-4xl mx-auto;
-}
-
 .home-skills {
   @apply max-w-4xl mx-auto mb-10;
 }
@@ -118,10 +110,6 @@ useHead({
   @apply border-b border-stone-200;
   font-size: 1.25rem !important;
   margin-top: 0 !important;
-}
-
-.home-skills__current {
-  @apply text-gray-600;
 }
 
 .home-skills__link {

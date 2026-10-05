@@ -32,7 +32,7 @@
 
     <template v-if="cv.biography?.text">
       <h2 class="cv__section">About me</h2>
-      <div class="cv__bio" v-html="bioHtml" />
+      <div class="cv__bio" v-html="cv.biography.text" />
     </template>
 
     <template v-if="cv.skills?.length">
@@ -96,7 +96,7 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   cv: Record<string, any>
   writing: { path: string, title: string, description?: string }[]
   // Rendering the version the PDF is made from: contact details instead of a download link.
@@ -106,15 +106,6 @@ const props = withDefaults(defineProps<{
 })
 
 const pdfPath = CV_PDF_PATH
-
-// The PDF keeps the first two paragraphs of the biography. The third says what "How I work"
-// already covers, and a recruiter should reach the experience sooner.
-const PRINT_BIO_PARAGRAPHS = 2
-const bioHtml = computed(() => {
-  const text: string = props.cv.biography?.text ?? ''
-  if (!props.print) return text
-  return (text.match(/<p>[\s\S]*?<\/p>/g) ?? [text]).slice(0, PRINT_BIO_PARAGRAPHS).join('')
-})
 </script>
 
 <style scoped>
