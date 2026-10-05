@@ -21,10 +21,15 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/cv/print/'],
+      routes: ['/', '/about/print/'],
       ignore: [],
       failOnError: false,
     }
+  },
+  // The page used to live at /cv, and that address has been shared and indexed. Send it on.
+  routeRules: {
+    '/cv': { redirect: { to: '/about/', statusCode: 301 } },
+    '/cv/': { redirect: { to: '/about/', statusCode: 301 } },
   },
   content: {},
   mdc: {
@@ -79,9 +84,9 @@ export default defineNuxtConfig({
       description: 'Full CV and the complete text of every post on andyevans.dev.',
     },
   },
-  // /cv is the page to index; the print version only exists to be rendered to PDF.
+  // /about is the page to index; the print version only exists to be rendered to PDF.
   sitemap: {
-    exclude: ['/cv/print/**'],
+    exclude: ['/about/print/**'],
   },
   site: {
     url: 'https://andyevans.dev',

@@ -1,4 +1,4 @@
-// Renders the prerendered /cv/print/ page to a PDF, so the downloadable CV is generated from
+// Renders the prerendered /about/print/ page to a PDF, so the downloadable CV is generated from
 // content/pages/cv.yml on every build and can never disagree with the page.
 //
 // Runs after `nuxt generate` (see the `generate` script in package.json). Set SKIP_CV_PDF=1 to
@@ -12,10 +12,10 @@ import { chromium } from 'playwright'
 // `nuxt generate` writes to .output/public and links dist to it locally; Cloudflare's
 // cloudflare-pages-static preset writes to dist directly. dist is what gets deployed either way.
 const OUTPUT_DIR = 'dist'
-const PAGE_PATH = '/cv/print/'
+const PAGE_PATH = '/about/print/'
 const PDF_FILE = 'andy-evans-cv.pdf'
 
-// Served under the real origin so relative links in the page (posts, /cv) become working
+// Served under the real origin so relative links in the page (posts, /about) become working
 // andyevans.dev links in the PDF, rather than pointing at a local server.
 const ORIGIN = 'https://andyevans.dev'
 
@@ -85,7 +85,7 @@ try {
 
   const footer = `
     <div style="width: 100%; font-size: 8px; color: #6b7280; text-align: center; font-family: sans-serif;">
-      Andy Evans &middot; andyevans.dev/cv &middot; <span class="pageNumber"></span> of <span class="totalPages"></span>
+      Andy Evans &middot; andyevans.dev/about &middot; <span class="pageNumber"></span> of <span class="totalPages"></span>
     </div>`
 
   await page.pdf({

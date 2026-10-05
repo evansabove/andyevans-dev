@@ -72,7 +72,7 @@ useHead({
         image: runtimeConfig.public.appImage,
         jobTitle: 'Senior Software Engineer',
         description: runtimeConfig.public.appDescription,
-        mainEntityOfPage: `${runtimeConfig.public.appUrl}/cv/`,
+        mainEntityOfPage: `${runtimeConfig.public.appUrl}/about/`,
         sameAs: [
           'https://github.com/evansabove',
           'https://www.linkedin.com/in/andy-evans-557b1125'
@@ -90,7 +90,7 @@ useHead({
     <section v-if="topSkills.length" class="home-skills">
       <h2 class="home-skills__heading">What I work with</h2>
       <CvSkills :groups="topSkills" />
-      <NuxtLink to="/cv" class="home-skills__link">Read more about me →</NuxtLink>
+      <NuxtLink to="/about" class="home-skills__link">Read more about me →</NuxtLink>
     </section>
 
     <RecentPosts

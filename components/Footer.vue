@@ -2,7 +2,7 @@
   <footer class="footer bg-purple-900 text-white py-2">
     <div class="footer-content">
       <nav class="footer-nav">
-        <NuxtLink to="/cv" class="footer-link">CV</NuxtLink>
+        <NuxtLink to="/about" class="footer-link">About</NuxtLink>
         <NuxtLink to="/posts" class="footer-link">Posts</NuxtLink>
         <NuxtLink to="/topics" class="footer-link">Topics</NuxtLink>
       </nav>

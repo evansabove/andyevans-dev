@@ -20,7 +20,7 @@
           <a v-if="cv.email" :href="`mailto:${cv.email}`">{{ cv.email }}</a>
           <!-- The PDF travels without the site around it, so it carries its own links back. -->
           <template v-if="print">
-            <a href="https://andyevans.dev/cv/">andyevans.dev/cv</a>
+            <a href="https://andyevans.dev/about/">andyevans.dev/about</a>
             <a href="https://www.linkedin.com/in/andy-evans-557b1125/">linkedin.com/in/andy-evans-557b1125</a>
           </template>
         </p>

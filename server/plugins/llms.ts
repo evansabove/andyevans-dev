@@ -18,13 +18,13 @@ export default defineNitroPlugin((nitroApp) => {
 
     options.sections = options.sections ?? []
     options.sections.unshift({
-      title: 'CV',
+      title: 'About me and CV',
       description: summariseCv(cv),
       links: [
         {
           title: cv.title ?? 'CV',
           description: cv.description ?? '',
-          href: `${options.domain}/cv/`,
+          href: `${options.domain}/about/`,
         },
         {
           title: 'CV (PDF)',
