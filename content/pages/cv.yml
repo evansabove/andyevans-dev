@@ -66,8 +66,8 @@ experience:
       - "Own the platform engineering role for DataQI, covering cloud and on-prem infrastructure, Kubernetes deployments and the CI/CD pipelines the team ships through."
       - "Investigated and introduced Argo CD, then made GitOps the way the whole business deploys. It now runs every DataQI environment."
       - "Introduced ephemeral environments on top of Argo CD, initially hosted on AKS. Labelling a pull request now gives any developer or tester their own deployment of DataQI in about 10 minutes, where before it took the best part of a day and so rarely happened at all."
-      - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting £600 a month from the Azure bill. Built and provisioned the cluster myself with Ansible."
-      - "Built self-service environments with Backstage, so non-technical colleagues can create their own instance of DataQI on demand, without needing an engineer."
+      - "Later moved those environments off AKS and onto an on-prem Kubernetes cluster, cutting hundreds of pounds per month from the Azure bill. Built and provisioned the cluster myself with Ansible."
+      - "Built a self-service environment system with Backstage, so non-technical colleagues can create their own instance of DataQI on demand, without needing an engineer."
       - "Built an AI code summariser for the team, fronted by an Azure DevOps extension and backed by a secured Azure Functions API running the LLM calls."
       - "Own the technical direction of client solutions and provide technical oversight in client-facing workshops."
       - "Lead multi-skilled delivery teams and bring clarity to projects through backlog management and estimation."
@@ -81,7 +81,7 @@ experience:
     tags: ["C#", "Azure", "Microservices", "Vue", "Kubernetes", "SQL Server", "Entity Framework", "Software architecture"]
     summary: "Technical leader on a microservice-based SaaS platform that sat at the core of a new business offering."
     highlights:
-      - "Architect and lead developer for a greenfield microservice SaaS platform, including its deployment and verification."
+      - "Lead developer for a greenfield microservice SaaS platform, including its deployment and verification."
       - "Set the technical standards and Azure deployment approach the delivery teams built against."
 
   - title: "Senior Software Engineer"
