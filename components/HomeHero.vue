@@ -4,7 +4,7 @@
       <div class="hero__text">
         <p class="hero__greeting">Hey, I'm</p>
         <h1 class="hero__name">Andy Evans</h1>
-        <p class="hero__title">Senior Software Engineer · Sheffield, UK</p>
+        <p class="hero__title">Senior / Lead Software Engineer · Sheffield, UK</p>
         <p class="hero__bio">I'm a software engineer based in Sheffield, UK. My background is in full-stack software development, building complex web-based systems for a variety of industries and applications.</p>
         <p class="hero__bio hero__bio--last">This is where I write about the things I'm building, the problems I'm solving, and the lessons I pick up along the way.</p>
       </div>

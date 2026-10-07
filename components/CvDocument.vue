@@ -13,7 +13,7 @@
       >
       <div>
         <h1 class="cv__heading">Andy Evans</h1>
-        <p class="cv__subtitle">{{ cv.role ?? 'Senior Software Engineer' }} · {{ cv.location ?? 'Sheffield, UK' }}</p>
+        <p class="cv__subtitle">{{ cv.role ?? 'Senior / Lead Software Engineer' }} · {{ cv.location ?? 'Sheffield, UK' }}</p>
         <p v-if="print && cv.availability?.location" class="cv__subtitle">{{ cv.availability.location }}</p>
 
         <p class="cv__contact">

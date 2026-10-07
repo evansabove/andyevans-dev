@@ -29,7 +29,7 @@ const { data: recentPosts } = await useAsyncData('recent-posts-home', () => {
   return query.all()
 })
 
-const pageTitle = 'Andy Evans — Senior Software Engineer'
+const pageTitle = 'Andy Evans — Senior / Lead Software Engineer'
 
 useHead({
   titleTemplate: () => pageTitle,
@@ -70,7 +70,7 @@ useHead({
         name: 'Andy Evans',
         url: runtimeConfig.public.appUrl,
         image: runtimeConfig.public.appImage,
-        jobTitle: 'Senior Software Engineer',
+        jobTitle: 'Senior / Lead Software Engineer',
         description: runtimeConfig.public.appDescription,
         mainEntityOfPage: `${runtimeConfig.public.appUrl}/about/`,
         sameAs: [
