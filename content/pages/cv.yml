@@ -1,18 +1,20 @@
-title: "Andy Evans — Senior Software Engineer (Azure & .NET)"
-description: "Senior software engineer based in Sheffield, UK, with 15 years in software: full-stack C# and .NET web systems, and more recently the Azure and Kubernetes platforms that development teams ship on. Open to remote or hybrid software, platform and lead engineering roles."
-role: "Senior Software Engineer"
+title: "Andy Evans — Senior / Lead Software Engineer (Azure & .NET)"
+description: "Senior and lead software engineer based in Sheffield, UK, with 15 years in software: full-stack C# and .NET web systems, and more recently the Azure and Kubernetes platforms that development teams ship on. Open to remote or hybrid software, platform and lead engineering roles."
+role: "Senior / Lead Software Engineer"
 location: "Sheffield, UK"
 email: "hello@andyevans.dev"
 
 biography:
   image: /andyevans.jpeg
-  imageAlt: "Andy Evans, senior software engineer based in Sheffield, UK"
+  imageAlt: "Andy Evans, senior and lead software engineer based in Sheffield, UK"
   text: |
     <p>I'm Andy Evans, a software engineer based in Sheffield, UK. I currently work for Razor Ltd, a software and AI consultancy.</p>
     <p>My background is in full-stack software development, building complex web-based systems.
     Over the last 15 years I've worked in a broad range of industries, with a huge range of languages and tools.</p>
     <p>More recently, I've had the opportunity to take on a platform engineering role. This has given me the chance to treat other engineers and individuals as my clients
     - building tools to make their lives easier, and to make the build and delivery of software more efficient and reliable.</p>
+    <p>How am I working with AI these days? AI has fundamentally changed how I build software. I use agentic tools like Claude Code every day to make my workflows more
+    accurate and more efficient. My mind is constantly open to new ideas about how to make even better use of this amazing technology.</p>
 
 availability:
   status: "Open to work"

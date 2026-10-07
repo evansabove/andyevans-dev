@@ -77,10 +77,10 @@ export default defineNuxtConfig({
   // @nuxt/content feeds the posts in automatically; server/plugins/llms.ts adds the CV.
   llms: {
     domain: 'https://andyevans.dev',
-    title: 'Andy Evans — Senior Software Engineer (Azure & .NET)',
-    description: "Andy Evans is a senior software engineer based in Sheffield, UK, with 15 years of experience building production software. His background is full-stack web development in C# and .NET, and more recently he has taken on platform engineering: CI/CD, Azure and Kubernetes.",
+    title: 'Andy Evans — Senior / Lead Software Engineer (Azure & .NET)',
+    description: "Andy Evans is a senior and lead software engineer based in Sheffield, UK, with 15 years of experience building production software. His background is full-stack web development in C# and .NET, and more recently he has taken on platform engineering: CI/CD, Azure and Kubernetes.",
     full: {
-      title: 'Andy Evans — Senior Software Engineer (Azure & .NET)',
+      title: 'Andy Evans — Senior / Lead Software Engineer (Azure & .NET)',
       description: 'Full CV and the complete text of every post on andyevans.dev.',
     },
   },

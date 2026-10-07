@@ -54,7 +54,7 @@ const personSchema = computed(() => {
       name: 'Andy Evans',
       givenName: 'Andy',
       familyName: 'Evans',
-      jobTitle: cv.value.role ?? 'Senior Software Engineer',
+      jobTitle: cv.value.role ?? 'Senior / Lead Software Engineer',
       description: pageDescription.value,
       url: pageUrl.value,
       image: runtimeConfig.public.appImage,
