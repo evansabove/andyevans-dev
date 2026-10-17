@@ -1,8 +1,9 @@
 <template>
   <div class="cv" :class="{ 'cv--print': print }">
     <header class="cv__masthead">
+      <!-- UK and US recruiters advise against a photo on a CV, so it's for the website only. -->
       <img
-        v-if="cv.biography?.image"
+        v-if="cv.biography?.image && !print"
         :src="cv.biography.image"
         :alt="cv.biography.imageAlt ?? 'Andy Evans'"
         class="cv__photo"
@@ -24,13 +25,26 @@
             <a href="https://www.linkedin.com/in/andy-evans-557b1125/">linkedin.com/in/andy-evans-557b1125</a>
           </template>
         </p>
-        <a v-if="!print" :href="pdfPath" download="Andy-Evans-CV.pdf" class="cv__download">Download CV (PDF)</a>
+        <p v-if="!print" class="cv__downloads">
+          <a
+            v-for="variant in CV_VARIANTS"
+            :key="variant.key"
+            :href="variant.pdfPath"
+            :download="variant.downloadName"
+            class="cv__download"
+          >{{ variant.label }} (PDF)</a>
+        </p>
       </div>
     </header>
 
     <CvAvailability v-if="cv.availability && !print" v-bind="cv.availability" />
 
-    <template v-if="cv.biography?.text">
+    <!-- The PDF gets the one-paragraph profile, so the experience starts on page 1. -->
+    <template v-if="print && cv.profile">
+      <h2 class="cv__section">Profile</h2>
+      <p class="cv__bio">{{ cv.profile }}</p>
+    </template>
+    <template v-else-if="cv.biography?.text">
       <h2 class="cv__section">About me</h2>
       <div class="cv__bio" v-html="cv.biography.text" />
     </template>
@@ -42,10 +56,21 @@
 
     <template v-if="cv.experience?.length">
       <h2 class="cv__section">Experience</h2>
-      <template v-for="(exp, i) in cv.experience" :key="i">
+      <template v-for="(exp, i) in roles" :key="i">
         <CvCareerBreak v-if="exp.type === 'break'" v-bind="exp" />
         <CvExperience v-else v-bind="exp" />
       </template>
+    </template>
+
+    <template v-if="earlierRoles.length">
+      <h2 class="cv__section">Earlier career</h2>
+      <ul class="cv__earlier">
+        <li v-for="(exp, i) in earlierRoles" :key="i">
+          <span class="cv__earlier-role">{{ exp.title }}, {{ exp.business }}</span>
+          <span class="cv__earlier-dates">{{ formatYears(exp.start, exp.end) }}</span>
+          <span class="cv__earlier-summary">{{ exp.brief ?? exp.summary }}</span>
+        </li>
+      </ul>
     </template>
 
     <template v-if="cv.howIWork?.length && !print">
@@ -59,7 +84,22 @@
       </div>
     </template>
 
-    <template v-if="cv.education?.length">
+    <!-- One line each in the PDF: these are what pushed it onto a third page. -->
+    <template v-if="print && (cv.education?.length || cv.certifications?.length)">
+      <h2 class="cv__section">Education &amp; certifications</h2>
+      <ul class="cv__earlier">
+        <li v-for="(edu, i) in cv.education ?? []" :key="`edu-${i}`">
+          <span class="cv__earlier-role">{{ edu.course }}{{ edu.grade ? ` (${edu.grade})` : '' }}, {{ edu.study_location }}</span>
+          <span class="cv__earlier-dates">{{ edu.year_start }}–{{ edu.year_end }}</span>
+        </li>
+        <li v-for="(cert, i) in cv.certifications ?? []" :key="`cert-${i}`">
+          <span class="cv__earlier-role">{{ cert.name }}</span>
+          <span class="cv__earlier-dates">{{ cert.issued }}</span>
+        </li>
+      </ul>
+    </template>
+
+    <template v-if="cv.education?.length && !print">
       <h2 class="cv__section">Education</h2>
       <CvEducation
         v-for="(edu, i) in cv.education"
@@ -68,7 +108,7 @@
       />
     </template>
 
-    <template v-if="cv.certifications?.length">
+    <template v-if="cv.certifications?.length && !print">
       <h2 class="cv__section">Certifications</h2>
       <CvCertification
         v-for="(cert, i) in cv.certifications"
@@ -96,7 +136,7 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   cv: Record<string, any>
   writing: { path: string, title: string, description?: string }[]
   // Rendering the version the PDF is made from: contact details instead of a download link.
@@ -105,7 +145,19 @@ withDefaults(defineProps<{
   print: false,
 })
 
-const pdfPath = CV_PDF_PATH
+// The PDF keeps roles marked `compact` (the early-career ones) to a line each, at the end.
+const roles = computed(() =>
+  (props.cv.experience ?? []).filter((exp: any) => !(props.print && exp.compact)),
+)
+const earlierRoles = computed(() =>
+  props.print ? (props.cv.experience ?? []).filter((exp: any) => exp.compact) : [],
+)
+
+function formatYears(start: string, end?: string | null) {
+  const from = new Date(start).getFullYear()
+  const to = end ? new Date(end).getFullYear() : 'Present'
+  return from === to ? `${from}` : `${from}–${to}`
+}
 </script>
 
 <style scoped>
@@ -137,7 +189,7 @@ const pdfPath = CV_PDF_PATH
 }
 
 .cv__subtitle {
-  @apply text-gray-500;
+  @apply text-gray-600;
   margin-bottom: 0;
 }
 
@@ -146,8 +198,13 @@ const pdfPath = CV_PDF_PATH
   margin-bottom: 0;
 }
 
+.cv__downloads {
+  @apply flex flex-wrap gap-2 mt-3;
+  margin-bottom: 0;
+}
+
 .cv__download {
-  @apply inline-block mt-3 px-3 py-1.5 rounded-md;
+  @apply inline-block px-3 py-1.5 rounded-md;
   @apply border border-purple-300 text-purple-800 text-sm font-semibold no-underline;
   @apply hover:bg-purple-50 transition-colors;
 }
@@ -168,6 +225,29 @@ const pdfPath = CV_PDF_PATH
 
 .cv__bio p:last-child {
   margin-bottom: 0;
+}
+
+.cv__earlier {
+  @apply list-none text-sm text-gray-700;
+  margin: 0;
+  padding: 0;
+
+  li {
+    @apply mb-2 last:mb-0;
+    padding: 0;
+  }
+}
+
+.cv__earlier-role {
+  @apply font-semibold text-purple-900;
+}
+
+.cv__earlier-dates {
+  @apply text-gray-700 ms-2;
+}
+
+.cv__earlier-summary {
+  @apply block;
 }
 
 .cv__writing-intro {

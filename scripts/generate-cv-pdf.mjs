@@ -1,4 +1,4 @@
-// Renders the prerendered /about/print/ page to a PDF, so the downloadable CV is generated from
+// Renders the prerendered /about/print/ pages to PDFs, so the downloadable CVs are generated from
 // content/pages/cv.yml on every build and can never disagree with the page.
 //
 // Runs after `nuxt generate` (see the `generate` script in package.json). Set SKIP_CV_PDF=1 to
@@ -12,8 +12,12 @@ import { chromium } from 'playwright'
 // `nuxt generate` writes to .output/public and links dist to it locally; Cloudflare's
 // cloudflare-pages-static preset writes to dist directly. dist is what gets deployed either way.
 const OUTPUT_DIR = 'dist'
-const PAGE_PATH = '/about/print/'
-const PDF_FILE = 'andy-evans-cv.pdf'
+
+// One PDF per CV variant. Keep in step with CV_VARIANTS in composables/useCv.ts.
+const CVS = [
+  { pagePath: '/about/print/', pdfFile: 'andy-evans-cv.pdf' },
+  { pagePath: '/about/print/platform/', pdfFile: 'andy-evans-cv-platform.pdf' },
+]
 
 // Served under the real origin so relative links in the page (posts, /about) become working
 // andyevans.dev links in the PDF, rather than pointing at a local server.
@@ -79,26 +83,29 @@ try {
     return route.fulfill({ status: 200, body: file.body, contentType: file.contentType })
   })
 
-  const page = await context.newPage()
-  const response = await page.goto(`${ORIGIN}${PAGE_PATH}`, { waitUntil: 'networkidle' })
-  if (!response?.ok()) throw new Error(`${PAGE_PATH} was not in ${OUTPUT_DIR}. Is it in nitro.prerender.routes, and is ${OUTPUT_DIR} the build output?`)
-
   const footer = `
-    <div style="width: 100%; font-size: 8px; color: #6b7280; text-align: center; font-family: sans-serif;">
+    <div style="width: 100%; font-size: 8px; color: #4b5563; text-align: center; font-family: sans-serif;">
       Andy Evans &middot; andyevans.dev/about &middot; <span class="pageNumber"></span> of <span class="totalPages"></span>
     </div>`
 
-  await page.pdf({
-    path: join(OUTPUT_DIR, PDF_FILE),
-    format: 'A4',
-    printBackground: true,
-    margin: { top: '14mm', bottom: '16mm', left: '14mm', right: '14mm' },
-    displayHeaderFooter: true,
-    headerTemplate: '<span></span>',
-    footerTemplate: footer,
-  })
+  for (const { pagePath, pdfFile } of CVS) {
+    const page = await context.newPage()
+    const response = await page.goto(`${ORIGIN}${pagePath}`, { waitUntil: 'networkidle' })
+    if (!response?.ok()) throw new Error(`${pagePath} was not in ${OUTPUT_DIR}. Is it in nitro.prerender.routes, and is ${OUTPUT_DIR} the build output?`)
 
-  console.log(`[cv-pdf] Wrote ${join(OUTPUT_DIR, PDF_FILE)}`)
+    await page.pdf({
+      path: join(OUTPUT_DIR, pdfFile),
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '14mm', bottom: '16mm', left: '14mm', right: '14mm' },
+      displayHeaderFooter: true,
+      headerTemplate: '<span></span>',
+      footerTemplate: footer,
+    })
+    await page.close()
+
+    console.log(`[cv-pdf] Wrote ${join(OUTPUT_DIR, pdfFile)}`)
+  }
 } finally {
   await browser.close()
 }

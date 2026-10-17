@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/about/print/'],
+      routes: ['/', '/about/print/', '/about/print/platform/'],
       ignore: [],
       failOnError: false,
     }

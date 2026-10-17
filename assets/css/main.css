@@ -97,7 +97,7 @@ span img {
    these rules too (see scripts/generate-cv-pdf.mjs). */
 @media print {
     html {
-        font-size: 10.5pt;
+        font-size: 10pt;
     }
 
     /* The site's own chrome only. A bare `header` selector also hid the CV masthead,
@@ -157,10 +157,41 @@ span img {
         margin-bottom: 12pt !important;
     }
 
-    .cv__photo {
-        width: 5.5rem !important;
-        height: 5.5rem !important;
-        border-width: 2px !important;
+    /* Smaller headings than the website: they were spreading the CV over four pages. The extra
+       classes outrank the components' own scoped !important sizes. */
+    .cv.cv--print .cv__heading {
+        font-size: 1.6rem !important;
+    }
+
+    .cv.cv--print .cv__section {
+        font-size: 1.05rem !important;
+        padding-bottom: 3pt !important;
+    }
+
+    .cv.cv--print .experience__title,
+    .cv.cv--print .education__course,
+    .cv.cv--print .cert__name {
+        font-size: 1rem !important;
+    }
+
+    .experience__summary {
+        font-size: 0.9375rem !important;
+    }
+
+    /* Dates and location on one line, rather than a second line of metadata for every role. */
+    .experience__meta {
+        display: flex !important;
+        gap: 0.75em;
+    }
+
+    /* Each role's technologies are already in the skills list, and the chips cost a lot of space. */
+    .experience__tags {
+        display: none !important;
+    }
+
+    .experience__highlights li {
+        margin-top: 2pt !important;
+        margin-bottom: 2pt !important;
     }
 
     /* Skills as a plain dotted list: denser than chips, and reads cleanly as text. */
@@ -175,8 +206,16 @@ span img {
         content: " ·";
     }
 
+    /* One line per category, label on the left, so the skills don't fill page 1. */
     .skills__group {
-        margin-bottom: 5pt !important;
+        display: grid;
+        grid-template-columns: 10.5rem 1fr;
+        align-items: baseline;
+        margin-bottom: 3pt !important;
+    }
+
+    .cv.cv--print .skills__category {
+        margin-bottom: 0 !important;
     }
 
     .how-i-work__marker {
