@@ -50,12 +50,12 @@ function formatDate(d: string) {
 }
 
 .career-break__location {
-  @apply text-gray-500 text-sm;
+  @apply text-gray-600 text-sm;
   margin-bottom: 0;
 }
 
 .career-break__dates {
-  @apply text-sm text-gray-500 font-medium sm:text-right flex-shrink-0;
+  @apply text-sm text-gray-600 font-medium sm:text-right flex-shrink-0;
   margin-bottom: 0;
 }
 

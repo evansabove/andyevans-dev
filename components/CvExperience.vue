@@ -76,7 +76,7 @@ function formatDate(d: string) {
 }
 
 .experience__meta {
-  @apply text-sm text-gray-500 sm:text-right flex-shrink-0;
+  @apply text-sm text-gray-700 sm:text-right flex-shrink-0;
 }
 
 .experience__dates {

@@ -49,7 +49,7 @@ defineProps<{
 }
 
 .cert__meta {
-  @apply text-sm text-gray-500 sm:text-right flex-shrink-0;
+  @apply text-sm text-gray-700 sm:text-right flex-shrink-0;
 }
 
 .cert__issued {

@@ -31,6 +31,11 @@ export default defineNitroPlugin((nitroApp) => {
           description: 'The same CV as a downloadable PDF.',
           href: `${options.domain}/andy-evans-cv.pdf`,
         },
+        {
+          title: 'DevOps & platform CV (PDF)',
+          description: 'The CV pitched at DevOps and platform engineering roles.',
+          href: `${options.domain}/andy-evans-cv-platform.pdf`,
+        },
       ],
     })
   })
